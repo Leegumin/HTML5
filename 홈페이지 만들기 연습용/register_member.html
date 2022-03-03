@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="css/register_member.css"/>
+    <script src="js/register_member.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="index.html" onsubmit="return checkPassword()">
+            <div class="title"><h1 style="font-size: 21px;">회원가입</h1></div>
+            <div class="id">
+                <input id="id" type="text" placeholder="아이디를 입력해 주세요." maxlength="14" required>
+            </div>
+            <div class="password">
+                <input id="password1" type="password" placeholder="비밀번호를 입력해 주세요." maxlength="20" required>
+            </div>
+            <div class="passwordCheck">
+                <input id="password2" type="password" placeholder="비밀번호를 다시 입력해 주세요." maxlength="14" required>
+            </div>
+            
+            <div class="name">
+                <input id="name" type="text" placeholder="이름을 입력해 주세요." maxlength="8" required>
+            </div>
+            <div class="phone">
+                <input id="phone1" type="number" size="1" minlength="3" min="0" max="999" placeholder="000" required> -
+                <input id="phone2" type="number" size="3" minlength="3" min="0" max="9999" placeholder="0000" required> -
+                <input id="phone3" type="number" size="3"  minlength="3" min="0" max="9999" placeholder="0000" required>
+            </div>
+            <div class="email">
+                <input id="email" name="mail" type="text" placeholder="이메일을 입력해 주세요." required>
+            </div>
+            <button type="submit" id="signUpButton">가입하기</button>
+
+            <!-- <div class="personNum">
+                <input id="personNum_before" type="text" maxlength="6" placeholder="000000"> -
+                <input id="personNum_after" type="text" maxlength="7" placeholder="0000000">
+            </div>
+            <div class="area">
+                <select id="area">
+                    <option selected disabled>지역을 선택하세요.</option>
+                    <option>서울</option>
+                    <option>인천</option>
+                    <option>경기</option>
+                </select>
+            </div>
+            <div class="gender">
+                <input id="gender_man" type="radio" name="gender">남성 
+                <input id="gender_woman" type="radio" name="gender">여성
+            </div> -->
+        </form>
+    </div>
+
+</body>
+
+</html>
