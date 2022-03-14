@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer>
+        // 연습문제 26
+        // 정수 두개가 입력으로 들어온다.
+        // 첫번째 정수가 홀수이면 홀수를 출력하고, 짝수이면 짝수를 출력한후 +를 출력
+        // 두번째 정수가 홀수이면 홀수를 출력하고, 짝수이면 짝수를 출력한후 =을 출력
+        // 결과로 나오는 수가 짝수이면 짝수 아니면 홀수를 출력
+        // 입력 예시 : 2 3
+        // 출력 예시 : 짝수+홀수=홀수
+
+        let inp = prompt("숫자를 2개 입력해주세요").split(" ").map(Number)
+        console.log(inp)
+
+        function 판정(x, y){
+            let result = "";
+
+            if(x % 2 == 1) {
+                result += "홀수+";
+            }
+            else {
+                result += "짝수+";
+            }
+
+            if(y % 2 == 1) {
+                result += "홀수 =";
+            }
+            else {
+                result += "짝수 =";
+            }
+            console.log(result)
+
+            if(((x + y) % 2) == 1){
+                result += "홀수";
+            }
+            else {
+                result += "짝수";
+            }
+
+            return result;
+        }
+
+        //화면출력
+        document.write(판정(inp[0], inp[1]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
