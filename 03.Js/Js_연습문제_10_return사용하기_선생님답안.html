@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //함수의 반환값을 이용해서 홀수가 입력되면 odd, 짝수가 입력되면 even을 출력하는 프로그램을 작성하세요
+    function even_odd() {
+        let num = prompt('숫자를 입력해 주세요');
+
+        let result = '';
+        if (num % 2 == 0) {
+            result = 'even';
+        } else {
+            result = 'odd';
+        }
+
+        return result;
+    }
+    alert(even_odd());
+    document.write("odd");
+
+    </script>
+</head>
+<body>
+</body>
+</html>

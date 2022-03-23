@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('nav ul li a:not(only-child)'/* 외동을 제외한 객체들을 선택함 -> 메뉴3은 a가 "이용안내" 한놈임 */).click(function(event){
+                $(this).siblings(".nav_dropdown").toggle();
+
+                //드롭다운 메뉴 선택 시 다른 드롭다운 메뉴를 숨기기
+                $(".nav_dropdown").not($(this).siblings()).hide();
+
+                //이벤트 디폴트값 중지
+                event.stopPropagation();
+            });
+            //드롭다운 메뉴 외 영역에 클릭 시 드롭다운 메뉴 숨기기
+            $("html"). click(function(){
+                $(".nav_dropdown").hide();
+            })
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .navigation {
+            height: 60px;
+            background: #333333;
+        }
+        .logo {
+            float: left;
+            margin-top: 20px;
+        }
+        .logo a, .logo a:visited {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .nav_container {
+            width: 900px;
+            /* height: 60px; */
+            margin: 0 auto;
+            background-color: blueviolet;
+        }
+        nav {
+            float: right;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a, nav ul li a:visited {
+            display: block;
+            color: #ffffff;
+            padding: 0 20px;
+            line-height: 60px;
+            background: #333333;
+            text-decoration: none;
+        }
+        nav ul li a:hover, nav ul li a:visited:hover {
+            background: #27cdef;
+            color: #ffffff;
+        }
+        nav ul li ul li {
+            width: 190px;
+        }
+        nav ul li ul li a {
+            padding: 15px;
+            line-height: 20px;
+        }
+        .nav_dropdown {
+            position: absolute;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="navigation">
+        <div class="nav_container">
+            <div class="logo">
+                <a href="#">로고</a>
+            </div>
+        </div>
+        <!-- 메뉴 시작부분 -->
+        <nav>
+            <!-- 대 메뉴 -->
+            <ul>
+                <!-- 메뉴 1 -->
+                <li>
+                    <a href="#">웹 강좌</a>
+                    <!-- 소 메뉴 -->
+                    <ul class="nav_dropdown">
+                        <li><a href="#">HTML/CSS</a></li>
+                        <li><a href="#">Js</a></li>
+                        <li><a href="#">jQuery</a></li>
+                    </ul>
+                </li>
+                <!-- 메뉴 2 -->
+                <li>
+                    <a href="#">커뮤니티</a>
+                    <!-- 소 메뉴 -->
+                    <ul class="nav_dropdown">
+                        <li><a href="#">공지게시판</a></li>
+                        <li><a href="#">자유게시판</a></li>
+                        <li><a href="#">QnA게시판</a></li>
+                    </ul>
+                </li>
+                <!-- 메뉴 3 -->
+                <li>
+                    <a href="#">이용안내</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</body>
+</html>

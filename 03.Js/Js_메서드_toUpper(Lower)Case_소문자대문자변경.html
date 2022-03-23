@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //첫번째 문제
+        //주어지는 문자의 대문자를 소문자로, 소문자를 대문자로 변경하는 프로그램을
+        // 작성하세요
+        // 입력 예시 : CodeChallenge2014withMSP
+        // 출력 예시 : cODEcHALLEGE2014WITHmsp
+    //     window.onload = function(){
+    //     let eng = prompt('영어 입력');
+    //     let result = ''
+    //     for(let i = 0; i < eng.length; i++){
+    //         if (eng[i] == eng[i].toUpperCase()) {
+    //             result += eng[i].toLowerCase()
+    //         } else {
+    //             result += eng[i].toUpperCase()
+    //         }
+    //     }   
+    //     document.write(result)
+    // }
+
+        window.onload = function(){
+        let eng = prompt('영어 입력');
+        for(let i = 0; i < eng.length; i++){
+            if (eng[i] == eng[i].toUpperCase()) {
+                document.write(eng[i].toLowerCase());
+            } else {
+                document.write(eng[i].toUpperCase());
+            }
+        }   
+    }
+    </script>
+</head>
+<body>
+</body>
+</html>

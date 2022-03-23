@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumAll(...args) { //...이 나머지 변수를 싹 잡아줌
+        let sum = 0;
+
+        for(let arg of args) sum += arg;
+
+        return sum;
+        }
+
+        alert(sumAll(1))
+        alert(sumAll(1, 2))
+        alert(sumAll(1, 2, 3))
+    </script>
+</head>
+<body>
+</body>
+</html>

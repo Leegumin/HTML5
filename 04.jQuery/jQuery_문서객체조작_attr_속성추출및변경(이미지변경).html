@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                $('#image').attr('src', '../00.source/img/cat2.jpg');
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <p><img src="../00.source/img/cat1.jpg" alt="고영희씨" id="image"></p>
+    <button id="btn">이미지 교체 하기</button>
+</body>
+</html>

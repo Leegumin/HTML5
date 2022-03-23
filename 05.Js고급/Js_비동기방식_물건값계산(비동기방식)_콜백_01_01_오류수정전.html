@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //비동기 프로그램
+        //물건값 계산 프로그램
+        //return : 총 물건값
+        function buy_normal(item, price, quantity) {
+            console.log(`${item} 상품을 ${quantity}개 골라서 점원에게 주었습니다.`) //두 번째 실행
+
+            setTimeout(function() { //원래 세 번째 실행이나 2초 지연으로 인해 반환될 값이 없어 undefined로  result로 반환되며 맨 마지막에 실행됨
+                console.log(`계산이 필요합니다`)
+
+                //물건값을 계산
+                let total = price * quantity;
+                return total
+            }, 2000);
+        }
+        //돈을 지불하는 함수
+        function pay(tot){//다섯번째 실행 buy_normal()으로 반환된 result값을 tot자리에 넣고 실행
+            console.log(`${tot}원을 지불하였습니다.`)
+        }
+
+        let result = buy_normal("고구마", 1000, 5); //첫 번째 result는 buy_normal() 실행
+        pay(result) // 네번째 실행 -> pay함수를 실행함
+    </script>
+</head>
+<body>
+</body>
+</html>

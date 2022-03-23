@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <link rel="stylesheet" href="/css/commons.css">   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script defer>
+        function genTable () {
+            let tableTag = document.createElement('table');
+            let tbodyTag = document.createElement('tbody');
+            let trTag, tdTag, tdText;
+
+            let arrText = ['제목', '내용', '기타'];
+            for(let i = 0; i < 3; i++) {
+                trTag = document.createElement('tr');
+                for(let j = 0; j < 3; j++) {
+                    tdTag = document.createElement('td');
+                    tdText = document.createTextNode(arrText[j]);
+                    //td 태그
+                    tdTag.appendChild(tdText);
+                    //tr태그에 td 추가
+                    trTag.appendChild(tdTag);
+                }
+                //tobody태그에 tr추가
+                tbodyTag.appendChild(trTag);
+            }
+            //table태그에 tbody 추가 : 테이블 동적으로 완성
+            tableTag.appendChild(tbodyTag)
+            //화면으로 출력
+            document.body.appendChild(tableTag)
+        }
+    </script>
+</head>
+<body>
+    <button type="button" name="button" onclick="genTable()"> 테이블 생성기</button>
+</body>
+</html>

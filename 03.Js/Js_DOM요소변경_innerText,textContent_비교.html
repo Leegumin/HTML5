@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/event.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        window.onload = function(){
+            let output = '';
+            for(let i = 0; i < 10; i++){
+                output += '<h2>Header - ' + i + '</h2>';
+            }
+            console.log(output)
+            document.querySelector("#textContent").textContent = output; //html까지 그대로 출력
+            console.log(output)
+            document.querySelector("#innerHTML").innerHTML = output; //html을 적용해서 출력
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>textContent</h1>
+        <p id="textContent"></p>
+    </div>
+        <h1>innerHTML</h1>
+        <p id="innerHTML"></p>
+</body>
+</html>

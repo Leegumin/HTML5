@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //어떤 두 수 a, b가 있을 때 두 수 사이의 모든 홀수를 순서대로 출력해 보세요
+        //입력 : 3
+        //입력 : 8
+        //출력 : 3 4 5 6 7 8
+        window.onload = function() {
+        let num1 = prompt('첫번째 숫자를 입력하세요');
+        let num2 = prompt('두번째 숫자를 입력하세요');
+
+        for(let a = num1; a <= num2; a++) {
+            if (a % 2 !=0) {
+            document.write(a + ' ');
+            }
+        }        
+    }
+    </script>
+</head>
+<body>
+</body>
+</html>

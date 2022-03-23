@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        tr {
+            border: 1px solid black;
+        }
+        td, th {
+            text-align: center;
+            padding: 2px 2px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        // 반복문을 사용해서 동적으로 테이블을 생성하는 프로그램을 작성해 주세요
+        //구구단
+        
+        function genTable() {
+            let contents =''
+            contents += '<h3>구구단표</h3>'
+            contents += '<table>';
+            contents += '<tr><th>2단</th><th>3단</th><th>4단</th><th>5단</th><th>6단</th><th>7단</th><th>8단</th><th>9단</th></tr>';
+            for(let i = 1; i <= 9; i++){
+                contents +='<tr>';
+                    for(let j = 2; j<=9; j++) {
+                        contents +='<td>' + i + 'x' + j + '=' + (i*j) + '</td>';
+                    }
+                contents += '</tr>'
+            }   
+            contents += '</table>';
+            document.getElementById("result").innerHTML = contents;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="genTable()">구구단표 생성기</button>
+    <!-- 출력 위치 -->
+    <div id="result"></div>
+</body>
+</html>

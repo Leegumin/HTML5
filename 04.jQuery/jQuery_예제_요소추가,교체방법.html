@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $('#show').html("<p>안녕하세요.html</p>")
+            })
+            $("#btn2").click(function(){
+                $('#show').text("<p>안녕하세요.text</p>")
+            })
+            $("#btn3").click(function(){
+                $('#show').append("<p>안녕하세요.append</p>")
+            })
+            $("#btn4").click(function(){
+                $('#show').prepend("<p>안녕하세요.prepend</p>")
+            })
+            $("#btn5").click(function(){
+                $('#show').before("<p>안녕하세요.before</p>")
+            })
+            $("#btn6").click(function(){
+                $('#show').after("<p>안녕하세요.after</p>")
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- 연습문제 01 -->
+    <!-- 버튼을 클릭하며 아래 출력 위치에 안녕하세요 라고 출력해보세요 -->
+    <button id="btn1">누르삼!(html)</button>
+    <button id="btn2">누르삼!(text)</button>
+    <button id="btn3">누르삼!(append)</button>
+    <button id="btn4">누르삼!(prepend)</button>
+    <button id="btn5">누르삼!(before)</button>
+    <button id="btn6">누르삼!(after)</button>
+    <p id="show"></p> <!-- 화면 출력 위치 -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        div{
+            background-color: blueviolet;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("div").animate({width: 300, height: 300}, 3000);  //작동방식 => width, height를 한번에 넣을경우 한번에 변경
+            });
+
+            $("#btn2").click(function(){
+                $("div").animate({width: 300}, 3000);  //작동방식 => width, height를 따로 넣을경우 차례차례 변경
+                $("div").animate({height: 300}, 3000);
+            });
+
+            $("#btn3").click(function(){
+                $("div").stop();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button id="btn1">Animation1</button>
+        <button id="btn2">Animation2</button>
+        <button id="btn3">Stop</button>
+    </p>
+
+    <div></div>
+</body>
+</html>

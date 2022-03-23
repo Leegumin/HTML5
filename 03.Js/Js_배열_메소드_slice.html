@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/Hello_JavaScript.js"></script> -->
+    
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>slice 메소드 사용하기</h1>
+    <script>
+        let colors = ['red','green','blue','white','black'];
+        let colors2 = colors.slice(2); // blue, white, black 2번 인덱스부터 출력해달라
+
+        document.write(colors2);
+        document.write('<br>');
+
+        let colors3 = colors.slice(2,4); // blue, white 2번 인덱스부터 4번 인덱스까지 출력해달라
+        document.write(colors3);
+        document.write('<br>');
+    </script>
+</body>
+</html>

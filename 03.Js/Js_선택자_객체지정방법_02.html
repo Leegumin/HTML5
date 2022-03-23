@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        window.onload = function () {
+            // 첫 번째
+            let selecteditem1 = document.getElementById('even');
+            selecteditem1.style.color = 'red';
+            
+            // 두 번째
+            let selecteditem2 = document.getElementsByClassName('odd');
+            for (let i = 0; i < selecteditem2.length; i++) {
+                selecteditem2.item(i).style.color = 'blue'
+            }
+       
+            // 세 번째
+            let selecteditem3 = document.getElementsByName('first');
+            for (let i = 0; i < selecteditem3.length; i++) {
+                selecteditem3.item(i).style.color = 'yellow'
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 첫 번째 -->
+    <h1>id를 이용한 선택</h1>
+    <ul>
+        <li>첫 번째 아이템이에요!</li>
+        <li id="even">두 번째 아이템이에요!</li>
+        <li>세 번째 아이템이에요!</li>
+        <!-- 아이디는 증복될 수 없어 네 번째는 적용이 안됨 -->
+        <li id="even">네 번째 아이템이에요!</li>
+        <li>다섯 번째 아이템이에요!</li>
+    </ul>
+
+    <!-- 두 번째 -->
+    <h1>class를 이용한 선택</h1>
+    <ul>
+        <li>첫 번째 아이템이에요!</li>
+        <li class="odd">두 번째 아이템이에요!</li>
+        <li>세 번째 아이템이에요!</li>
+        <li class="odd">네 번째 아이템이에요!</li>
+        <li>다섯 번째 아이템이에요!</li>
+
+    <!-- 세 번째 -->
+    <h1>name을 이용한 선택</h1>
+    <ul>
+        <li name="first">첫 번째 아이템이에요!</li>
+        <li>두 번째 아이템이에요!</li>
+        <li>세 번째 아이템이에요!</li>
+        <li>네 번째 아이템이에요!</li>
+        <li>다섯 번째 아이템이에요!</li>
+    </ul>
+</body>
+</html>

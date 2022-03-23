@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //함수의 조건이 참인 결과만 선택해서 새로운 배열을 만듬
+
+        let guys = [
+            {name : "YD", money : 500000},
+            {name : "Bill", money : 400000},
+            {name : "Andy", money : 300000},
+            {name : "Roky", money : 200000},
+        ]
+
+        let rich = guys.filter(function(man){
+            return man.money > 300000 //300000보다 큰 값만 반환함
+        });
+
+        //원래 배열
+        console.log(guys);
+
+        //필터적용 배열
+        console.log(rich);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

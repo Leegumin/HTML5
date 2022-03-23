@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        window.onload = function () {
+            // 첫 번째
+            let a = document.getElementById('sky')
+            a.style.color = 'blue'
+            // 두 번째
+            let selectdeditem = document.getElementsByTagName('li'); //태그가 여러개일 경우 인덱스로 배열됨 => 출력할 때 selectdeditem[인덱스넘버]
+            for (let i = 0; i < selectdeditem.length; i++){
+                // 첫 번째 방법
+                selectdeditem.item(2).style.color = 'yellow'; //"2"인덱스를 변환
+                // 두 번째 방법
+                selectdeditem[0].style.color = 'red'; //"0"인덱스를 변환
+                selectdeditem[i].style.color = 'green';
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 첫 번째 -->
+    <p id="sky">sky</p>
+
+    <!-- 두 번째 -->
+    <h1>HTML 태그 이름을 이용한 선택</h1>
+    <ul>
+        <li>첫 번째 아이템이에요!</li>
+        <li>두 번째 아이템이에요!</li>
+        <li>세 번째 아이템이에요!</li>
+        <li>네 번째 아이템이에요!</li>
+        <li>다섯 번째 아이템이에요!</li>
+    </ul>
+</body>
+</html>

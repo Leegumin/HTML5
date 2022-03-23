@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer>
+        function Dog(color, name, age){
+            this.color = color;
+            this.name = name;
+            this.age = age;
+        }
+
+        let myDog = new Dog("흰색", "마루", 1);
+        let hisDog = new Dog("갈색", "콩이", 3);
+
+        Dog.prototype.family = "시베리안 허스키"; //부모(function Dog(){})를 직접 건드려서 속성을 추가함
+        Dog.prototype.breed = function() {
+            return this.color + " " + this.family
+        }
+
+        delete myDog.color;
+
+        document.write(`우리 집 강쥐는 ${myDog.family}이고, 친구네 집 강아지도 ${hisDog.family}입니다.`)
+        document.write(`<br>우리 집 강쥐 품종은 ${myDog.breed()}임돠.`)
+        document.write(`<br>친구네 집 강아지는 ${hisDog.breed()}임돠.`)
+
+        console.log(`우리 집 강쥐는 ${myDog.family}이고, 친구네 집 강아지도 ${hisDog.family}입니다.`)
+        console.log(`<br>우리 집 강쥐 품종은 ${myDog.breed()}임돠.`)
+        console.log(`<br>친구네 집 강아지는 ${hisDog.breed()}임돠.`)
+
+        //함수 선언식 = 함수 호이스팅이 일어남
+        // function aa() {
+        //     return XPathResult;
+        // }
+
+        //모던 자바스크립트(고급) = let으로 잡아주면 자리가 고정됨
+        //함수표현식으로 사용
+        // let dummy = function (a,b) {
+        //     return a + b;
+        // }
+
+        //호이스팅 = 자바스크립트 소스를 맨 위로 올려버림(가장먼저 실행)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // 첫 번째 방법
+            // $(".accordion > dd").hide();
+            
+            //두 번째 방법
+            let allPanels = $(".accordion > dd");
+            allPanels.hide();
+            //두 번째 방법의 첫 번째
+            /* $(".accordion > dt > a").click(function(){
+                 //클릭시 모든 dd slideUp
+                allPanels.slideUp();
+                 //this = 'a'의 parent = 부모인 "dt"의 next = 다음 부모태그인 "dd"를 slideDown 시킴 즉 "a" 영역 클릭 시 "a"의 부모"dt"의 바로 밑에 있는 "dd"를 보여줌
+                $(this).parent().next().slideDown();
+            }); */
+
+            //두 번째 방법의 두 번째
+            $(".accordion > dt > a").click(function(){
+                $(this).parent().next().slideToggle();
+            });
+        })
+            
+    </script>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .accordion {
+            margin: 30px;
+        }
+
+        .accordion dt, .accordion dd {
+            padding: 10px;
+            border: 1px solid #cccccc;
+        }
+
+        .accordion dt:last-of-type, .accordion dd:last-of-type {
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .accordion dt a, .accordion dd a {
+            border-top: 0;
+            font-size: 14px;
+            line-height: 150%;
+        }
+    </style>
+</head>
+<body>
+    <dl class="accordion">
+        <dt><a href="#">웹이란?</a></dt>
+        <dd>웹은 'World Wide Web'의 약자로서 간단하게 WWW로 표현된다. 
+            웹이란 인터넷에 연결된 컴퓨터를 통해 전 세계 사람들이 정보를 제공하고 공유할 수 있는 사이버 공간이다.
+        </dd>
+        <dt><a href="#">웹 브라우저</a></dt>
+        <dd>웹은 'World Wide Web'의 약자로서 간단하게 WWW로 표현된다. 
+            웹이란 인터넷에 연결된 컴퓨터를 통해 전 세계 사람들이 정보를 제공하고 공유할 수 있는 사이버 공간이다.
+        </dd>
+        <dt><a href="#">웹 호스팅</a></dt>
+        <dd>웹은 'World Wide Web'의 약자로서 간단하게 WWW로 표현된다. 
+            웹이란 인터넷에 연결된 컴퓨터를 통해 전 세계 사람들이 정보를 제공하고 공유할 수 있는 사이버 공간이다.
+        </dd>
+    </dl>
+</body>
+</html>

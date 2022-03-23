@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // p331 11번 문제
+        // 센티미터를 cm 입력하면 피트 feet 와 인치 inch로 변환하는 프로그램을 작성하시오
+        //1feet = 12inch, 1inch=2.54cm
+        function solution() {
+            let cm = Number(prompt('cm를 입력하시오'));
+            let inch = Number(cm/2.54)
+            let feet = Number(inch/12)
+            let result = '';
+            result = (
+                '인치(inch) ' + ' = ' + inch + 'inch'
+                + '<br>' +
+                '피트(feet) ' + ' = ' + feet + 'feet');
+            return result //모든 방식이 실행된 후의 최종적으로 정의된 값이라고 보면 됨
+                }
+        document.write(solution())
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        ul {
+            border: 1px solid blue;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("li:first-child").css("backgroundColor", "lightyellow") //각 ul의 li의 첫번째에 해당하는 요소
+            $("li:last-child").css("backgroundColor", "lightpink") //각 ul의 li의 마지막에 해당하는 요소
+
+            $("li:first").css("border", "1px solid red") //배열 li 의 첫번째에 해당하는 요소
+            $("li:last").css("border", "1px solid black") //배열 li 의 마지막에 해당하는 요소
+        })
+    </script>
+</head>
+<body>
+    <h2>:first-child, :last-child 필터</h2>
+    <ul>
+        <li>항목 1</li>
+        <li>항목 2</li>
+        <li>항목 3</li>
+    </ul>
+    <ul>
+        <li>항목 1</li>
+        <li>항목 2</li>
+        <li>항목 3</li>
+    </ul>
+</body>
+</html>

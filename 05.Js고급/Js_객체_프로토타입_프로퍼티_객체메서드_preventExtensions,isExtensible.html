@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let day = new Date();
+        document.write(Object.isExtensible(day) + "<br>"); //isExtensible 해당 객체에 새로운 프로퍼티를 추가할 수 있는지의 여부 판별
+
+
+        let myDay = Object.preventExtensions(day);
+        document.write(Object.isExtensible(day) + "<br>");
+        //preventExtensions 해당 객체에 새로운 프로퍼티 추가를 불가능하게 만듬
+        //isExtensible 값이 false로 나옴
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

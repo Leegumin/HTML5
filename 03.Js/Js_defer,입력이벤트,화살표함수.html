@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <!-- async 로딩속도는 빠르나 자기 멋대로인 관계로 오류가 날 수 있음(window.onload와 유사기능) -->
+    <script src="" async></script>
+
+    <!-- defer 로딩속도는 느리나 async에 비해 안정적임(window.onload와 유사기능), js로 따로 뺐을때 적용됨 -->
+    <script src="../00.SOURCE/js/p2_00_defer, 입력이벤트, 화살표함수.js" defer></script>
+    <!-- <script>
+        window.onload = function(){
+        const nameInput = document.querySelector('.name-input');
+        const warningMessage = document.querySelector('.warning-message');
+
+        //.name-input에 입력 할 때 마다 아래 이벤트가 실행됨
+        nameInput.addEventListener('input', () => {//화살표 펑션
+            //입력된 문자 가져오기
+            const inputStr = nameInput.value;
+            //입력된 문자를 소문자로 변환
+            const normalStr = inputStr.toLowerCase();
+            // 입력된 문자가 test인지 아닌지 확인해보기
+            if(normalStr.includes('test') == true){
+                warningMessage.innerHTML = 'test 문자가 입력이 되었습니다.'
+            } 
+            else{
+                warningMessage.innerHTML = 'Nope'
+            }
+        })
+    }
+    </script> -->
+    
+</head>
+<body>
+    <form>
+        <h1>입력폼</h1>
+        <input type="text" class="name-input">
+        <p class="warning-message"></p>
+        <div class="button-wrapper">
+            <button class="cancel">취소</button>
+            <button class="submit">전송</button>
+        </div>
+    </form>
+</body>
+</html>

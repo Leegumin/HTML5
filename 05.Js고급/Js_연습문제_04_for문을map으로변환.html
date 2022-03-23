@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제4
+        //아래 형태를 map을 사용하는 형태로 출력하세요
+        
+        let numbers = ["가", "나", "다"];
+        let result = [];
+
+        for(let i=0; i < numbers.length; i++){
+            result[i] = numbers[i] + " 붙임";
+        }
+        console.log(result);
+
+        //map으로 변환
+        mapResult1 = numbers.map(a => a + " 붙임")
+        console.log(mapResult1)
+
+        mapResult2 = numbers.map(function(a){
+            return a + " 붙임"
+        });
+        console.log(mapResult2)
+    </script>
+</head>
+<body>
+</body>
+</html>

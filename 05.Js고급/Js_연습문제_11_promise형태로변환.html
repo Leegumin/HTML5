@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제11
+        //프로미스가 있슴다
+        //then 실행으로 출력해주세영
+        //성공 : 10 미만의 숫자를 입력하셨습니다.
+
+        let promise = new Promise(function(resolve, reject) {
+
+            let n = Number(prompt("10 미만의 숫자를 입력하십시요"));
+
+            setTimeout(function() {
+                if( n < 10) {
+                    resolve(n);
+                } else {
+                    reject(`오류 : ${n}은/는 10이상 숫자입니다.`);
+                }
+            }, 1000);
+        });
+
+    //함수호출방법1
+        // promise.then(function(text) {
+        //     console.log(`10 미만의 숫자 ${text}을/를 입력하셨습니다.`)
+        // }, function(error){
+        //     console.log(error)
+        // })
+
+    // //함수호출방법2
+    //     promise.then((num) => {
+    //         console.log(`10 미만의 숫자 ${num}을/를 입력하셨습니다.`)
+    //     }, (error) => {
+    //         console.log(error)
+    //     })
+
+    //함수호출방법3
+        promise
+        .then(function(num) {
+            console.log(`10 미만의 숫자 ${num}을/를 입력하셨습니다.`);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>

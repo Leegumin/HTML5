@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ipsum quis consectetur</h1>
+    <p id="myText">Labore do officia velit mollit</p>
+
+    <script>
+        let text = document.querySelector('#myText');
+        text.addEventListener("click", changeText);
+
+        function changeText(){
+            text.style.fontSize = '20px';
+            text.style.color = 'blue';
+            text.style.backgroundColor = '#ccc';
+        }
+    </script>
+</body>
+</html>

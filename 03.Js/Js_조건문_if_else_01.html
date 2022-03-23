@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <script src="/04_chapter/js/p01_13.js"></script>
+    <script>
+        function changeText() {
+
+        let x = 10, y = 20;
+
+        if (x == y) {
+            let str = document.getElementById("text");
+            str.innerHTML = "x는 y와 같슴다.";
+        }
+        else { 
+            if (x < y) {
+                let str = document.getElementById("text");
+                str.innerHTML = "x는 y보다 작슴다.";
+            } 
+            else {
+                let str = document.getElementById("text");
+                str.innerHTML = "x는 y보다 큼다."; 
+            }
+        }
+
+    }
+    </script>
+</head>
+<body>
+    <h1>inner HTML 예제</h1>
+    <p id="text">이걸 누르믄 답이 나옴다</p>
+    <form>
+        <input type="button" name="text" value="클릭클릭!" onclick="changeText();"> 
+    </form>
+</body>
+</html>

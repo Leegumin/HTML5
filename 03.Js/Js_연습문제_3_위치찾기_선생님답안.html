@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //네번째 문제
+        //어떤 문자열이 있을 때 문자 t의 위치를 모두 찾아 출력하세요
+        //입력 : 공백이 없는 문자열이 한 줄 입력 된다(10글자 이하)
+        //hint : indexOf, lastIndexOf 사용
+        //입력 : test
+        //출력 예시 : 1 4
+        window.onload = function(){
+	    let word = prompt('test 입력하셈')
+        let wordindex = word.indexOf('t')
+        let wordindex2 = word.lastIndexOf('t')
+        let result = wordindex +' '+ wordindex2            
+
+        document.querySelector('#result').innerHTML = result;
+    }
+    </script>
+</head>
+<body>
+    <!-- 출력위치 -->
+    <p>여기 출력할거임</p>
+    <div id="result"></div>
+</body>
+</html>

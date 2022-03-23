@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 연습문제 32
+    // 월을 의미하는 1개의 정수가 입력된다.(1 ~ 12)
+    // 계절 이름을 출력한다.
+    // 입력 예시 : 12
+    // 출력 예시 : winter
+
+    window.onload = () => {
+        let result= function (num) {
+            if (3 <= num && num < 6) {
+                Season = "Spring"
+            }
+            else if (6 <= num && num < 9) {
+                Season = "Summer"
+            }
+            else if (9 <= num && num < 12) {
+                Season = "Fall"
+            }
+            else {
+                Season = "Winter"
+            }
+            return Season + "<br>"
+        }
+
+        //함수 하나에 한개의 값 밖에 호출을 하지 못하는지에 대해 질문하기
+        //-> 함수이름과 리턴값 이름이 같아서 기능을 제대로 못하는 거였음
+        //한꺼번에 호출 가능함
+        document.write(result(1))
+        document.write(result(2))
+        document.write(result(3))
+        document.write(result(4))
+        document.write(result(5))
+        document.write(result(6))
+        document.write(result(7))
+        document.write(result(8))
+        document.write(result(9))
+        document.write(result(10))
+        document.write(result(11))
+        document.write(result(12))
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

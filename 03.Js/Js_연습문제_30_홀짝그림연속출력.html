@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // 반복문을 사용해서 총 6번 이미지를 보여주세요
+        // 출력 : image1.png image2.png 순서로 반복
+        window.onload = function() {
+        let contents = '';
+
+        for(let n=1; n<=6; n++) {
+        if (n % 2 == 0) {
+        contents += '<img src="../00.SOURCE/img/image1.png">';
+        }
+        else {
+            contents += '<img src="../00.SOURCE/img/image2.png">';
+        }
+        document.getElementById('result').innerHTML = contents;
+    }
+}
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>

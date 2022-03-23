@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer>
+        // 연습문제 10번
+        // 정수 1개가 입력된다.
+        // 1만큼씩 줄이면서 한 줄에 1개씩 카운트다운 수를 출력한다.
+        // 입력 : 5
+        // 출력 : 5
+        //        4
+        //        3
+        //        2
+        //        1
+
+        let num = Number(prompt("정수 입력"));
+        let result = ""
+
+        // for(let a = 0; a < num; a++){
+        //     result += `${num-a}<br>`;
+        //     console.log(result)
+        // }
+
+        for(let a = num; a > 0; a--){
+            result += `${a}<br>`;
+            console.log(result)
+        }
+        document.write(result);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //함수의 반환값을 이용해서 아래를 출력
+        //1부터 n까지의 정수합을 출력
+        function solution() {
+            let n = Number(prompt('숫자를 입력하숑'));
+            let result = 0;
+
+            for(let i = 1; i <= n; i++) {
+                result += i;
+            }
+            return result //모든 방식이 실행된 후의 최종적으로 정의된 값이라고 보면 됨
+        }
+        document.write(solution())
+        // alert(solution())
+    </script>
+</head>
+<body>
+</body>
+</html>

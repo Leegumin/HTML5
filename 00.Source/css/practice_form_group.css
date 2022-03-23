@@ -1,0 +1,40 @@
+#nameTr {
+    color: lightblue;
+}
+
+#name {
+    background-color: lightcoral;
+}
+
+#emailTr {
+    color: lightgreen;
+}
+
+#mail {
+    background-color: lightslategray;
+}
+
+fieldset {
+    border : thick solid green;
+    background-image: url(../img/sunset_g.jpg);
+}
+
+#labelYy {
+    color: lightseagreen;
+}
+
+#birth_yy {
+    background-color: limegreen;
+}
+
+#birth_mm:hover {
+    background-color: lawngreen;
+}
+
+#birth_dd:focus {
+    background-color: lightseagreen;
+}
+
+body {
+    background-image: url(../img/fish_g.png);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //아스키 코드
+        //한 문자 => 아스키코드 : charCodeAt(문자열의 인덱스 번호) -> 인코더
+        //예시 : let word = 'abc';
+        //       let letterCode = word.charCodeAt(0);
+        //아스키코드 => 한 문자 : String.fromCharCode(문자) -> 디코더
+
+        //도전과제
+        //인터넷 서비스들은 대부분 아이디와 패스워드를 이용한다.
+        //이때 사용되는 패스워드는 여러가지 방법으로 암호하되어 저장된다.
+        //1번 암호화방법 : 입력받은 문자의 아스키코드값 + 2
+        //2번 암호화방법 : 입력받은 문자의 (아스키코드값 *7) % 80 + 48
+        //1, 2번 암호화 방법을 적용해서 화면에 출력하세용
+        //입력예시 : TEST
+        //출력예시1 : VGUV
+        //출력예시2 : L3El
+
+        // let word = prompt('TEST를 입력하쇼').split('')
+        let word = 'TEST';
+
+        for(let i = 0; i < word.length; i++){
+            askinum1 = word.charCodeAt(i) + 2;
+            document.write(String.fromCharCode(askinum1));
+        }
+        document.write('<br>')
+        for(let i = 0; i < word.length; i++){
+            askinum2 = (word.charCodeAt(i)*7) % 80 + 48;
+            document.write(String.fromCharCode(askinum2));
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

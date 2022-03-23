@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <link rel="stylesheet" href="/css/commons.css">   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function removeCh() { //부모 태그 밑에 있는 자식 태그 삭제
+            //부모태그
+            let outputId = document.getElementById('outputId');
+            //자식태그
+            let pTag = document.getElementById('removeChId');
+            //삭제
+            outputId.removeChild(pTag);
+        }
+
+        function removeTag(){ //그냥 삭제
+            //태그 id 접근
+            let removeId = document.getElementById('removeId')
+            //그 태그 삭제
+            removeId.remove();
+        }
+    </script>
+</head>
+<body>
+    <div id="outputId">
+        <p>first</p>
+        <p>second</p>
+        <p id="removeChId">third</p>
+        <p>fourth</p>
+    </div>
+    <p id="removeId">I want to disappear</p>
+    <button type="button" name="button" onclick="removeCh()">removeChild</button>
+    <button type="button" name="button" onclick="removeTag()">remove</button>
+</body>
+</html>

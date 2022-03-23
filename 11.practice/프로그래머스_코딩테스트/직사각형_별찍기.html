@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const a = Number(5), b = Number(3);
+
+// 내 정답
+    for (let i = 0; i < b; i++) {
+        let result = ""
+        for (let j = 0; j < a; j++) {
+            result += "*"
+        }
+        console.log(result)
+    }
+
+// 다른사람 정답 참고
+    const row = '*'.repeat(a)
+    for (let i = 0; i < b; i++) {
+        console.log(row)
+    }
+
+    const star = `${'*'.repeat(a)}\n`; /* \n -> 줄바꿈처리 */
+    console.log(star.repeat(b));
+
+    console.log((('*').repeat(a)+`\n`).repeat(b))
+</script>
+
+<body>
+
+</body>
+
+</html>

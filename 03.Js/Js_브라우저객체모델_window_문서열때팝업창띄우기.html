@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+    </style>
+</head>
+<body>
+    <p>문서를 열면 팝업 창이 표시됩니다.</p>
+    <script>
+        function openCenter(doc, win, w, h) {
+            let left = (screen.availWidth-w) /2 /*팝업창의 왼쪽 좌표*/
+            let top = (screen.availWidth-h) /2 /*팝업창의 위쪽 좌표*/
+            let opt = 'left=' + left + ', top=' + top + ', width=' + w + ', height=' + h;
+            window.open(doc, win, opt);
+        }
+        openCenter('../00.source/html/notice.html', 'pop', 500, 400)
+    </script>
+</body>
+</html>

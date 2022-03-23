@@ -1,0 +1,36 @@
+#content {
+    display: flex;
+    justify-content: flex-start;
+    background-color: coral;
+}
+
+#main-section {
+    width: 640px;
+    margin: 5px 20px;
+    background-color: lightblue;
+}
+
+.article-header {
+    font-size: 15px;
+}
+
+.article-body {
+    font-size: 10px;
+    margin: 5px 10px;
+}
+
+#main-aside {
+    margin-left: auto;
+    background-color: cornsilk;
+    width: 260px;
+    margin-top: 10px;
+}
+
+.aside-list-item {
+    margin: 10px 0px;
+}
+
+#main-footer {
+    font-size: 13px;
+    margin: 2px 20px;
+}

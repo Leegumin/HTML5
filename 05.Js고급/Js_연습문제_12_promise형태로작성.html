@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제12
+        //한 문자를 입력받아 1초후에 출력하는 비동기 프로그램을 작성하시오
+        //입력 : a
+        //출력 : a
+
+    //내 정답
+        // let wordPrint = function(word){
+        //     return new Promise(function(resolve, reject) {
+        //         setTimeout(function(){
+        //             console.log(word);
+        //             resolve();
+        //         },3000);
+        //     });
+        // };
+
+        // wordPrint("A")
+
+
+    //선생님 정답
+        let wait2 = inputStr => {
+            return new Promise((resolve, reject) => {
+
+                //입력창 활성시 resolve(char1로 변경)
+                // let char1 = prompt("한 문자를 입력해주세요")
+
+                setTimeout(() => {
+                    //바로 출력을 하는 방법
+                    // console.log(inputStr)
+                    // resolve()
+
+                    //성공시 값을 받아서 출력하는 방법
+                    resolve(inputStr);
+                },3000);
+            });
+        };
+
+        //바로 출력을 하는 방법
+        // wait2("a")
+
+        //성공시 값을 받아서 출력하는 방법
+        wait2("a")
+        .then(function(char){
+            console.log(char)
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // 반복문을 사용해서 동적으로 테이블을 생성하는 프로그램을 작성해 주세요
+        //번호     제목       일자
+        // 1    안녕하세요    12-07
+        function genTable(){
+            let contents =''
+            contents += '<table border="1">'
+            contents += '<tr><th>번호</th><th>제목</th><th>일자</th></tr>';
+
+            let n = 1
+            while (n <= 3){
+                contents += '<tr><td>' + n + '</td><td>안녕하세요</td><td>12-07</td></tr>';
+                n++;
+            }
+            contents += '</table>';
+            document.getElementById("result").innerHTML = contents;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="genTable()">테이블 생성기</button>
+    <!-- 출력 위치 -->
+    <div id="result"></div>
+</body>
+</html>

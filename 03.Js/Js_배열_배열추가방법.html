@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_10.js"></script> -->
+    <script>
+        let arr = [1, true, "Java"];
+
+        // psuh = 배열에 Script를 밀어넣음(마지막으로)
+        arr.push("Script");
+        document.write(arr + "<br>");
+
+        //배열에 100을 밀어넣음(마지막으로)
+        arr[arr.length] = 100;
+        document.write(arr + "<br>");
+
+        // 배열 10 인덱스에 '자바스크립트'를 밀어넣음
+        arr[10] = "자바스크립트";
+        document.write(arr + "<br>");
+
+        // 배열 인덱스 7번은 빈 값이므로 undefined가 출력됨
+        document.write(arr[7]);
+    </script>
+</head>
+<body>
+</body>
+</html>

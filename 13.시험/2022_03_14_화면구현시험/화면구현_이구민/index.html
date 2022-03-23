@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Basic Page</title>
+    <link rel="stylesheet" href="./css/commons.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/section.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./js/dropDownMenu.js"></script>
+    <script src="./js/time.js"></script>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <hgroup>
+                <h1 class="master-title">밍구의 공간에 오신것을 환영합니다!</h1>
+            </hgroup>
+        </header>
+        <!-- 메뉴 부분 -->
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <!-- 대메뉴 : 첫 번째 about 메뉴 -->
+                    <li class="outer-menu-item">
+                        <span class="menu-title">About</span>
+                        <ul class="inner-menu">
+                            <!-- About -> 홈 소메뉴 -->
+                            <li class="inner-menu-item"><a href="#">Home</a></li>
+                            <!-- About -> Complain 소메뉴 -->
+                            <li class="inner-menu-item"><a href="#">Question</a></li>
+                            <!-- About -> 회원가입 소메뉴 -->
+                            <li class="inner-menu-item"><a href="register_member.html">Register</a></li>
+                        </ul>
+                    </li>
+                    <!-- 두 번째 상품정보 메뉴 -->
+                    <li class="outer-menu-item">
+                        <span class="menu-title">History</span>
+                        <!-- 상품정보 컵 소개 소메뉴 -->
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">발전과정소개</a></li>
+                        </ul>
+                    </li>
+                    <!-- 세번째 찾아오시는길 메뉴 -->
+                    <li class="outer-menu-item">
+                        <span class="menu-title">찾아오시는길</span>
+                        <!-- 찾아오시는 길 -> 데이터 소메뉴 -->
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="https://map.kakao.com/?urlX=969234&urlY=464870&urlLevel=3&itemId=14967901&q=%EC%97%90%EC%9D%B4%EC%9B%90%ED%94%84%EB%9D%BC%EC%9E%90&srcid=14967901&map_type=TYPE_MAP">카카오맵</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+        </nav>
+        <!-- 본문 -->
+        <div id="content">
+            <section id="main-section">
+                <!-- 본문상세1 -->
+                <article>
+                    <div class="article-header">
+                        <h1>가입자 명단</h1><br>
+                        <p class="article-date">현재시각 - <span id="current" class="display"></span></p>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>순번</th>
+                            <th>이름</th>
+                            <th>아이디</th>
+                            <th>전화번호</th>
+                            <th>이메일</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>일길동</td>
+                            <td>onegildong</td>
+                            <td>010-1111-1111</td>
+                            <td>onerotto@naver.com</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>이길동</td>
+                            <td>twogildong</td>
+                            <td>010-2222-2222</td>
+                            <td>towrotto@naver.com</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>삼길동</td>
+                            <td>threegildong</td>
+                            <td>010-3333-3333</td>
+                            <td>threerotto@naver.com</td>
+                        </tr>
+                    </table>
+                </article>
+                <!-- 본문상세2 -->
+                <article id="hobby-list">
+                    <h1>상세 소개</h1>
+                    <ul>
+                        <li>
+                            <img class="hobby-img" src="img/cafe.jpg" alt="카페탐방">
+                            <p>일길동씨의 취미는 카페 탐방입니다. <br>
+                            여러 카페를 전전하며 자신만의 글을 쓰는 시간을 가지는걸 즐겨합니다.
+                            </P>
+                        </li>
+                        <li>
+                            <img class="hobby-img" src="img/game.jpg" alt="게임">
+                            <p>이길동씨의 취미는 게임입니다.<br>
+                            여러가지 다양한 게임들을 여가시간에 하는    것이 그의 낙입니다.</p>
+                        </li>
+                        <li>
+                            <img class="hobby-img" src="img/warking.jpg" alt="산책">
+                            <p>삼길동씨의 취미는 산책입니다.<br>
+                            사색을 즐길 수 있는 다양한 장소를 걷는 것을 좋아합니다.</p>
+                        </li>
+                    </ul>
+                </article>
+                <!-- 본문상세3 -->
+                <article id="Who-am-i">
+                    <h1>주인장을 소개합니다.</h1>
+                    <ul>
+                        <li>이름 : 이구민</li>
+                        <li>나이 : 32세</li>
+                        <li>취미 : 게임, 산책, 독서</li>
+                        <li>장점 : 강박적인 결말주의자</li>
+                        <li>단점 : 소심한 겁쟁이</li>
+                    </ul><br>
+                    <p>늦은 나이에 새로운걸 하고 싶어서 도전하게 된 프로그래밍.</p>
+                    <p>결코 쉽게 보고 판단하고 도전한건 아니지만, 막상 배우고 보니 어떤걸 해야할지, 어디로 가야할지 갈피를 쉽게 잡을 수 없는 낯설고 거대한 세계가 보이는 것 같습니다.</p><br>
+                    <p>그럼에도 불구하고, 걱정한 것 만큼 지루한 작업이라는 생각도 들지 않고, 이 분야에 대한 새로운것을 접했을때 그것을 알고 싶다는 욕심이 샘솟고, 그렇게 배운것들을 통해 만들어내는 결과물을 봤을때 뿌듯함이 드는 것이 정말 제게는 너무나도 즐겁습니다.</p><br>
+                    <p>때문에, 비록 저에게 너무나 낯설고 거대한 세계이지만, 그 세계를 여행하는 과정이 결코 지루하지 않을 것이라는 사실이 너무 기대가 됩니다.</p>
+                </article>
+            </section>
+            <!-- 오른쪽 사이드 메뉴 -->
+            <aside id="main-aside">
+                <!-- 첫 번째 대메뉴 -->
+                <div class="aside-list">
+                    <h3>카테고리</h3>
+                    <!-- 소메뉴 -->
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                <!-- 두 번째 대메뉴 -->
+                <div class="aside-list">
+                    <h3>최근 글</h3>
+                    <!-- 소메뉴 -->
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>링크</h3>
+                    <ul>
+                        <li><a href="http://www.google.com" target="_blank">구글</a></li>
+                        <li><a href="http://www.naver.com" target="_blank">네이버</a></li>
+                        <li><a href="http://www.daum.net" target="_blank">다음</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <!-- 꼬리말 -->
+        <footer id="main-footer">
+            <a href="#">Created By Mingu </a>
+        </footer>
+    </div>
+</body>
+</html>

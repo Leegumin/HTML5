@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+        .container {
+            display: flex;
+            background-color: #eee;
+            border: 1px solid #222;
+            margin-bottom: 30px;
+        }
+        #opt1 {
+            flex-direction: row; /*왼쪽에서 오른쪽으로*/
+        }
+        #opt2 {
+            flex-direction: row-reverse; /*오른쪽으에서 왼쪽으로*/
+        }
+        #opt3 {
+            flex-direction: column; /*위에서부터 아래로*/
+        }
+        #opt4 {
+            flex-direction: column-reverse; /*아래에서부터 위로*/
+        }
+        #opt5 {
+            align-items: stretch; /*항목을 늘려 교차축을 꽉 채움*/
+        }
+        .box {
+            padding: 5px 45px;
+            margin: 5px;
+            width: 40px;
+            background-color: #222;
+        }
+        p {
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="opt1">
+        <div class="box"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+    </div>
+
+    <div class="container" id="opt2">
+        <div class="box"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+    </div>
+
+    <div class="container" id="opt3">
+        <div class="box"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+    </div>
+
+    <div class="container" id="opt4">
+        <div class="box"><p>1</p></div>
+        <div class="box"><p style="font-size:14px;">2</p></div>
+        <div class="box"><p style="font-size:25px;">3</p></div>
+        <div class="box"><p style="font-size:10px;">4</p></div>
+    </div>
+
+    <div class="container" id="opt5">
+        <div class="box"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+    </div>
+</body>
+</html>

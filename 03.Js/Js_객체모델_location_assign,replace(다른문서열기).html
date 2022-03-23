@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function openDocument(){
+            location.assign('http://www.naver.com')
+        }
+        function openDocumentWithReplace(){
+            location.replace('http://www.naver.com')
+        }
+    </script>
+</head>
+<body>
+    <h1>현재 창에 문서 불러오긔</h1>
+    <p>아래 버튼을 눌러 새로운 문서를 열고 브라우저의 뒤로 가기 버튼을 눌러보쌔용!</p>
+    <!-- 뒤로가기 먹힘 -->
+    <button onclick="openDocument()">새로운 문서 열기</button> 
+    <!-- 뒤로가기 안먹힘(앞에 열었던 문서 삭제된 상태) -->
+    <button onclick="openDocumentWithReplace()">이전 문서 삭제 후 새로운 문서 열기</button>
+</body>
+</html>

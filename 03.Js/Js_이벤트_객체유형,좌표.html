@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+    <img src="../00.SOURCE/img/cup-1.png" id="cup">
+
+    <script>
+        let cup = document.querySelector('#cup')
+        cup.onclick = function(event1) {
+            document.querySelector('#container').innerHTML = '이벤트 유형: ' + event.type + ', 이벤트 위치 ' + event.pageX + ' ,' + event.pageY;
+        }
+    </script>
+</body>
+</html>

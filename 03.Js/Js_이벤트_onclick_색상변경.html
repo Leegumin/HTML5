@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_26_06.js"></script> -->
+    <script>
+        function changeRedColor() {
+        let str = document.getElementById('text');
+        str.style.color = 'red';
+    }
+        function changeBlackColor() {
+        let str = document.getElementById('text');
+        str.style.color = 'black';
+    }
+    </script>
+</head>
+<body>
+    <h1>DOM 요소의 스타일 변경</h1>
+    <p id="text">이 문자열의 기본은 검정색임</p>
+    <button onclick="changeRedColor()">빨간버튼!</button>
+    <button onclick="changeBlackColor()">검정버튼!</button>
+</body>
+</html>

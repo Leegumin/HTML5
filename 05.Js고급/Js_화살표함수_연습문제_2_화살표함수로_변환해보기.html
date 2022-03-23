@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제2
+        //아래 함수 선언문을 화살표 함수로 고쳐서 결과를 출력해 보세요
+        //함수 선언문
+        function mySum(a,b) {
+            return a - b;
+        }
+
+        let result1 = mySum(5, 2);
+        document.write(result1 +"<br>")
+
+        //화살표함수로 변환
+        let result2  = (a, b) => {return a - b;}
+        // let result2  = (a, b) => a - b;
+
+        document.write(result2(5, 2))
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //네번째 문제
+        //영어 소문자로 구성된 단어 s1, s2, s3가 있을 때,
+        //s1의 마지막 문자가 s2의 첫 글자와 같고,
+        //s2의 마지막 문자가 s3의 첫 글자와 같고,
+        //s3의 마지막 문자가 s1의 첫 글자와 같으면 순환 문자열이라고 한다.
+        //hint : 문자열 배열에 내용을 각각 비교
+        //순환문자열이면 good 출력 아니면 bad 출력
+        //입력 예시 : turtle error robot
+        //출력 예시 : good
+	    let word = ['turtle', 'error', 'robot']
+        // let word = prompt('문자열을 입력해주세열').split('')
+        let fword0 = word[0]; //turtle
+        let fword1 = word[1]; //error
+        let fword2 = word[2]; //robot
+        //length는 문자의 배열길이를 반환하는 속성임 0이 아닌 1부터 시작.
+        //따라서 각 변수의 length에 -1을 한 값은 최대 배열 위치와 동일함
+        if(fword0[fword0.length-1] == fword1[0] &&
+            fword1[fword1.length-1] == fword2[0] &&
+            fword2[fword2.length-1] == fword0[0]) {
+                document.write('good');
+            } else {
+                document.write('bad')
+            }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제9
+        //콜백함수를 promise로 고쳐쓰세요
+
+        const wait = (inputStr, callback) => {
+            //비동기 프로그래밍 부분
+            //콜백을 이용한 부분
+            setTimeout(() => {
+                console.log(inputStr);
+                callback();
+            }, 1000);
+        };
+
+        //함수 호출
+        //콜백지옥
+        // wait("B", () => {
+        //     return;
+        // });
+
+    //promise로 변환
+        const wait2 = inputStr => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                console.log(inputStr);
+                resolve();
+                }, 1000)
+            })
+        }
+
+        // wait2("B")
+        // .then( () => wait2("C"))
+
+    //promise로 변환2
+        let promise = new Promise(function(resolve, reject) {
+        setTimeout(function(){
+            console.log("B")
+            resolve();
+            }, 1000);
+        });
+
+        promise.then(function() {
+            console.log("C")
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>

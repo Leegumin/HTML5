@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // let arr = ['사과', '봐나나', '망고', '슷뜨로베리'];
+        // document.write(arr[1]);
+
+        let object = {
+            number: 273,
+            string: 'rintiantta',
+            boolean: true,
+            array: [52, 273, 103, 32],
+            method: function(){
+            },
+        };
+
+        for (let i in object){
+            document.write(i + ' : ' + object[i] + '<br>');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

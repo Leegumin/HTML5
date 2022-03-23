@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <style>
+        #box{
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+
+        #box.hover {
+            background-color: blue;
+            border-radius: 50px;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            //id=box의 class=hover에 하버기능을 먹임. function(){안의 조건일 때 class를 추가/제거하여 제어} 
+            $('#box').hover(function(){
+
+                //마우스를 올렷을 때 class = hover 추가
+                $('#box').addClass('hover');
+
+            }, function(){
+
+                //마우스를 내렷을 때 class = hover 제거
+                $('#box').removeClass('hover');
+            });
+        });
+
+            
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="box" class="hover"></div>
+</body>
+</html>

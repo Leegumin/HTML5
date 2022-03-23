@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    
+    <!-- 표현식이 참이면 반복적으로 실행 -->
+    <!-- <script src="/04_chapter/js/while과 do_while.js"></script> -->
+    <!-- <script src="/04_chapter/js/while과 do_while.js"></script>  -->
+
+    <script>
+        let a = 1;
+        while (a < 10) {
+            document.write('변수값이 참일 경우 계속해서 실행됨<br>');
+            document.write(a + ' ');
+            a++; //다음 변수값은 1을 더해서 나타남
+            }
+
+        document.write('<hr><br>')   
+        
+        let b = 1
+        do {
+            document.write('무조건 한 번 실행됨');
+            document.write('b : ' + (b++) + '<br>');
+        } while (b > 3) {
+            document.write('처음 한 번은 실행됐으나, 조건이 맞지 않아 이후로 실행되지 않음');
+            document.write('b : ' + (b++) + '<br>');
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>

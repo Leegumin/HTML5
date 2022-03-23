@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // p331 12번 문제
+        // 원기둥 밑면의 반지름과 높이를 입력받아 부피를 계산하는 프로그램을 작성하시오
+        //원기둥의 부피 = 밑면의 넓이x높이 = (반지름x반지름x파이)x높이
+        //num.toFixed(2) = num에 입력된 요소를 ()에 입력된 숫자 자리만치 소수점 남기고 다 자르기
+            let radius = Number(prompt('반지름을 입력하시오'));
+            let height = Number(prompt('높이를 입력하시오'));
+            let result = (radius*radius*3.14)*height;
+            document.write('result = ' + result.toFixed(2) + '㎤')
+    </script>
+</head>
+<body>
+</body>
+</html>

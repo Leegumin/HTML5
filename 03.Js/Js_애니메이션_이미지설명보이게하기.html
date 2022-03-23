@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+        #container {
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .prod-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .prod-list li {
+            float: left;
+            padding: 0;
+            margin: 10px;
+            overflow: hidden;
+            position: relative; /*좌표 먹이려고 포지션 배정함*/
+        }
+
+        .prod-list image {
+            margin: 0;
+            padding: 0;
+            float: left;
+            z-index: 5;
+        }
+        
+        .prod-list .caption {
+            position: absolute;
+            top: 200px;
+            width: 300px;
+            height: 200px;
+            padding-top: 20;
+            background: rgba(0, 0, 0, 0.5); /* 반투명한 검정 배경 */
+            opacity: 0; /* 화면에 보이지 않게 */
+            transition: all 0.6s ease-in-out;
+            z-index: 10;
+        }
+
+        .prod-list li:hover .caption{
+            opacity: 1; /*설명글이 화면에 보이게*/
+            transform: translateY(-200px); /* 설명글이 위로 200px 이동하게 */
+        }
+
+        .prod-list .caption h2, .prod-list .caption p {
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>신상품 목록</h1>
+        <ul class="prod-list">
+            <!-- 첫 번째 상품 이미지 -->
+            <li>
+                <img src="../00.SOURCE/img/prod1.jpg">
+                <div class="caption">
+                    <h2>상품 1</h2>
+                        <p>상품 1 설명 텍스트</p>
+                        <p>가격 : 12,340원</p>
+                </div>
+            </li>
+            <!-- 두 번째 상품 이미지 -->
+            <li>
+                <img src="../00.SOURCE/img/prod2.jpg">
+                <div class="caption">
+                    <h2>상품 2</h2>
+                        <p>상품 2 설명 텍스트</p>
+                        <p>가격 : 13,340원</p>
+                </div>
+            </li>
+            <!-- 세 번째 상품 이미지 -->
+            <li>
+                <img src="../00.SOURCE/img/prod3.jpg">
+                <div class="caption">
+                    <h2>상품 3</h2>
+                        <p>상품 3 설명 텍스트</p>
+                        <p>가격 : 14,340원</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

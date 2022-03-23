@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //열거할 수 있는 자료 끝까지 순회하여 인덱스 출력함 
+        // for만 사용했을 시 긴 코딩배열
+        document.write('<br>' + '=====for======' + '<br>')
+        let arr = [3, 4, 5]
+        for (let a = 0; a < arr.length; a++) {
+            document.write(a + ' '); // 인덱스값
+        }
+        document.write('<br>')
+        for (let a = 0; a < arr.length; a++) {
+            document.write(arr[a] + ' '); //배열값
+        }
+
+
+        document.write('<br>' + '=====for in======' + '<br>')
+        // for, in을 사용했을 시 짧은 코딩배열
+        for (let a in arr) {
+            document.write(a + ' '); // 인덱스값
+        }
+            document.write('<br>')
+        for (let a in arr) {
+            document.write(arr[a] + ' '); //배열값
+        }
+
+        document.write('<br>' + '=====for in 값 테이블 정렬======' + '<br>')
+        let result = '<table border=1><tr>'
+        for (let a in arr) {
+            result +='<td>' + arr[a] + '</td>';
+        }
+
+        result += '</tr></table>';
+
+        console.log(result);
+        document.write(result);
+
+        document.write('<br>' + '=====for of======' + '<br>')
+        for (let a of arr) {
+            document.write(a + ' '); //바로 배열값 출력
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

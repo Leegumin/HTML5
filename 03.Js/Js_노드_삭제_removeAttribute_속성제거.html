@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/event.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function remove(){
+            let text = document.getElementById('text');
+            text.removeAttribute('style');
+        }
+    </script>
+</head>
+<body>
+    <h1>removeAttribute() 메소드</h1>
+    <button onclick="remove()">속성 노드 삭제</button>
+        <p id="text" style="color:red; background-color: lemonchiffon;" >이 단락의 속성이 제거될 거심HTML</p>
+        <p id="item">CSS</p>
+        <p>javaScript</p>
+    </div>
+</body>
+</html>

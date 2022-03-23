@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        window.onload = function() {
+        let header1 = document.getElementById('header');
+        header1.style.color = 'orange';
+        header1.style.background = 'red';
+        header1.innerHTML = 'From JavaScript';
+
+        let header2 = document.querySelector('h1'); //제일 처음걸린 한놈만 적용
+        header2.style.color = 'orange';
+        header2.style.background = 'red';
+        header2.innerHTML = 'From JavaScript';
+        
+        let headers3 = document.querySelectorAll('h3'); //모든 객체가 배열로 들어옴 => 배열로 처리
+        for (let i = 0; i < headers3.length; i++) {
+            let header3 = headers3[i];
+            header3.style.color = 'orange';
+            header3.style.background = 'red';
+            header3.innerHTML = 'From JavaScript';
+        }
+    }
+    </script>
+</head>
+<body>
+    <h2 id="header">header</h2>
+    <hr>
+    <h1>header</h1>
+    <h1>header</h1>
+    <h1>header</h1>
+    <hr>
+    <h3>ssssss</h3>
+    <h3>ssss22</h3>
+    <h3>ssss33</h3>
+    <h3>ssss44</h3>
+</body>
+</html>

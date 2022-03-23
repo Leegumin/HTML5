@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            padding-top: 20px;
+            text-align: center;
+        }
+        #pic {
+            transition: 5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="pic" src="../00.source/img/girl.png">
+    </div>
+
+    <script>
+        let myPic = document.querySelector('#pic');
+        myPic.addEventListener("mouseover", function(){
+            pic.src = '../00.source/img/boy.png';
+        })
+        myPic.addEventListener("mouseout", function(){
+            pic.src = '../00.source/img/girl.png';
+        })
+    </script>
+</body>
+</html>

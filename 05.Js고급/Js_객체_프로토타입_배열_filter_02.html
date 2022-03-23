@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //함수의 조건이 참인 결과만 선택해서 새로운 배열을 만듬
+
+        let numbers = [1, 2, 3, 4, 5]
+
+        let result = numbers.filter(function(number){
+            return number > 3; //3보다 큰 값만 반환함
+        });
+
+        //원래 배열
+        console.log(numbers);
+
+        //필터적용 배열
+        console.log(result);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

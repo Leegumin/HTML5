@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //함수의 반환값을 이용해서 아래를 출력
+        //두 수가 입력된 후 최대 공약수를 구하는 함수를 만드셈
+        function solution() {
+            let n1 = Number(prompt('첫번째 숫자를 입력하숑'));
+            let n2 = Number(prompt('두번째 숫자를 입력하숑'));
+            let result = 0;
+            for(let i = 2; i <= Math.min(n1, n2); i++) {//최소 값부터 올라가면서 탐색
+                if (n1 % i === 0 && n2 % i === 0){
+                    result = i;
+                    break; //값을 발견하면 명령 종료
+                }
+            }
+            return result //모든 방식이 실행된 후의 최종적으로 정의된 값이라고 보면 됨
+        }
+        document.write(solution())
+        // alert(solution())
+    </script>
+</head>
+<body>
+</body>
+</html>

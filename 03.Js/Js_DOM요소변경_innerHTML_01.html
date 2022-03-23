@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <link rel="stylesheet" href="/css/commons.css">   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        window.onload = function(){
+            document.getElementById('btnId').onclick = btnClick;
+        }
+
+        function btnClick(){
+            let table = document.getElementById('tableId'); //rows = 줄, cells = 칸
+            table.rows[0].cells[0].innerHTML = '홍춘이!';
+            table.rows[0].cells[1].innerHTML = '뫄뫄앙';
+            table.rows[1].cells[0].innerHTML = '냥냥';
+            table.rows[1].cells[1].innerHTML = '요롱요롱';
+        }
+    </script>
+</head>
+<body>
+    <body>
+        <table id="tableId">
+            <tr>
+                <td>강태경</td>
+                <td>강태경</td>
+            </tr>
+            <tr>
+                <td>강태경</td>
+                <td>강태경</td>
+            </tr>
+        </table>
+        <button type="button" name="button" id="btnId">셀값 변경</button>
+    </body>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+            window.onload = function () {
+                let str = document.getElementById('text');
+                str.innerHTML = '이 문장으로 바뀌었음 ㅎ...'
+            }
+    </script>
+</head>
+<body>
+    <h1>innerHTML을 이용한 요소의 내용 변경</h1>
+    <p id="text">이 문장을 바꿀거임</p>
+</body>
+</html>

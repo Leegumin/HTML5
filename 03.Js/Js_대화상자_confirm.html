@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function confirmDialogBox() {
+            let str;
+
+            if (confirm('확인이나 취소를 눌러주셈') == true) {
+                str = '당신은 확인을 눌렀심'
+            }
+            else {
+                str = '당신은 취소를 눌렀심'
+            }
+            document.getElementById('text').innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <h1>confirm() 메소드</h1>
+    <button onclick="confirmDialogBox()">confirm 대화 상자</button>
+    <p id="text"></p>
+</body>
+</html>

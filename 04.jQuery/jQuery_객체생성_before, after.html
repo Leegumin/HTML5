@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn1').click(function(){
+                $('#para').before("<h1 style = 'color:red'>안녕!!</h1>"); //요소를 기준 위에 추가해버리는 기능 before
+            })
+            $('#btn2').click(function(){
+                $('#para').after("<h2 style = 'color:hotpink'>안녕!!</h2>"); //요소를 기준 아래 추가해버리는 기능 after
+            })
+        });
+    </script>
+    
+</head>
+<body>
+    <p id="para" style="background-color: yellow;">기주우우우우운!!!!!!!!</p>
+    <button id="btn1">눌러봥! before!</button>
+    <button id="btn2">눌러봥! after!</button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // p332 16번 문제
+        // 매개변수로 n을 입력받아 n!factorial(1부터 양의 정수 n까지 정수 곱)의 을 반환하는 함수를 만드시오
+        function factorial(num) {
+            let result = 1;
+            
+            for (let i = 1; i <= num; i++){
+                result *= i;
+            }
+
+            return result //모든 방식이 실행된 후의 최종적으로 정의된 값이라고 보면 됨
+                }
+        
+        let inp_num = Number(prompt('숫자를 입력해주쏘'))
+        alert(factorial(inp_num));
+    </script>
+</head>
+<body>
+</body>
+</html>

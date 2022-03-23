@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <link rel="stylesheet" href="/css/nodelist.css">   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Web Programming</h1>
+        <p>공부할 주제를 기록해 보세요</p>
+        <p>공부가 끝난 것은 클릭해서 삭제할 수 있습니다.</p>
+        <form action="">
+            <input type="text" id="subject" autofocus>
+            <button onclick="newRegister(); return false;">추가</button>
+        </form>
+        <hr>
+        <!-- 목록 생성되어 출력되는 위치 -->
+        <ul id="itemList"></ul>
+    </div>
+    <script>
+        function newRegister(){
+            // 생성 과정
+            let newItem = document.createElement('li'); //요소 추가
+
+            let subject = document.querySelector('#subject'); //form 텍스트 
+            let newText = document.createTextNode(subject.value)//form의 subject 텍스트 값을 목록으로 생성하는 부분
+
+            newItem.appendChild(newText)
+
+            let itemList = document.querySelector('#itemList')
+            itemList.insertBefore(newItem, itemList.childNodes[0])
+            // 삭제 과정
+            subject.value=''
+            let items = document.querySelectorAll('li')
+            for(let i = 0; i < items.length; i++){
+                items[i].addEventListener('click', function(){
+                    if(this.parentNode){
+                        this.parentNode.removeChild(this);
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+</html>

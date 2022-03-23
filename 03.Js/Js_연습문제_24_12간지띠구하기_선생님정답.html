@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // p332 14번 문제
+        // 사용자에게 태어난 연도를 입력받아 그 해의 띠를 출력하는 프로그램을 작성하시오.
+        //입력받은 연도를 12로 나눈 나머지를 사용합니다.
+        // 나머지가 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11일 때는 각각 
+        // 원숭이띠, 닭띠, 개띠, 돼지띠, 쥐띠, 소띠, 범띠, 토끼띠, 용띠, 뱀띠, 말띠, 양띠입니다.
+            let n1 = Number(prompt('태어난 년도 입력'));
+            let arr = ['원숭이띠','닭띠','개띠','돼지띠','쥐띠','소띠','범띠','토끼띠','용띠','뱀띠','말띠','양띠'];
+            let exp = n1 % 12;
+
+            for ( let i = 0; i < 12; i++) {
+                console.log(i)
+                if( exp == i ) {
+                    document.write(arr[i]);
+                    break;
+                }
+             }
+    </script>
+</head>
+<body>
+</body>
+</html>

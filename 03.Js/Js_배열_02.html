@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/Hello_JavaScript.js"></script> -->
+    
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>배열의 각 요소</h1>
+    <script>
+    let season =['봄', '여름','가을','겨울'];
+
+    for(let i=0; i < season.length; i++){
+        document.write(season[i] + ' ')
+    }
+
+    document.write('<br>')
+
+    let numbers = ['one', 'two', 'three', 'four'];
+
+    for(let i=0; i < numbers.length; i++){
+        document.write('<p>' + numbers[i] + '</p>')
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제2
+        //아래 함수 선언문을 화살표 함수로 고쳐서 결과를 출력해 보세요
+        //함수 선언문
+        function myAvg(a, b, c) {
+            let res = (a + b + c) / 3;
+            return res;
+        }
+
+        let result1 = myAvg(1, 2, 3);
+        document.write(`함수 ${result1} <br>`)
+
+        //화살표함수로 변환
+        let result2 = (a, b, c) => {
+            let res = (a + b + c) / 3;
+            return res;
+        }
+
+        document.write(`화살표함수 ${result2(1, 2, 3)}<br>`);
+
+        //즉시 실행 함수(1회용) let a = (함수)(매개변수값)
+        let result3 = ((a, b, c) => {
+            let res = (a + b + c) / 3;
+            return res;
+        })(1, 2, 3);
+
+        document.write(`즉시실행함수 ${result3}`);
+    </script>
+</head>
+<body>
+</body>
+</html>

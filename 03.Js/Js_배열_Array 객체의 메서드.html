@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/Hello_JavaScript.js"></script> -->
+    
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Array 객체의 메서드</h1>
+    <script>
+        let nums = [1, 2, 3];
+        let chars = ['a','b','c','d']
+
+        //두 배열 합치기
+        let numsChars = nums.concat(chars); //concat -> 대상에 ()를 결합시킴
+        let charsNums = chars.concat(nums); //concat -> 대상에 ()를 결합시킴
+        document.write(numsChars + '<br>')
+        document.write(charsNums)
+
+        document.write('<br>')
+        document.write('<br>')
+
+        //배열에 요소 추가하기
+        document.write('이전 배열 : ' + nums + '<br>')
+        let ret1 = nums.push(4, 5); //기존 배열에 4, 5를 추가, 출력시 '5'만 출력됨
+        document.write('배열에 추가된 값 : ' + ret1 + '<br>')
+        document.write('이후 배열 : ' + nums)
+
+        document.write('<br>')
+        document.write('<br>')
+
+
+        // 배열에 요소를 제거하기
+        document.write('이전 배열 : ' + chars + '<br>')
+        let popped1 = chars.pop(); //마지막 요소를 꺼냄
+        document.write('꺼낸(제거된)요소 : ' + popped1 + '<br>')
+        document.write('이후 배열 : ' + chars)
+    </script>
+</body>
+</html>

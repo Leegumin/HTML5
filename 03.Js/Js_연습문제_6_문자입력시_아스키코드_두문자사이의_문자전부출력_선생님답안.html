@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //연습문제 6
+        //두 값을 입력받아 그 사이에 있는 문자를 출력하세요
+        //입력 : a f
+        //출력 : a b c d e f
+        let word = prompt('알파벳을 입력하쇼').split(" ");
+        let word1 = word[0].charCodeAt(0); //charCodeAt로 문자를 숫자값으로 변경
+        let word2 = word[1].charCodeAt(0);
+        let result = '';
+
+        for(let i = word1; i <= word2; i++) {
+            result += String.fromCharCode(i) + ' ' //숫자로 변경된 i값이 차례대로 들어오면서 문자로 다시 변경됨
+        }
+            
+            document.write(result)
+    </script>
+</head>
+<body>
+</body>
+</html>

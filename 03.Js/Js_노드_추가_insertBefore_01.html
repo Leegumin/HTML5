@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/event.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function appendNode() {
+            let parent = document.getElementById('list');
+            let criteriaitem = document.getElementById('criteria');
+            let newitem = document.getElementById('item');
+            parent.insertBefore(newitem, criteriaitem);
+        }
+    </script>
+</head>
+<body>
+    <h1>insertBefore() 메소드</h1>
+    <h2 id="item">JavaScript</h2>
+    <div id="list">
+        <p>HTML</p>
+        <p id="criteria">CSS</p>
+        <p>JQuery</p>
+    </div>
+    <button onclick="appendNode()">노드 추가</button>
+</body>
+</html>

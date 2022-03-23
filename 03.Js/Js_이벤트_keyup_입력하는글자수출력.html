@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .textarea{
+            width: 100%;
+            height: calc(100% - 40px);
+            font-size: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        p {
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
+    <!-- defer 로딩속도는 느리나 async에 비해 안정적임(window.onload와 유사기능) -->
+    <script src="../00.SOURCE/js/p2_01_keyup_입력하는 글자수 출력.js" defer></script>
+    </script>
+    
+</head>
+<body>
+    <textarea class="textarea"></textarea>
+    <p>현재 <span class="string_num">0</span>글자를 입력하였습니다.</p>
+</body>
+</html>

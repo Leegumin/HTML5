@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // 홀수이면 image1.png를 보여주고, 짝수이면 image2.png를 화면에 보여주세요
+        //출력 : div태그를 만드셔서 id='result' 영역에 출력해 주세요
+        window.onload = function() {
+        let num = Number(prompt('숫자를 입력해주세요'))
+        let contents = '';
+
+        if (num % 2 == 0) {
+            contents = '<img src="../00.SOURCE/img/image1.png">';
+        }
+        else {
+            contents = '<img src="../00.SOURCE/img/image2.png">';
+        }
+        document.getElementById('result').innerHTML = contents;
+    }
+        
+    </script>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>

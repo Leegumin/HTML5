@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script>
+        //객체를 선언
+        const object = {
+            name: "딥러닝을 위한 수학",
+            price: 25000,
+            publisher: "위키북스"
+        };
+
+        //객체 내부에 속성이 있는지 확인
+        object.name = object.name === undefined ? "제목 미정" : object.name;
+        object.author = object.author === undefined ? "작가 미정" : object.name;
+
+        console.log(JSON.stringify(object));
+    </script>
+</head>
+<body>
+</body>
+</html>

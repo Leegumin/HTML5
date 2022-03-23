@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(function(){
+            let text = $('h1').text(); //모든 텍스트를 끌어옴
+            let html = $('h1').html(); //첫번째 것만 선택됨
+
+            alert(`text: ${text}`); //``(백틱)사용법
+            alert('html: ' + html);
+        });
+
+            
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Headder-0</h1>
+    <h1>Headder-1</h1>
+    <h1>Headder-2</h1>
+</body>
+</html>

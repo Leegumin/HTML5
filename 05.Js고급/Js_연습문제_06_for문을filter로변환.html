@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제6
+        //아래 함수를 filter 형태로 바꾸시오
+        
+        const numbers =[1,2,3,4,5];
+        const result =[];
+
+        console.log(numbers[0]) //1
+        console.log(numbers[1]) //2
+        console.log(numbers[2]) //3
+        console.log(numbers[3]) //4
+        console.log(numbers[4]) //5
+
+        for(let i = 0; i < numbers.length; i++){
+            if(numbers[i] < 3) {
+                result.push(numbers[i]);
+            }
+        }
+        console.log(result)
+
+
+        //filter적용
+
+        filterResult = numbers.filter(function(number){
+            return number < 3
+        })
+        filterResult2 = numbers.filter((number) => {
+            return number < 3
+        })
+
+        console.log(filterResult)
+        console.log(filterResult2)
+    </script>
+</head>
+<body>
+</body>
+</html>

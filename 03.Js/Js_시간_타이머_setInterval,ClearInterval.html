@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/function.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function startInterval() {
+            timeoutId = setInterval(printCurrentDate, 1000); //1초마다 함수실행
+        }
+        function cancelInterval() {
+            clearInterval(timeoutId); //반복되는 함수호출 취소
+        }
+        function printCurrentDate() {
+            document.getElementById("date").innerHTML += new Date() + '<br>'; //출력함수
+        }
+    </script>
+</head>
+<body>
+    <h1>setTimeout() 메소드</h1>
+    <button onclick="startInterval()">1초 뒤에 현재 시간을 표시함</button>
+    <button onclick="cancelInterval()">시간 갱신 중G</button>
+    <p id="date"></p>
+</body>
+</html>

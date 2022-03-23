@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                $('#box').remove(); //요소를 삭제하는 기능, 해당 부분을 싹다 날림
+            })
+        });
+    </script>
+    
+</head>
+<body>
+    <div id="box" style="background-color: yellow;">
+        <p>누를꼬양?</p>
+        <p>정말루?</p>
+        <p>아..안됑ㅠㅠ</p>
+    </div>
+    <button id="btn">꾹 눌러서 삭제♡</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        //함수의 반환값을 이용해서 아래를 출력
+        //0이 입력되면 'false' 그 외에는 true
+        function false_true() {
+            let num = prompt();
+            let result = '';
+            if (num == 0){
+                result = 'false';
+            } else {
+                result = 'true'
+            }
+            return result
+        }
+        document.write(false_true());
+    </script>
+</head>
+<body>
+</body>
+</html>

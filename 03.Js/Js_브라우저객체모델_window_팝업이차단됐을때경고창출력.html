@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/nodelist.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <style>
+    </style>
+</head>
+<body onload="openPopup()">
+    <p>문서를 열면 팝업 창이 표시됩니다.</p>
+    <script>
+        let blocked = false;
+        function openPopup() {
+        let newWin = window.open('../00.source/html/notice.html', 'pop', 'width=500, height=400')
+        if(newWin == null){
+            alert('팝업이 차단되어 이씁니다. 팝업 차단을 해제해 주쎄여');
+        }
+        newWin.moveBy(100, 100);
+    }
+    </script>
+</body>
+</html>

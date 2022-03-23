@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/event.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function btnFunc(){
+            //childNodes : 줄바꿈 ,주석, 텍스트노드, 태그(요소) 모두 포함
+            let myPtags = document.getElementById('intro').childNodes;
+
+            for(let i of myPtags) {
+                document.getElementById('demo').innerHTML += i.innerHTML;
+            }
+
+            document.getElementById('demo').innerHTML = '<br> == children == <br>';
+            //children : 태그(요소)만 포함, 그 외에는 모두 제외
+            let myPtags2 = document.getElementById('intro').children
+
+            for(let i of myPtags2) {
+                document.getElementById('demo').innerHTML += i.innerHTML;
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="intro">
+        <p>Hello javascript</p>
+        <p>HTML5</p>
+        <p>CSS</p>
+        <p>!!!!</p>
+    </div>
+    <p id="demo"></p>
+    <button type="button" name="button" onclick="btnFunc()">버튼 클릭</button>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        //hover(마우스 올렸을 때, 마우스 내렸을 때)
+        $(function(){
+            $('h1').hover(function(){
+                $(this).css({background: "red", color: "white"})
+            },function(){
+                $(this).css({background: "", color: ""});
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>얍얍!</h1>
+</body>
+</html>

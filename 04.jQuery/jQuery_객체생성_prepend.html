@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                $('#list').prepend("<li style = 'color:skyblue'>안녕!!</li>"); //요소를 맨 앞에 추가해버리는 기능 prepend
+            })
+        });
+    </script>
+    
+</head>
+<body>
+    <ul id="list">
+        <li>항목 1</li>
+        <li>항목 2</li>
+        <li>항목 3</li>
+    </ul>
+    <button id="btn">눌러봥!</button>
+</body>
+</html>

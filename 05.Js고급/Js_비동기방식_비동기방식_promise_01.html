@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let _promise = function(param) {
+            return new Promise(function(resolve, reject) {
+                //3초후에 실행되는 비동기 함수
+                setTimeout(function() {
+                    if(param == true) {
+                        resolve("해결 완료") //true값일 경우 resolve와 한쌍인 then이 실행됨
+                    }
+                    else {
+                        reject(Error("해결 실패"));
+                    }
+                }, 3000);
+            });
+        }
+
+        _promise(false)
+        .then(function(text) {
+            console.log(text) // 참값인 resolve의 "해결 완료"를 들고옴
+        }, function(error) { 
+            console.log(error) // 거짓값
+        });
+
+    </script>
+</head>
+<body>
+</body>
+</html>

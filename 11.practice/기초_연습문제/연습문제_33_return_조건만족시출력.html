@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 연습문제 33
+    // 슬기가 던진 공의 위치가 입력으로 주어진다.
+    // 50이상 60이하이면 win을 출력 , 그 외에는 lose를 출력하시오.
+    // 입력 예시 : 50.213
+    // 출력 예시 : win
+    // 함수의 리턴값을 이용해서 출력해보세요
+    // 함수의 리턴값 예시 : 아래처럼 출력하기 
+    // let result = func()
+    // console.log(result);
+
+    let result = function (num) {
+        if(50 <= num && num <= 60){
+            result = "win"
+        }
+        else{
+            result = "lose"
+        }
+        return result
+    }
+
+    document.write(result(50.213))
+</script>
+
+<body>
+
+</body>
+
+</html>

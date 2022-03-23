@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(function(){
+                $('.red').css('color', 'red').css('font-weight', 'bold')
+                $('.purple').css({'color' : 'purple', "font-weight" :'bold'});
+        });
+    </script>
+</head>
+<body>
+    <!-- 연습문제 #5 -->
+    <!-- jQuery를 이용해서 -->
+    <!-- class = red를 선택해서 color => red -->
+    <!-- class = red을 선택해서 font-weight -> bold -->
+
+    <h2>클래스 선택자</h2>
+    <p>클래스 선택자는 요소의 <span class="red">class 속성 값</span>으로 해당 요소를 선택한다</p>
+    <ul>
+        <li class="purple">항목 1</li>
+        <li class="red">항목 2</li>
+        <li class="purple">항목 3</li>
+        <li class="red">항목 4</li>
+    </ul>
+</body>
+</html>

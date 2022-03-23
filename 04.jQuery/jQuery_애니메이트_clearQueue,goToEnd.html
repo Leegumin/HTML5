@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            let clearQueue = false; //false 현재 애니메이션에만 영향, true 앞으로 실행될 애니메이션 모두 영향
+            let goToEnd = false;
+            //다음 순서에 실행될 애니메이션을 정지
+            $("#clearQueue").change(function(){
+                clearQueue = $(this).prop("checked") //체크박스 체크여부 확인
+            });
+
+            //실행중인 애니메이션 순서의 최종형태로 이동
+            $("#goToEnd").change(function(){
+                goToEnd = $(this).prop("checked")
+            });
+
+            $("#stopButton").click(function(){
+                $("#box").stop(clearQueue, goToEnd)
+            });
+
+            $("#box").css({width: 100, height: 100, background: "red"})
+            setInterval(() => {
+                $("#box").animate({width: 200}, 2000)
+                .delay(1000 /* 다음명령까지 실행 딜레이 */)
+                .animate({width: 50, height: 100}, 2000);
+            }, 1000 /* setInterval 시작 값 */);
+        });
+    </script>
+</head>
+<body>
+    <h2>clearQueue</h2>
+    <input type="checkbox" id="clearQueue">
+    <br>
+    <h2>goToEnd</h2>
+    <input type="checkbox" id="goToEnd">
+    <br>
+    <button id="stopButton">멈춰!</button>
+    <!-- 애니메이션 -->
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        // p331 13번 문제
+        // 네 자리 정수를 입력받아 천, 백, 십, 일의 자리로 분리해 출력하는 프로그램을 작성하시오
+        // 천의 자리는 parseInt(num/1000), 백의 자리는 parseInt(num % 1000/100)으로 구할 수 있음.
+        // 사용자에게 값을 입력받는 부분은 다음과 같이 prompt()함수를 사용함
+        function solution() {
+            let n1 = Number(prompt('4자리 수 입력'));
+            let 천자리 = parseInt(n1/1000) //"1000"으로 나눈 몫이 출력됨
+            let 백자리 = parseInt(n1%1000/100) // "1000"으로 나눈 나머지를 "100"으로 나눈 몫이 출력됨
+            let 십자리 = parseInt(n1%1000%100/10) // "1000"으로 나눈 나머지를 "100"으로 나눈 나머지를 "10"으로 나눈 몫이 출력됨
+            let 일자리 = parseInt(n1%1000%100%10) // "1000"으로 나눈 나머지를 "100"으로 나눈 나머지를 "10"으로 나눈 나머지가 출력됨
+            let result = '';
+            result = (
+                '천' + ' = ' + 천자리 +'<br>'
+                 + '백' + ' = ' + 백자리 +'<br>'
+                 + '십' + ' = ' + 십자리 +'<br>'
+                 + '일' + ' = ' + 일자리
+            );
+            return result //출력된 result 값을 "solution"함수의 값으로 반환
+                }
+        document.write(solution())
+    </script>
+</head>
+<body>
+</body>
+</html>

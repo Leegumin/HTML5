@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript DOM Element</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="/css/event.css">    -->
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        function createNode() {
+            let criteriaNode = document.getElementById('text');
+            let newNode = document.createElement('p');
+            newNode.innerHTML = '새로운 단락입니다.';
+            document.body.insertBefore(newNode, criteriaNode);
+        }
+    </script>
+</head>
+<body>
+    <h1>요소 노드의 생성</h1>
+    <p id="text">새로운 단락을 생성하여 이 단락 앞에 추가할거임</p>
+    <button onclick="createNode()">요소 노드 생성</button>
+</body>
+</html>

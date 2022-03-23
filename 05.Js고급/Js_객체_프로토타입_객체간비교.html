@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Dog(color, name, age){
+            this.color = color;
+            this.name = name;
+            this.age = age;
+        }
+
+        let myDog = new Dog("흰색", "마루", 1);
+        let hisDog = new Dog("흰색", "마루", 1);
+
+        document.write(`${(myDog == hisDog)}<br>`); //깊은 복사 주소값은 다르나 객체 값은 같음 false
+        document.write(`${(myDog === hisDog)}<br>`);
+
+        let herDog = hisDog
+        document.write(`${(hisDog == herDog)}<br>`); //얕은 복사 주소값, 객체값 동일 true
+        document.write(`${(hisDog === herDog)}<br>`);//herDog 은 결국 hisDog라는 주소를 가지고 있음
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

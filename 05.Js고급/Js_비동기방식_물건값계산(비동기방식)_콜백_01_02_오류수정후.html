@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //비동기 프로그램
+        //물건값 계산 프로그램
+        //return : 총 물건값
+        function buy_asis(item, price, quantity, callBack) {
+            console.log(`${item} 상품을 ${quantity}개 골라서 점원에게 주었습니다.`)//두 번째 실행
+
+            //비동기 방식으로 동작하는 부분
+            setTimeout(function() { //세 번째 실행
+                console.log(`계산이 필요합니다`)
+
+                //물건값을 계산
+                let total = price * quantity;
+
+                //함수가 들어올 자리
+                callBack(total); // == pay(tatal)
+            }, 2000); 
+        }
+
+        //돈을 지불하는 함수
+        function pay(tot){
+            console.log(`${tot}원을 지불하였습니다.`)//네 번째 실행
+        }
+
+        let result = buy_asis("고구마", 1000, 5, pay); //첫 번째 실행 result를 정의하기 위하여 buy_asis 실행
+    </script>
+</head>
+<body>
+</body>
+</html>

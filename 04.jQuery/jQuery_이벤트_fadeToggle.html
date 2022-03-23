@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+    </style>
+    <script>
+        // .fadeToggle( [duration ] [, easing ] [, complete ] )
+            //duration에는 사라지거나 나타나는데 걸리는 시간을 넣습니다. fast, slow로 정하거나 1000분의 1초 단위의 숫자로 정합니다. fast는 200, slow는 600에 해당하고 기본값은 400입니다.
+            //easing에는 사라지거나 나타날 때의 모양이 들어갑니다. swing과 linear가 가능하며 기본값은 swing입니다. 따옴표 안에 값을 넣습니다.
+            //complete에는 지정한 요소가 사라진 다음 불러올 함수가 들어갑니다.
+        $(function(){
+            $("#btn1").click(function(){
+                $(".page").fadeToggle("slow");
+            });
+            $("#btn2").click(function(){
+                $(".page").fadeToggle("fast");
+            });
+            $("#btn3").click(function(){
+                $(".page").fadeToggle(1000, "linear");
+            });
+            $("#btn4").click(function(){
+                $(".page").fadeToggle(1000, "swing");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn1">Toggle Show1</button>
+    <button id="btn2">Toggle Show2</button>
+    <button id="btn3">Toggle Show3</button>
+    <button id="btn4">Toggle Show4</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, quia laboriosam nemo voluptate quasi deleniti a, eum est corporis maiores iste? Rerum minus ullam distinctio maxime vitae eius nesciunt necessitatibus?</p>
+    </div>
+</body>
+</html>

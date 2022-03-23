@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //연습문제8
+        //이름이 "YD인 사람의 money를 뽑아내어 새로운 배열을 생성하고 출력해보세염(filter 이용)"
+        let guys = [
+            {name : "YD", money : 500000},
+            {name : "Bill", money : 400000},
+            {name : "Andy", money : 300000},
+            {name : "Roky", money : 200000},
+        ]
+
+        filterResult = guys.filter(function(man){
+            return man.name == "YD";
+        })
+
+        filterResult2 = guys.filter((man) => {
+            return man.name == "YD"
+        })
+
+        console.log(filterResult)
+        console.log(filterResult2)
+    </script>
+</head>
+<body>
+</body>
+</html>

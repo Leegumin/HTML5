@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                $('p').css('backgroundColor', 'yellow')
+            })
+        });
+    </script>
+</head>
+<body>
+    <!-- 연습문제 #3 -->
+    <!-- jQuery를 이용해서 버튼을 클릭하면 -->
+    <!-- p를 선택해서 백그라운드 속성을 노란색으로 만들어주세요 -->
+
+    <h2>태그 선택자</h2>
+    <p>태그 선택자는 페이지의 해당 요소를 선택한다</p>
+    <p>태그 선택자는 다른 말로 요소 선택자라고 한다.</p>
+    <ul>
+        <li>항목 1</li>
+        <li>항목 2</li>
+    </ul>
+
+    <button id="btn">노란맛 끼얹기</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css import  -->
+    <!-- <link rel="stylesheet" href="css/hello.css"> -->   
+    <!-- javascript import -->
+    <!-- <script src="/04_chapter/js/p01_20_02.js"></script> -->
+    <script>
+        window.onload = function() {
+            let lectures = ['html', 'css', '자바스크립트', 'php'];
+            let topic = '자바스크립트';
+            for (let i = 0; i < lectures.length; i++) {
+                if (lectures[i] == topic) {
+                document.write( topic + ' 과목은 ' + (i + 1) + '번째 과목입니다. ');
+                break; //조건에 만족되는 값이 나올 경우 해당 기능을 정지
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
