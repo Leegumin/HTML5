@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.
+    // arr은 길이 1 이상, 100 이하인 배열입니다.
+    // arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.
+    // arr1 = 2.5
+    // arr2 = 5
+
+    let arr1 = [1, 2, 3, 4]
+    let arr2 = [5, 5]
+
+    let solutionA_1 = arr1.reduce((n, i) => n + i) / arr1.length
+    //reduce((n, i) => n+i, 초기 제공값)
+    //n -> "accumulator" : 반환된 값이 누적됨. 처음 호출 시 initialValue 값이 들어감
+    //i -> "currentValue" : 처리할 현재 요소(배열값)
+    //초기 제공값 -> "initialValue" : 초기 제공값. 없으면 배열의 첫번째 숫자가 초기 제공값이 됨
+    let solutionA_2 = arr1.reduce((n, i) => n + i, 0) / arr1.length
+    let solutionB = arr2.reduce((n, i) => n + i) / arr2.length
+    console.log(solutionA_1)
+    console.log(solutionB)
+
+
+    //callback : 배열의 각 요소에 대해 실행할 함수. 다음 네 가지 인수를 받습니다
+    // -accumulator : 누산기accmulator는 콜백의 반환값을 누적합니다. 콜백의 이전 반환값 또는, 콜백의 첫 번째 호출이면서 initialValue를 제공한 경우에는initialValue의 값입니다.
+    // -currentValue : 처리할 현재 요소.
+    // -currentIndex(optional : 사용해도 되고 안해도 되고) : 처리할 현재 요소의 인덱스. initialValue를 제공한경우 0, 아니면 1부터 시작합니다.
+    // -array(optional : 사용해도 되고 안해도 되고) : reduce()를 호출한 배열.
+    // initialValue(optional : 사용해도 되고 안해도 되고) : callback의 최초 호출에서 첫 번째 인수에 제공하는 값. 초기값을 제공하지 않으면 배열의 첫 번째 요소를 사용합니다. 빈 배열에서 초기값 없이 reduce()를 호출하면 오류가 발생합니다.
+
+    // initialValue를 제공하지 않으면, reduce()는 인덱스 1부터 시작해 콜백 함수를 실행하고 첫 번째 인덱스는 건너 뜁니다.
+    // reduce()함수 호출시 initialValue 값이 없는 경우
+    // -accumulator 는 배열의 첫번째 값
+    // -currentValue 는 배열의 두번째 값
+
+    var res = [0, 1, 2, 3, 4].reduce(function (accumulator, currentValue, currentIndex, array) {
+        console.log(`currentIndex : ${currentIndex}`);
+        console.log(`accumulator : ${accumulator}`);
+        console.log(`currentValue : ${currentValue}`);
+        console.log(`currentIndex : ${currentIndex}`);
+        console.log(" ");
+        return accumulator + currentValue;
+    }, 0);
+
+    console.log("res:", res);
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

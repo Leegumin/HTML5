@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다.
+    // 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 
+    // 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.
+    // let arr = [10, 12, 11, 13]
+
+    function solutionA() {
+        let n = 10
+        let sum = 0
+        
+        let nArr = String(n).split("")
+        for(a in nArr){
+            sum += Number(nArr[a])
+        }
+        return n % sum == 0 ? true : false
+    }
+
+    function solutionB() {
+        let n = 13
+
+        let nArr = (n + "").split("")
+        return n % (Number(nArr[0]) + Number(nArr[1])) == 0 ? true : false
+    }
+
+    function solutionC() {
+        let n = 11
+
+        return !(n % (n + '').split('').reduce(function (i, sum) { return +sum + +i; }));
+        //나머지 값이 0과 1만 나온다고 했을 때 js에서 0은 false, 1은 true로 출력합니다. 문제에서 나누어 떨어질 때(즉, 나머지가 0일 때) true, 
+        //나누어 떨어지지 않을 때(나머지가 1일 때)는 false를 출력하라고 했으니까 !를 붙여서 false는 true로, true는 false가 되도록 한 것 같네요.
+        //텍스트 앞에 +를 붙여주면 정수, -를 붙여주면 음수로 변환됨
+    }
+
+    function solutionD() {
+        let n = 12
+
+        let nArr = (n + "").split("")
+        return n % (+(nArr[0]) + +(nArr[1])) == 0 ? true : false
+    }
+    console.log(solutionA())
+    console.log(solutionB())
+    console.log(solutionC())
+    console.log(solutionD())
+    console.log(+"1")
+    console.log(-"1")
+
+</script>
+
+<body>
+
+</body>
+
+</html>

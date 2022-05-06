@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 연습문제 35
+    // 정수 두개가 입력으로 들어온다.
+    // 첫번째 정수가 홀수이면 홀수를 출력하고, 짝수이면 짝수를 출력한후 +를 출력
+    // 두번째 정수가 홀수이면 홀수를 출력하고, 짝수이면 짝수를 출력한후 =을 출력
+    // 결과로 나오는 수가 짝수이면 짝수 아니면 홀수를 출력
+    // 입력 예시 : 2 3
+    // 출력 예시 : 짝수+홀수=홀수
+    // 함수의 리턴값을 이용해서 출력해보세요
+    // 함수의 리턴값 예시 : 아래처럼 출력하기 
+    // let result = func()
+    // console.log(result);
+
+    let n = prompt("숫자를 입력해주세요").split(" ").map(Number)
+    let result = () => {
+        result1 = (n[0]%2 == !0) ? `홀수 +`:`짝수 +`
+        result2 = (n[1]%2 == !0) ? ` 홀수 =`:` 짝수 =`
+        result3 = ((n[0]+n[1])%2 == !0) ? ` 홀수`:` 짝수`
+
+        return result1 + result2 + result3
+    }
+    document.write(result())
+</script>
+
+<body>
+
+</body>
+
+</html>

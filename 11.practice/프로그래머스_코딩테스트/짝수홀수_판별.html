@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //짝수, 홀수 판별하시오
+    //Num = 3, 4
+
+    function solutionA(num) {
+        return num % 2 == 0 ? "Even" : "Odd"
+    }
+
+    function solutionB(num) {
+        return num % 2 ? "Odd" : "Even"
+        // 0값은 false, 1값은 true 라는 것을 이용한 역발상
+    }
+
+    console.log(solutionA(3))
+    console.log(solutionA(4))
+    console.log(solutionB(3))
+    console.log(solutionB(4))
+</script>
+
+<body>
+
+</body>
+
+</html>

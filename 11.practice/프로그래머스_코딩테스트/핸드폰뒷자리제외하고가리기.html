@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
+    // 전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 
+    // 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.
+    let phone_number1 = "01033331234"
+    let phone_number2 = "027778888"
+
+    function solutionA() {
+        let answer = ""
+
+        for (i in phone_number2) {
+            if (i < phone_number2.length - 4) {
+                answer += "*"
+            }
+            else {answer += phone_number2[i]}
+        }
+        return answer
+    }
+
+    function solutionB() {
+        let number1_front = phone_number1.substr(0, phone_number1.length - 4);
+        //(-4, 4) -> -4자리에서 시작해서 4길이의 값을 가져오는 것이지만 (-4)만 해도 어차피 4자리수를 가져오는 것이기 때문에 동일한 결과값이 출력됨
+        let number1_back = phone_number1.substr(-4);
+
+        // 앞자리 "*"로 변환하는 정규식
+        let result = number1_front.replace(/[0-9]/g, '*');
+
+        answer = result + number1_back
+        return answer;
+    }
+
+    function solutionC() {
+        return "*".repeat(phone_number1.length-4) + (phone_number1.slice(-4))
+    }
+
+    function solutionD() {
+        return phone_number1.replace(/\d(?=\d{4})/g, "*");
+    }
+
+    function solutionE() {
+        return [...phone_number1].fill("*",0,phone_number1.length-4).join("")
+    }
+
+    console.log("A")
+    console.log(solutionA())
+    console.log("B")
+    console.log(solutionB())
+    console.log("C")
+    console.log(solutionC())
+    console.log("D")
+    console.log(solutionD())
+    console.log("E")
+    console.log(solutionE())
+    console.log([...phone_number1])
+    console.log([...phone_number1].fill("*",0,phone_number1.length-4))
+    console.log([...phone_number1].fill("*",0,phone_number1.length-4).join(""))
+
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 연습문제 31
+    // 정수 1개가 입력된다.
+    // 음수이면서 짝수이면, A
+    // 음수이면서 홀수이면, B
+    // 양수이면서 짝수이면, C
+    // 양수이면서 홀수이면, D 출력한다.
+    // 입력 예시 : -2147483648
+    // 출력 예시 : A
+    // 함수의 리턴값을 이용해서 출력해보세요
+    // 함수의 리턴값 예시 : 아래처럼 출력하기 
+    // let result = func()
+    // console.log(result);
+
+    window.onload = () => {
+        let result = function (num) {
+
+            if (num < 0 && num % 2 == 0) {
+                result = "A";
+            }
+            else if (num < 0 && num % 2 == !0) {
+                result = "B";
+            }
+            else if (num > 0 && num % 2 == 0) {
+                result = "C";
+            }
+            else {
+                result = "D";
+            }
+            return result
+        }
+        document.write(result(-2147483648))
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

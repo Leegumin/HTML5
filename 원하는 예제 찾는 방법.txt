@@ -1,0 +1,7 @@
+cmd에서>
+ findstr /S "v-text" *.html
+
+리눅스에서>
+ $ grep "v-text" *.html
+
+->리눅스(깃배쉬)가 정확도 더 좋음
