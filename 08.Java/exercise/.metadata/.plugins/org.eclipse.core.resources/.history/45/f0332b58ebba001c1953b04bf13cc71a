@@ -1,0 +1,12 @@
+package ex_06;
+
+public class Employee {
+	String id;
+	String name;
+	int money;
+	
+	Employee() {
+	}
+	Employee(String id, String name, int money) {
+	}
+}

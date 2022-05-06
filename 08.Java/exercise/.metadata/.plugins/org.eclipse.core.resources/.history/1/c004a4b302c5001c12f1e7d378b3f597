@@ -1,0 +1,20 @@
+package 기초연습문제_선생님.CommonDTO;
+
+public class CommonDTOTest {
+
+	public static void main(String[] args) {
+		CommentDTO dto = new CommentDTO();
+		dto.setPaginationInfo("페이지 정보");
+		dto.setDeleteYn("TRUE");
+		dto.setInsertTime("등록일");
+		dto.setUpdateTime("수정일");
+		dto.setDeleteTime("삭제일");
+		dto.setIdx(1);
+		dto.setBoardIdx(1);
+		dto.setContent("게시판 내용");
+		dto.setWriter("글쓴이");
+		
+		dto.info();
+	}
+
+}

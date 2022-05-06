@@ -1,0 +1,10 @@
+package 기초연습문제_선생님.DTO.예제_05_상속_interface;
+
+public interface BoardService {
+	public boolean registerBoard();
+	public BoardDTO getBoardDetail();
+	public boolean deleteBoard();
+	public List<BoardDTO> getBoardList();
+	public List<AttachDTO> getAttachFileList(Long boardIdx);
+	public AttachDTO getAttachDetail(Long idx);
+}

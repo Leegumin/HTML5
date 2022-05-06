@@ -1,0 +1,12 @@
+package ex_02;
+
+public class Ex06_teacherTest_4 {
+	public static void main(String[] args) {
+//		클래스를 작성해보세요
+//		변수 : title = "Dancing Queen"
+//			  singer = "ABBA"
+//			  country = "스웨덴"
+//		출력: "스웨뒌 국적의 ABBA가 부른 "Dancing Queen"
+		
+	}
+}

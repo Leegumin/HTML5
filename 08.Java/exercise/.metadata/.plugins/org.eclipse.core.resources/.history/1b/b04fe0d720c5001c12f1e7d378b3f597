@@ -1,0 +1,8 @@
+package 기초연습문제_선생님.DTO.예제_05_상속_interface;
+
+public interface CommentService {
+	public void registerComment(String params);
+	public void deleteComment(Long idx);
+	public void getCommentList(String params);
+
+}

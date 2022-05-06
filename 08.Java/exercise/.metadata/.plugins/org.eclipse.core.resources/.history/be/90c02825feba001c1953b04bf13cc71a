@@ -1,0 +1,11 @@
+package ex_07;
+
+public class StarCraft1 {
+	String height;
+	String weight;
+}
+
+public class StarCraft2 {
+	String height;
+	String weight;
+}

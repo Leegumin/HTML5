@@ -1,0 +1,44 @@
+package ex_06;
+
+class Car2 {
+	/* 색상 */
+	String color;
+	/* 변속기 종류 - auto, manual */
+	String gearType;
+	/* 문 개수 */
+	int door;
+
+	Car2() {
+		this("white", "auto", 4);
+	}
+
+	Car2(String color) {
+		this(color, "auto", 4);
+	}
+
+	Car2(String color, String gearType, int door) {
+
+	}
+}
+
+public class Ex06_13 {
+	public static void main(String[] args) {
+		/* 기본 생성자를 이용해서 객체 생성 */
+		/* 나쁜 코딩 */
+		Car2 c1 = new Car2();
+
+		/* c1 객체에 대한 초기화 작업 */
+		c1.color = "white";
+		c1.gearType = "auto";
+		c1.door = 4;
+
+		/* 매개변수 있는 생성자를 이용해 객체 생성 */
+		/* 매개변수만 던져주어 초기화가 가능 */
+		/* 좋은 코딩 */
+		Car2 c2 = new Car2("white", "auto", 4);
+
+		System.out.println("c1의 color=" + c1.color + ", gearType=" + c1.gearType + ", door=" + c1.door);
+		System.out.println("c2의 color=" + c2.color + ", gearType=" + c2.gearType + ", door=" + c2.door);
+
+	}
+}

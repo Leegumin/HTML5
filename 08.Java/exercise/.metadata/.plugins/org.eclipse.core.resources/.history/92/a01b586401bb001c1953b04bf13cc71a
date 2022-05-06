@@ -1,0 +1,13 @@
+package ex_07;
+
+public class StarCraft_Tank{
+	int weight;
+
+	public void driving () {
+		System.out.println("움직이고 있습니다.");
+	}
+	public void sizeMode () {
+		System.out.println("시즈모드로 동작하였습니다.");
+	}
+}
+

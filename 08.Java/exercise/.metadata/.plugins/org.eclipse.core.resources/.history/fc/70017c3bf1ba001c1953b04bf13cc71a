@@ -1,0 +1,6 @@
+package ex_06;
+
+public class CarFactory {
+	int carNum;
+	String carName;
+}

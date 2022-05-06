@@ -1,0 +1,4 @@
+<script src="/js/p3_00_객체설정 및 탐색2 - 복사본.js" defer></script> => 절대경로
+<script src="js/p3_00_객체설정 및 탐색2 - 복사본.js" defer></script> => 상대경로
+<script src="./js/p3_00_객체설정 및 탐색2 - 복사본.js" defer></script> => 상대경로 현재 웹페이지가 소속된 경로
+<script src="../js/p3_00_객체설정 및 탐색2 - 복사본.js" defer></script> => 상대경로 현재 웹페이지의 부모 경로

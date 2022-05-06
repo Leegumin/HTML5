@@ -1,0 +1,45 @@
+package ex;
+
+public class Ex4_test_4 {
+	public static void main(String args[]) {
+//		1+(-2)+3+(-4)+....과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100이상 되는지 구하시오
+
+		/* 내 풀이 */
+//		int sum = 0, count = 0, num = 0;
+//		while (true) {
+//			if (sum >= 100) {
+//				break;
+//			}
+//			count++;
+//			num = (count % 2) != 0 ? count : -count;
+//			sum += num;
+//			System.out.println("sum: " + sum);
+//			System.out.println("count: " + count);
+//		}
+//		System.out.println("sum: " + sum);
+//		System.out.println("count: " + count);
+
+		/* 선생님 풀이 */
+		int sum = 0;
+		int s = 1;
+		int num = 0;
+
+		int i = 1;
+
+		while (true) {
+			if (sum >= 100) {
+				break;
+			}
+			System.out.println("i: " + i);
+			System.out.println("s: " + s);
+			num = s * i;
+			s = -s;
+			sum = sum + num;
+			System.out.println("num: " + num);
+			System.out.println("s: " + s);
+			i++;
+		}
+		System.out.println("num=" + num);
+		System.out.println("sum=" + sum);
+	}
+}

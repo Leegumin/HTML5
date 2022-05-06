@@ -1,0 +1,14 @@
+package ex_07;
+
+public class ex_07_04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/* VIP, Gold, Silver */
+		/*속성 : 고객ID
+			  고객이름
+			  고객등급*/
+		/* 기능 */
+	}
+
+}

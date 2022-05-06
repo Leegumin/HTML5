@@ -1,0 +1,13 @@
+package 기초연습문제_선생님.DTO.예제_08;
+
+public class Buyer {
+
+	private int id;
+	private String name;
+	private String address;
+	private String gender;
+	private String phone;
+	private String mobile;
+	private Date regDate;
+	private Date updateDate;
+}

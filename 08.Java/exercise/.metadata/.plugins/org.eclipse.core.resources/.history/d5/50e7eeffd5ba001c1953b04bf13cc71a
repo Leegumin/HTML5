@@ -1,0 +1,10 @@
+package ex_06;
+
+public class Ex06_teacherTest_07 {
+	public static void main(String[] args) {
+		/* name "이순신", height 175, weight 75 */
+		Person Kim = new Person("이순신", 175, 75);
+		
+		System.out.printf("Kim의 정보는 이름:%s, 키:%d, 몸무게:%d", Kim.name, Kim.height, Kim.weight);
+	}
+}

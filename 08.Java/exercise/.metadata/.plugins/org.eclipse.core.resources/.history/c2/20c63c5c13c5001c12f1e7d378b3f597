@@ -1,0 +1,17 @@
+package 기초연습문제_선생님.DTO.예제_04_상속;
+
+public class TEST {
+
+	public static void main(String[] args) {
+		StudentDTO student = new StudentDTO();
+		
+		student.setStudent();
+		student.info();
+		
+		StaffDTO staff = new StaffDTO();
+		
+		student.setStudent();
+		student.info();
+	}
+
+}

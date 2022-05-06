@@ -1,0 +1,20 @@
+package 기초연습문제_선생님.기초연습문제.문제_05;
+
+import java.util.Scanner;
+
+public class 문제5_다른방법 {
+
+	public static void main(String[] args) {
+		int[] arr = { 10, 20, 30, 50, 3, 60, -3 };
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int choice = scanner.nextInt();
+		
+		arr[choice] = 1000;
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("arr[" + i + "] = " + arr[i]);
+		}
+	}
+}

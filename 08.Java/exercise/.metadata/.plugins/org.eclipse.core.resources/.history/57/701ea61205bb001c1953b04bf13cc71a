@@ -1,0 +1,13 @@
+package ex_07;
+
+public class Customers {
+	String name;
+	String number;
+	
+	public void draw() {
+		System.out.println("여러분은 동성쇼핑몰 고객입니다.");
+	}
+	public void takePicture() {
+		System.out.println("사진을 찍습니다.");
+	}
+}

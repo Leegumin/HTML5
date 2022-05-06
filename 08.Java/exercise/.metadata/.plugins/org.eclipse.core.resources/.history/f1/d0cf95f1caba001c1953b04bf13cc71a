@@ -1,0 +1,14 @@
+package ex_06;
+
+public class MyType {
+	int a;
+	int b;
+	int c;
+	
+	MyType() {
+		a = 100;
+		b = 200;
+		c = 300;
+	}
+	MyType
+}

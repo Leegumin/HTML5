@@ -1,0 +1,22 @@
+package ex_06;
+
+public class Student {
+	String name;
+	int hakbun;
+	int kor;
+	int eng;
+	int math;
+
+	Student() {
+	}
+
+	Student(String name, int hakbun, int kor, int eng, int math) {
+		
+	}
+
+	int sum() {
+		int result = 0;
+		result = kor+eng+math;
+		return result;
+	}
+}

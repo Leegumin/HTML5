@@ -1,0 +1,28 @@
+package ex_07;
+
+public class ex_07_04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/* VIP, Gold, Silver */
+		/*속성 : 고객ID*/
+			  /*고객이름*/
+			 /* 고객등급 */
+		/*기능 : draw() - 여러분은 동성쇼핑몰 고객입니다*/
+		/*      show() - 고객ID, 고객이름, 고객등급 출력 */
+		/* 위의 고객들을 생성하고 기능을 출력하세요 */
+		
+		Customers_a Kim = new Customers_a("KimSsi", "김씨", "VIP");
+		Kim.draw();
+		Kim.show();
+		
+		Customers_b Lee = new Customers_a("LeeSsi", "이씨", "Gold");
+		Kim.draw();
+		Kim.show();
+		
+		Customers_c Jang = new Customers_a("JangSsi", "장씨", "Silver");
+		Kim.draw();
+		Kim.show();
+	}
+
+}

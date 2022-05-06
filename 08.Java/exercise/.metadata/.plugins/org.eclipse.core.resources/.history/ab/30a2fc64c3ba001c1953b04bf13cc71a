@@ -1,0 +1,28 @@
+package ex_06;
+
+class Car {
+	/* 색상 */
+	String color;
+	/* 변속기 종류 - auto, manual */
+	String gearType;
+	/* 문 개수 */
+	int door;
+	
+	/* 매개변수 없는 생성자 추가 -> 매개변수가 있는 생성자를 작동해주기 위해 필요함 */
+	Car(){}
+	
+	Car(String c, String g, int d) {
+		color = c;
+		gearType = g;
+		door = d;
+	}
+}
+
+public class Ex06_12 {
+	public static void main(String[] args) {
+		Car c1 = new Car();
+		c1.color = "white";
+		c1.gearType = "auto";
+		c1.door = 4;
+	}
+}

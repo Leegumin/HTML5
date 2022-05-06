@@ -1,0 +1,15 @@
+package 기초연습문제_선생님.문제_04;
+
+public class 문제4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = { 10, 20, 30, 50, 3, 60, -3 };
+		
+		// 전통적 방법의 for문
+		for (int i = 0; i < arr.length; i++) {
+			sum += arr[i];
+		}
+	}
+
+}

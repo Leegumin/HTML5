@@ -1,0 +1,46 @@
+package 기초연습문제_선생님.DTO.예제_05_상속_interface;
+
+public class BoardServiceImpl implements BoardService {
+
+	@Override
+	public void registerBoard(String params) {
+		System.out.println();
+	}
+
+	@Override
+	public void registerBoard(String params, String files) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getBoardDetail(Long idx) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteBoard(Long idx) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getBoardList(String params) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getAttachFileList(Long boardIdx) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getAttachDetail(Long idx) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

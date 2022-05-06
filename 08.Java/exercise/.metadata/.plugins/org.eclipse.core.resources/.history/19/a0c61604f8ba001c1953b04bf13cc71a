@@ -1,0 +1,7 @@
+package ex_07;
+
+public class Iphone {
+	String os;
+	String numbers;
+	String battery;
+}

@@ -1,0 +1,27 @@
+package Chapter_05_배열.예제.예제_04_배열활용_섞기;
+
+import java.util.Arrays;
+
+public class 섞기 {
+	public static void main(String args[]) {
+		/* numArr 배열 선언 */
+		int[] numArr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		System.out.println(Arrays.toString(numArr));
+
+		
+		for (int i = 0; i < 100; i++) {
+			/* 변수 n은 0~9까지의 랜덤한 숫자 */
+			int n = (int) (Math.random() * 10);
+			/* 기존 numArr 배열의 인덱스넘버[0]의 값을 tmp 변수로 저장 */
+			int tmp = numArr[0];
+			/* numArr[n] -> 즉 0~9까지 랜덤하게 생성된 숫자가 인덱스 번호로 들어가면서 numArr[0] 자리에 들어감*/
+			numArr[0] = numArr[n];
+			/* numArr[n]값은 numArr[0]의 값인 0이 들어감 */
+			numArr[n] = tmp;
+			/* 이럴 경우 최종값은 n이 3이라 가정했을 경우*/
+			/* numArr[0]은 numArr[3]의 값인 3으로 대체 -> numArr[0] = 3 */
+			/* 이 상태에서 다시 처음으로 돌아가 반복되는 것임 */
+		}
+		System.out.println(Arrays.toString(numArr));
+	}
+}

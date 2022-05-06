@@ -1,0 +1,11 @@
+package ex_06;
+
+public class Person {
+	String name;
+	int height;
+	int weight;
+	
+	Person(String a, int b, int c){
+		name = a;
+	}
+}

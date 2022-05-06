@@ -1,0 +1,30 @@
+package Chapter_06_객체지향프로그래밍.예제.예제_01_객체의생성과사용;
+
+public class 객체생성사용방법 {
+	public static void main(String args[]) {
+		/* Tv인스턴스(객체)를 참조하기 위한 변수 t를 선언 */
+		Tv t;
+		/* Tv인스턴스(객체) 생성 */
+		t = new Tv();
+		/* Tv인스턴스(객체)의 멤버변수 channel의 값을 7로 함 */
+		t.channel = 7;
+		/* Tv인스턴스(객체) 메서드 channelDown()을 호출 */
+		t.channelDown();
+		System.out.println("현재 채널은 " + t.channel + " 입니다.");
+	}
+}
+
+class Tv {
+	/* Tv의 속성(멤버변수) */
+	/* 색상 */
+	String color;
+	/* 전원상태(on/off) */
+	boolean power;
+	/* 채널 */
+	int channel;
+	
+	/* Tv의 기능(메서드) */
+	void power() { power = !power; }
+	void channelUp() { ++channel; }
+	void channelDown() { --channel; }
+}

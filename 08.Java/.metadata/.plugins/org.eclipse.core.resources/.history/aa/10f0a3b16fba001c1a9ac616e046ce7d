@@ -1,0 +1,25 @@
+package ex_04;
+
+public class Ex4_19 {
+	public static void main(String args[]) {
+		Loop1: for (int i = 2; i <= 9; i++) {
+			for (int j = 1; j <= 9; j++) {
+				if (j == 5)
+					/* if (j == 5) 조건이 만족되는 순간 Loop1을 멈춤 -> 2단 에서 정지 */
+//					break Loop1;
+					/* 조건이 만족되는 순간 바로 위의 for문을 멈춤 -> 1~9단까지 */
+					/* if (j == 5)가 되는 순간 멈춤   */
+//					break;
+					/* if (j == 5) 조건이 만족되는 순간 Loop1로 돌아가기 때문에 */
+					/* 각 단수의 4까지 출력, 쓸 일은 거의 없다고 보면됨 */
+					continue Loop1;
+					/* 각 단수의 5값을 제외 */
+					/* continue는 if가 걸렸을 경우 해당 조건이 실행되면 continue 밑으로 실행을 시키지 않고*/
+					/* 다음 반복문으로 넘어가는 역할을 함*/
+//					continue;
+				System.out.println(i + "*" + j + "=" + i * j);
+			}
+			System.out.println();
+		}
+	}
+}

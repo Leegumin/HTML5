@@ -1,0 +1,15 @@
+package ex_07;
+
+public class ex_07_02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Dslr dslr = new Dslr();
+		FilmCamera filmCamera = new FilmCamera();
+		
+		dslr.takePicture();
+		filmCamera.takePicture();
+	}
+
+}

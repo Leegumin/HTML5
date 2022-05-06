@@ -1,0 +1,15 @@
+package ex_03;
+
+public class Ex3_11 {
+	public static void main(String args[]) {
+		double pi = 3.141592;
+		double shortPi = Math.round(pi * 1000) / 1000.0;
+
+		/* pi * 1000 = 3141.592 이나 Math.round에서 round는 소수점 첫째 자리에서 반올림을 실행하여 3142가 됨 */
+		System.out.println(Math.round(pi * 1000));
+		/* Math.round값은 int로 들어오기 때문에 1000(int)로 나누면 int 값이 나옴 */
+		System.out.println(Math.round(pi * 1000) / 1000);
+		/* double 값인 1000.0으로 나누면 double 값이 나옴 */
+		System.out.println(Math.round(pi * 1000) / 1000.0);
+	}
+}

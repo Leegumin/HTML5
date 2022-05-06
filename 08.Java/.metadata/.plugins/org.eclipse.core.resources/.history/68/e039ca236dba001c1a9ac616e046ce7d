@@ -1,0 +1,11 @@
+package ex;
+
+public class Ex3_13 {
+	public static void main(String args[]) {
+		/* 나누는 수는 무조건 절대값으로 작용함 */
+		System.out.println(-10 % 8);
+		System.out.println(10 % -8);
+		System.out.println(-10 % -8);
+
+	}
+}

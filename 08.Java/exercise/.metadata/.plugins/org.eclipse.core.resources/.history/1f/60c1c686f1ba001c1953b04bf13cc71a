@@ -1,0 +1,10 @@
+package ex_06;
+
+public class Ex06_teacherTest_12 {
+	public static void main(String[] args) {
+		CarFactory sonata = new CarFactory (1, "sonata");
+		CarFactory avante = new CarFactory (2, "avante");
+		CarFactory santafe = new CarFactory (3, "santafe");
+		
+	}
+}

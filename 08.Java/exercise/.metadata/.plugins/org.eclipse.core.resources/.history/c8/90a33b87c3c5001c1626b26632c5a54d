@@ -1,0 +1,6 @@
+package 기초연습문제_선생님.DTO.예제_07_상속_interface;
+
+public class CartServiceImpl implements CartService {
+
+
+}

@@ -1,0 +1,44 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_02;
+
+public class BookServiceImpl implements BookService {
+
+	@Override
+	public void getGoodsList(String cri) {
+		System.out.println("상품 검색");
+	}
+
+	@Override
+	public void goodsGetTotal(String cri) {
+		System.out.println("상품 총 개수");
+	}
+
+	@Override
+	public void getCateCode1() {
+		System.out.println("국내 카테고리 리스트");
+	}
+
+	@Override
+	public void getCateCode2() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getGoodsInfo(int bookId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getBookIdName(int bookId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void authorEnroll(String author) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

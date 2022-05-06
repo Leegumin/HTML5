@@ -1,0 +1,12 @@
+package ex_06;
+
+public class MyType {
+	int kor1
+	int kor2
+	int kor3
+	
+	MyType() {
+	}
+	MyType() {
+	}
+}

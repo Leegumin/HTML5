@@ -1,0 +1,10 @@
+// 실행방법 디버그 -> 디버그컨피그레이션 -> 쇼 커맨드라인 -> 클래스패스 복사
+경로 앞에 java -cp 붙이기
+cmd창 2개 필요함
+
+java -cp "D:\work\01_HTML5\08.Java\exercise\Ex\bin" Chapter_16_네트워킹.예제_선생님.예제_01.SocketServer
+java -cp "D:\work\01_HTML5\08.Java\exercise\Ex\bin" Chapter_16_네트워킹.예제_선생님.예제_02.SocketClient
+ex)
+java -cp "D:\work\01_HTML5\08.Java\exercise\Ex\bin" Chapter_16_네트워킹.예제.예제_06_TCP소켓프로그래밍.TcpIpClient
+java -cp "D:\work\01_HTML5\08.Java\exercise\Ex\bin" Chapter_16_네트워킹.예제.예제_06_TCP소켓프로그래밍.TcpIpServer
+

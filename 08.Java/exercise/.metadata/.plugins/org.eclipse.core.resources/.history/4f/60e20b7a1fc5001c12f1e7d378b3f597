@@ -1,0 +1,8 @@
+package 기초연습문제_선생님.DTO.예제_05_상속_interface;
+
+public interface BoardService {
+	public boolean registerBoard(BoardDTO params);
+	public boolean registerBoard(BoardDTO params, MultipartFile[] files);
+	public BoardDTO getBoardDetail(Long idx);
+	public boolean deleteBoard(Long idx);
+}

@@ -1,0 +1,29 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_02;
+
+public class MemberServiceImpl implements MemberService {
+
+	@Override
+	public void memberJoin(String member) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void idCheck(String memberId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void memberLogin(String member) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getMemberInfo(String memberId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

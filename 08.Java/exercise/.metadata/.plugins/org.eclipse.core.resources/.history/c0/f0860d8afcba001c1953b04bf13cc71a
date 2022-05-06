@@ -1,0 +1,9 @@
+package ex_07;
+
+public class FilmCamera {
+	String grapicExtra;
+	
+	public void smallPicture() {
+		System.out.println("득소 화질로 찍습니다.");
+	}
+}

@@ -1,0 +1,24 @@
+package Chapter_04_조건문반복문.예제.예제_14_while;
+
+import java.util.Scanner;
+
+public class while문 {
+	public static void main(String args[]) {
+		int num = 0, sum = 0;
+		System.out.println("숫자를 입력하세요(예:12345).>");
+
+		Scanner scanner = new Scanner(System.in);
+		String tmp = scanner.nextLine();
+		num = Integer.parseInt(tmp);
+
+		while (num != 0) {
+			/* num%10 -> 12345 중 10으로 나누고 나머지 값인 '5'가 sum에 더해짐*/
+			sum += num%10;
+			System.out.printf("sum=%3d num=%d%n", sum, num);
+			
+			/* num의 나머지를 제외한 몫만을 num에 다시 저장 12345 -> 1234*/
+			num /= 10;
+		}
+		System.out.println("각 자리수의 합:" + sum);
+	}
+}

@@ -1,0 +1,12 @@
+package ex_06;
+
+public class Ex06_teacherTest_05 {
+	public static void main(String[] args) {
+		MyType kor1 = new MyType();
+		MyType kor2 = new MyType(300, 200, 100);
+		
+		System.out.println("a = " + kor1.a);
+		System.out.println("b = " + kor1.b);
+		System.out.println("c = " + kor1.c);
+	}
+}

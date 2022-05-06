@@ -1,0 +1,15 @@
+package ex_02;
+
+public class Ex3_4 {
+	public static void main(String args[]) {
+		int i = -10;
+		
+		/* +는 작동하는게 거의 없음 => 쓸모 거의 없음 */
+		i = +i;
+		System.out.println(i);
+		
+		i = -10;
+		i = -i;
+		System.out.println(i);
+	}
+}

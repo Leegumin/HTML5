@@ -1,0 +1,12 @@
+package ex_06;
+
+class Ex06_15 {
+	static int[] arr = new int[10];
+	public static void main(String[] args) {
+		System.out.println("Ex06_14 bt = new Ex06_14(); ");
+		Ex06_15 bt = new Ex06_15();
+		
+		System.out.println("Ex06_14 bt2 = Ex06_14(); ");
+		Ex06_15 bt2 = new Ex06_15();
+	}
+}

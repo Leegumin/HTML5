@@ -1,0 +1,9 @@
+package ex_06;
+
+public class Ex06_teacherTest_11 {
+	public static void main(String[] args) {
+		Employee hong = new Employee ("skcc12345", "홍길동", 2_000_000_000);
+		Employee lee = new Employee ("skcc156789", "이순신", 2_000_000_000);
+		
+	}
+}

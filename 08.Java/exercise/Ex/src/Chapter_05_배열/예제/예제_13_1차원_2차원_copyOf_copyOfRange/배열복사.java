@@ -1,0 +1,27 @@
+package Chapter_05_배열.예제.예제_13_1차원_2차원_copyOf_copyOfRange;
+
+import java.util.Arrays;
+
+public class 배열복사 {
+	public static void main(String args[]) {
+		
+		/* copyOf는 배열 전체를 복사 */
+		/* copyOf의 범위는 length */
+		int[] arr = { 0, 1, 2, 3, 4 };
+		int[] arr2 = Arrays.copyOf(arr, arr.length);
+		int[] arr3 = Arrays.copyOf(arr, 3);
+		int[] arr4 = Arrays.copyOf(arr, 7);
+		/* copyOfRange는 배열 일부를 복사 */
+		/* copyOfRange의 범위는 index */
+		/* copyOfRange에 지정된 범위의 끝은 포함되지 않음 */
+		int[] arr5 = Arrays.copyOfRange(arr, 2, 4);
+		int[] arr6 = Arrays.copyOfRange(arr, 0, 7);
+		
+		System.out.println("arr  = " + Arrays.toString(arr));
+		System.out.println("arr2 = " + Arrays.toString(arr2));
+		System.out.println("arr3 = " + Arrays.toString(arr3));
+		System.out.println("arr4 = " + Arrays.toString(arr4));
+		System.out.println("arr5 = " + Arrays.toString(arr5));
+		System.out.println("arr6 = " + Arrays.toString(arr6));
+	}
+}

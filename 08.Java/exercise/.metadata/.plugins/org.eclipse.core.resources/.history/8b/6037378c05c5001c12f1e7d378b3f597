@@ -1,0 +1,20 @@
+package 기초연습문제_선생님.DTO.예제_02;
+
+public class DTOTest {
+
+	public static void main(String[] args) {
+		BoardDTO board = new BoardDTO();
+		board.setIdx(0);
+
+		common.info();
+
+		AttachDTO comment = new AttachDTO();
+		comment.setIdx(1);
+		comment.setBoardIdx(1);
+		comment.setContent("게시판 내용");
+		comment.setWriter("글쓴이");
+
+		comment.info();
+	}
+
+}

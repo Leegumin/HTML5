@@ -1,0 +1,12 @@
+package ex_07;
+
+public class Customers_b extends Customers{
+
+	Customers_a() {
+	}
+	Customers_a(String id, String name, String grade) {
+		this.id = id;
+		this.name = name;
+		this.grade = grade;
+	}
+}

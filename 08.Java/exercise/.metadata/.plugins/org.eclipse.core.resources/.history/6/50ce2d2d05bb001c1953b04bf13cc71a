@@ -1,0 +1,15 @@
+package ex_07;
+
+public class Customers {
+	String name;
+	String number;
+	
+	public void draw() {
+		System.out.println("여러분은 동성쇼핑몰 고객입니다.");
+	}
+	public void show() {
+		System.out.println(id);
+		System.out.println(name);
+		System.out.println(grade);
+	}
+}

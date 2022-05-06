@@ -1,0 +1,12 @@
+-자바 https://www.java.com/ko/download/
+https://www.oracle.com/java/technologies/downloads/#jdk18-windows
+https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
+
+코드업에서 자바 언어 먹힘
+-> 코드업에서 연습해볼것
+
+
+-자바 api https://docs.oracle.com/javase/8/docs/api/
+
+Intellij IDEA (상용은 유료)
+이클립스 -> Eclipse IDE for Java Developers

@@ -1,0 +1,8 @@
+package ex_06;
+
+public class Ex06_teacherTest_10 {
+	public static void main(String[] args) {
+		/* 홍길동이 통장을 개설했다 */
+		JBank hong = new JBank("홍길동", 12500);
+	}
+}

@@ -1,0 +1,27 @@
+package 기초연습문제_선생님.DTO.예제_02;
+
+public class DTOTest {
+
+	public static void main(String[] args) {
+		BoardDTO board = new BoardDTO();
+		board.setIdx(1);
+		board.setTitle("애린왕자");
+		board.setContent("오후 4시에 니가 온다카믄 내는 3시부터 행복할끼라");
+		board.setWriter("");
+		board.setNoticeYn(0);
+		board.setSecretYn(0);
+		board.setChangeYn(0);
+		board.setFileIdxs(0);
+
+		board.info();
+
+		AttachDTO comment = new AttachDTO();
+		comment.setIdx(1);
+		comment.setBoardIdx(1);
+		comment.setContent("게시판 내용");
+		comment.setWriter("글쓴이");
+
+		comment.info();
+	}
+
+}

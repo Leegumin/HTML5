@@ -1,0 +1,15 @@
+package ex_06;
+
+public class Ex06_11 {
+	class Data_1 {
+		int vaule;
+	}
+	
+	class Data_2 {
+		int value;
+		
+		Data_2(int x) {
+			value = x;
+		}
+	}
+}

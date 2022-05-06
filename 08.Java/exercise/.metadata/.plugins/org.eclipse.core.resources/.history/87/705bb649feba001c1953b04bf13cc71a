@@ -1,0 +1,11 @@
+package ex_07;
+
+public class StarCraft {
+	String height;
+	String weight;
+	
+	public void working() {
+		
+	}
+}
+

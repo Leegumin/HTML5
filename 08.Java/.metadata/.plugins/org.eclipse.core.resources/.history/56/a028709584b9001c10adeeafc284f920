@@ -1,0 +1,32 @@
+package Main;
+
+import java.util.Scanner;
+
+public class ex_1414 {
+
+	public static void main(String args[]) {
+
+		Scanner scn = new Scanner(System.in);
+		String[] str = scn.nextLine().split("");
+		int countC = 0;
+		int countCC = 0;
+
+		for (int i = 0; i < str.length; i++) {
+
+			if (str[i].equals("c")) {
+				countC++;
+			}
+//			if (i != str.length - 1) {
+//				if (str[i].equals("c") && str[i + 1].equals("c")) {
+//					countCC++;
+//				}
+			if (i != str.length - 1) {
+				if ((str[i]+str[i+1]).equalsIgnoreCase("cc")) {
+					countCC++;
+				}
+			}
+		}
+		System.out.println("C: " + countC);
+		System.out.println("CC: " + countCC);
+	}
+}

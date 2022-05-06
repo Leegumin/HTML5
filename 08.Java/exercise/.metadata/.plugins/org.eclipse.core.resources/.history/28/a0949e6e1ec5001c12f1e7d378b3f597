@@ -1,0 +1,24 @@
+package 기초연습문제_선생님.DTO.예제_04_상속;
+
+public class PersonDTO {
+	int age; // 나이
+	String name; // 이름
+	int height; // 키
+	int weight; // 몸무게
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+	
+	void info() {
+		System.out.println("age : " + age);
+		System.out.println("name : " + name);
+		System.out.println("height : " + height);
+		System.out.println("weight : " + weight);
+	}
+
+}

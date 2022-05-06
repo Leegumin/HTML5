@@ -1,0 +1,43 @@
+package 기초연습문제_선생님.DTO.예제_05_상속_interface;
+
+import java.util.List;
+
+public class BoardServiceImpl implements BoardService {
+
+	@Override
+	public boolean registerBoard() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public BoardDTO getBoardDetail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteBoard() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<BoardDTO> getBoardList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AttachDTO> getAttachFileList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AttachDTO getAttachDetail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

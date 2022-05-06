@@ -1,0 +1,20 @@
+package 기초연습문제_선생님.DTO.예제_04_상속_extends;
+
+public class TEST {
+
+	public static void main(String[] args) {
+		System.out.println("== Student ==");
+		StudentDTO student = new StudentDTO();
+		
+		student.setStudent();
+		student.info();
+		
+
+		System.out.println("== Staff ==");
+		StaffDTO staff = new StaffDTO();
+		
+		staff.setStaff();
+		staff.info();
+	}
+
+}

@@ -1,0 +1,11 @@
+package ex_06;
+
+public class Ex06_14 {
+	static {
+		System.out.println("static { }");
+	}
+	{System.out.println("{ }");}
+	public static void main(String[] args) {
+
+	}
+}

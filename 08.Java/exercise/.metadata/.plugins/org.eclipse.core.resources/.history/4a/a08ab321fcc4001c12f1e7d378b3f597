@@ -1,0 +1,13 @@
+package 기초연습문제_선생님.CommonDTO;
+
+public class CommonDTO {
+	private String paginationInfo; // 페이지 정보
+	private String deleteYn; // 삭제 여부
+	private String insertTime; // 등록일
+	private String updateTime; // 수정일
+	private String deleteTime; // 삭제일
+	private int idx; // 글번호
+	private int boardidx; // 게시판id
+	private String deleteTime; // 게시판내용
+	private String deleteTime; // 글쓴이
+}

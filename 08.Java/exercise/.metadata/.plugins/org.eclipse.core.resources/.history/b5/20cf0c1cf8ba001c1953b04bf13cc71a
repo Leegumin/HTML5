@@ -1,0 +1,15 @@
+package ex_07;
+
+public class Iphone {
+	String os;
+	String numbers;
+	String battery;
+	
+	public void call() {
+		System.out.println("전화걸기");
+	}
+	
+	public void sms() {
+		System.out.println("전화걸기");
+	}
+}

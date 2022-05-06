@@ -1,0 +1,8 @@
+package ex_02;
+
+public class Snippet {
+	public static void main(String[] args) {
+		ex_02_12
+	}
+}
+

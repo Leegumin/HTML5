@@ -1,0 +1,15 @@
+package ex_03;
+
+public class ex_03_11 {
+	public static void main(String args[]) {
+		double pie = 3.141592;
+		double money = 4424.243423;
+
+		/* .2f -> 소수점 2자리수까지 실수 표기 */
+		System.out.println(String.format("%.2f", pie));
+		/* .3f -> 소수점 3자리수까지 실수 표기 */
+		System.out.println(String.format("%.3f", pie));
+		/* .3f -> 소수점 3자리수까지 실수 표기 */
+		System.out.println(String.format("%.3f", money));
+	}
+}

@@ -1,0 +1,7 @@
+package ex_07;
+
+public class Customers_a extends Customers{
+
+	Customers_a() {
+	}
+}

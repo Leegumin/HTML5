@@ -1,0 +1,12 @@
+package ex_02;
+
+public class Ex3_1 {
+	public static void main(String args[]) {
+		int x, y;
+		
+		/* y에 3이 저장된 후에 x에 3이 저장됨 */
+		x = y = 3;
+		System.out.println("x= " + x);
+		System.out.println("y= " + y);
+	}
+}

@@ -1,0 +1,13 @@
+package 기초연습문제_선생님.DTO.예제_03_상속;
+
+public class ColorPointDTO extends Point {
+	private String color; // 컬러 색상
+
+	@Override
+	public void showPoint() {
+		// TODO Auto-generated method stub
+		super.showPoint();
+	}
+	
+	
+}

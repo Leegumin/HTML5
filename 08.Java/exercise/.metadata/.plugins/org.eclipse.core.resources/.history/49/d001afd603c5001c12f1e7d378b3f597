@@ -1,0 +1,24 @@
+package 기초연습문제_선생님.DTOcopy;
+
+public class CommonDTOTest {
+
+	public static void main(String[] args) {
+		CommonDTO common = new CommonDTO();
+		common.setPaginationInfo("페이지 정보");
+		common.setDeleteYn(true);
+		common.setInsertTime("등록일");
+		common.setUpdateTime("수정일");
+		common.setDeleteTime("2022-04-26 10:48");
+
+		common.info();
+
+		CommentDTO comment = new CommentDTO();
+		comment.setIdx(1);
+		comment.setBoardIdx(1);
+		comment.setContent("게시판 내용");
+		comment.setWriter("글쓴이");
+
+		comment.info();
+	}
+
+}

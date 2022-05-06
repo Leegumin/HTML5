@@ -1,0 +1,13 @@
+package ex_07;
+
+public class CustomerTest extends phone {
+	String battery;
+	
+	public void call() {
+		System.out.println("전화걸기");
+	}
+	
+	public void sms() {
+		System.out.println("문자보내기");
+	}
+}

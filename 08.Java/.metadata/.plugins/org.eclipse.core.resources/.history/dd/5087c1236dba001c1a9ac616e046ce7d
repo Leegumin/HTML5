@@ -1,0 +1,23 @@
+package ex;
+
+class Data {
+	int x;
+}
+
+public class Ex06_06 {
+	public static void main(String[] args) {
+		Data d = new Data();
+		d.x = 10;
+		System.out.println("main() : x = " + d.x);
+
+		/* static의 change 메서드를 호출 */
+		change(d.x);
+		System.out.println("After change(d.x)");
+		System.out.println("main() : x = " + d.x);
+	}
+
+	static void change(int x) {
+		x = 1000;
+		System.out.println("change() : x = " + x);
+	}
+}

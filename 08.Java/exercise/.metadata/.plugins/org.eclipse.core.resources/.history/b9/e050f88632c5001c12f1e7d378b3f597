@@ -1,0 +1,17 @@
+package 기초연습문제_선생님.기초연습문제.문제_07;
+
+import java.util.Arrays;
+
+public class 문제7_다른방법 {
+
+	public static void main(String[] args) {
+		
+		int[] arr = { 10, 20, 30, 50, 3, 60, -3 };
+		
+		int max = arr[0];
+		int min = arr[0];
+		
+		System.out.println("최소 : " + arr[0]);
+		System.out.println("최대 : " + arr[arr.length-1]);
+	}
+}

@@ -1,0 +1,11 @@
+package ex_06;
+
+public class Employee {
+	String id;
+	String name;
+	int money;
+	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+}

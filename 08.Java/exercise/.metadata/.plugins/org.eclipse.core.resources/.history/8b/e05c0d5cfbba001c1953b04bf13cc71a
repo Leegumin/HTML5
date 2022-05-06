@@ -1,0 +1,9 @@
+package ex_07;
+
+public class Dslr {
+	String grapic;
+	
+	public void extraPicture() {
+		System.out.println("득대 화질로 찍습니다.");
+	}
+}

@@ -1,0 +1,17 @@
+package 기초연습문제_선생님.기초연습문제.문제_04;
+
+public class 문제4 {
+
+	public static void main(String[] args) {
+		int[] arr = { 10, 20, 30, 50, 3, 60, -3 };
+
+		// 전통적 방법의 for문
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == arr[3]) {
+				continue;
+			}
+			System.out.println("arr[" + i + "] = " + arr[i]);
+		}
+	}
+
+}

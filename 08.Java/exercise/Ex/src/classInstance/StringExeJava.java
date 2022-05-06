@@ -1,0 +1,150 @@
+package classInstance;
+
+public class StringExeJava {
+	public static void main(String args[]) {
+		/* 자바 String 유용한 메소드 정리 */
+
+		/* 1 */
+		/* substring : 문자열 자르기 */
+		/* substring(int end) : end까지 문자열을 자름 */
+		/* substring(int start, int end) : start부터 end까지 문자열을 자름 */
+		/* return값 : 잘린 문자열 */
+
+		String tmp_str = "abcdefgh";
+		/* end는 포함되지 않음 */
+		String substring1 = tmp_str.substring(5);
+		String substring2 = tmp_str.substring(1, 4);
+
+		System.out.println("substring1 = " + substring1);
+		System.out.println("substring2 = " + substring2);
+
+		/* 2 */
+		/* length : 문자열의 길이 구하기 */
+		/* 사용법 : length() */
+		/* return값 : 정수, 문자열 길이 */
+
+		String string1 = "java";
+		String string2 = "메소드 설명";
+
+		System.out.println("string1.length() = " + string1.length());
+		System.out.println("string2.length() = " + string2.length());
+
+		/* 3 */
+		/* split : 문자열 나누기 */
+		/* String[] split(String divider) -> split으로 문자열을 나누면 반환값 String[](배열로 나옴) */
+		/* int split(String divider) -> split으로 문자열을 나누면 반환값 int(정수로 나옴) */
+		/* 함수설명 : 문자열을 자를 분리자로 나눠서 문자열 배열에 담아서 반환함 */
+		/* 1st 매개변수 : 분리자 */
+		/* return 값 : 분리자로 잘린 문자열 배열 */
+
+		String str_num = "123^4567^890";
+		String[] arr_split = str_num.split("\\^");
+
+		System.out.println("arr_split[0] = " + arr_split[0]);
+		System.out.println("arr_split[1] = " + arr_split[1]);
+		System.out.println("arr_split[2] = " + arr_split[2]);
+
+		/* 4 */
+		/* equals : 문자열 일치 여부 검사 */
+		/* boolean equals(Object obj) */
+		/* 1st 매개변수 : 문자열 객체가 들어옴 */
+		/* return 값 : 일치하면 참(true), 틀리면 거짓(false) */
+		String s = "Hello Java";
+		boolean c1 = s.equals("Hello Java");
+		boolean c2 = s.equals("hello Java");
+
+		/* 문자열 비교는 ==를 쓰지말고 무조건 equals를 사용 */
+		System.out.println("c1 = " + c1);
+		System.out.println("c2 = " + c2);
+
+		/* 5 */
+		/* contains : 문자열에 포함된 문자가 있는지 검사 */
+		/* boolean conatain(문자열) */
+		/* 1st 매개변수 : 검사할 문자열 */
+		/* return 값 : 검사한 문자열이 있으면 true(참), 없으면 false(거짓) */
+
+		String str = "abcdefg";
+		boolean a1 = str.contains("efg");
+		boolean a2 = str.contains("xy");
+
+		System.out.println("a1 = " + a1);
+		System.out.println("a2 = " + a2);
+
+		/* 6 */
+		/* startWith, endsWith : 문자열 시작 또는 끝 부분에 일치하는 문자열이 있는지 검사 */
+		/* boolean startWith(String s) : 문자열 s로 시작하는지 검사(맞으면 true(참), 틀리면 false(거짓) */
+		/* boolean endsWith(String s) : 문자열 s로 끝나는지 검사(맞으면 true(참), 틀리면 false(거짓) */
+		String string_With = "http://www.naver.com";
+		boolean b1 = string_With.startsWith("http");
+		boolean b2 = string_With.endsWith("co.kr");
+
+		System.out.println("b1 = " + b1);
+		System.out.println("b2 = " + b2);
+
+		/* 7 */
+		/* replace : 문자열을 임의의 문자열로 바꾸기 */
+		/* String replace(원본 문자열, 바꿀 문자열) */
+		/* return 값 : 바꾸어진 문자열 */
+		String tmpStr = "ABCDEF";
+
+		String replace = tmpStr.replace("DE", "XX");
+
+		System.out.println("replace = " + replace);
+
+		/* 8 */
+		/* trim : 문자열 좌우의 공백 없애기 */
+		/* String trim() */
+		/* return 값 : 문자열 처음과 끝의 공백을 제거한 문자열 */
+
+		String tmp_Str = "  Hello Java Test        ";
+		System.out.println("tmp_Str = " + tmp_Str);
+
+		String trim = tmp_Str.trim();
+		System.out.println("trim = " + trim);
+
+		/* 9 */
+		/* toLowerCase : 문자열의 대문자를 소문자로 바꾸기 */
+		/* return 값 : 소문자로 모두 바뀐 문자열 */
+		/* toUpperCase : 문자열의 대문자를 소문자로 바꾸기 */
+		/* return 값 : 대문자로 모두 바뀐 문자열 */
+
+		String tmp_toLowerCase = "Java Programming Test";
+		String toLowerCase = tmp_toLowerCase.toLowerCase();
+
+		System.out.println("toLowerCase = " + toLowerCase);
+
+		String tmp_toUpperCase = "Java Programming Test";
+		String toUpperCase = tmp_toUpperCase.toUpperCase();
+
+		System.out.println("toUpperCase = " + toUpperCase);
+
+		/* 10 */
+		/* charAt() : 문자열에서 매개변수의 index번호에 해당하는 문자 하나를 반환 */
+		/* char charAt(int index) */
+		/* 1st 매개변수 : 문자열 유사배열의 index 번호 */
+		/* return 값 : 문자열 index번호에 해당하는 문자 하나 */
+
+		String tmp_CharAt = "abcdefg";
+
+		char chr = str.charAt(1);
+		char chr2 = str.charAt(str.length() - 1);
+
+		System.out.println("chr = " + chr);
+		System.out.println("chr2 = " + chr2);
+
+		/* 11 */
+		/* indexOf(찾을 문자열) : 문자열 중 찾을 문자열이 나오는 첫 index번호를 반환 */
+		/* int indexOf(String str) */
+		/* 1st 매개변수 : 찾을 문자열 */
+		/* return 값 : 찾은 문자열의 첫번째 index번호 -> 찾은 문자열이 없으면 -1을 반환 */
+
+		String str_indexOf = "abcdefg hi";
+		int index = str_indexOf.indexOf("a");
+		int index2 = str_indexOf.indexOf("hi");
+		int index3 = str_indexOf.indexOf("j");
+
+		System.out.println("index = " + index);
+		System.out.println("index2 = " + index2);
+		System.out.println("index3 = " + index3);
+	}
+}

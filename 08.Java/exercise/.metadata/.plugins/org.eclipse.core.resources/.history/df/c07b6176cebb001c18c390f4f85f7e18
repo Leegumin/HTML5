@@ -1,0 +1,22 @@
+package ex_07;
+
+public class ex_07_12_teacher {
+
+	public static void testAllPhone(Phone_02 p) {
+
+		if (p instanceof Phone_02_IPhone) {
+			((Phone_02_IPhone) p).sms();
+			((Phone_02_IPhone) p).call();
+		} else if (p instanceof Phone_02_Galaxy) {
+			((Phone_02_Galaxy) p).dmb();
+		}
+	}
+
+	public static void main(String[] args) {
+		Phone_02_IPhone p1 = new Phone_02_IPhone();
+		Phone_02_Galaxy p2 = new Phone_02_Galaxy();
+		
+		testAllPhone(p2);
+		testAllPhone(p1);
+	}
+}

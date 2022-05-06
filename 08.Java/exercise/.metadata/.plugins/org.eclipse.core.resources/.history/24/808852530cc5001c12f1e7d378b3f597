@@ -1,0 +1,7 @@
+package 기초연습문제_선생님.DTO.예제_03_상속;
+
+public class BlackPointDTO extends Point {
+	private boolean blackYn;
+	
+	
+}

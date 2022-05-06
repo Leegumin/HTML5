@@ -1,0 +1,15 @@
+package ex_07;
+
+public class Galaxy extends {
+	String os;
+	String numbers;
+	String externalMemory;
+	
+	public void dmb() {
+		System.out.println("tv를 봅니다.");
+	}
+	
+	public void sms() {
+		System.out.println("문자보내기");
+	}
+}

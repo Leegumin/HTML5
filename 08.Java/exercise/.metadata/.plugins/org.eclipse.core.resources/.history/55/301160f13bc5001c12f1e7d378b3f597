@@ -1,0 +1,14 @@
+package 기초연습문제_선생님.DTO.예제_06_상속_extends;
+
+public class Figure {
+	int x;
+	int y;
+	
+	public void draw(String figure) {
+		System.out.println(figure);
+	}
+	
+	public void draw() {
+		System.out.println(figure);
+	}
+}

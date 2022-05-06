@@ -1,0 +1,11 @@
+package ex_06;
+
+public class Sample {
+	int a;
+	int b;
+	int c;
+	
+	Sample(){
+		(10, 20, 30)
+	}
+}

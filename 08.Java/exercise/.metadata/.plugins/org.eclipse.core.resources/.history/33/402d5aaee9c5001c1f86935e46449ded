@@ -1,0 +1,19 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_01;
+
+public class BookDTO {
+	private int bookId;
+	private String bookName;
+	private int authorId; 
+	private String authorName; 
+	private String publeYear; 
+	private String publisher; 
+	private String cateCode; 
+	private String cateName;
+	private bookPrice; int
+	private bookStock; int
+	private bookDiscount; double
+	private bookIntro; String
+	private bookContents; String
+	private regDate; Date
+	private updateDate; Date
+}

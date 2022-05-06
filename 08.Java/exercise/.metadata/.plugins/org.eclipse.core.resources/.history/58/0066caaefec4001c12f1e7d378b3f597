@@ -1,0 +1,50 @@
+package 기초연습문제_선생님.CommonDTO;
+
+public class CommonDTO {
+	private String paginationInfo; // 페이지 정보
+	private String deleteYn; // 삭제 여부
+	private String insertTime; // 등록일
+	private String updateTime; // 수정일
+	private String deleteTime; // 삭제일
+
+	public String getPaginationInfo() {
+		return paginationInfo;
+	}
+
+	public void setPaginationInfo(String paginationInfo) {
+		this.paginationInfo = paginationInfo;
+	}
+
+	public String getDeleteYn() {
+		return deleteYn;
+	}
+
+	public void setDeleteYn(String deleteYn) {
+		this.deleteYn = deleteYn;
+	}
+
+	public String getInsertTime() {
+		return insertTime;
+	}
+
+	public void setInsertTime(String insertTime) {
+		this.insertTime = insertTime;
+	}
+
+	public String getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public String getDeleteTime() {
+		return deleteTime;
+	}
+
+	public void setDeleteTime(String deleteTime) {
+		this.deleteTime = deleteTime;
+	}
+
+}

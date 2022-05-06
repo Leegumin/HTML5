@@ -1,0 +1,13 @@
+package ex_06;
+
+public class Student {
+	String name;
+	int hakbun;
+	int kor;
+	int eng;
+	int math;
+	
+	Student() {
+		
+	}
+}

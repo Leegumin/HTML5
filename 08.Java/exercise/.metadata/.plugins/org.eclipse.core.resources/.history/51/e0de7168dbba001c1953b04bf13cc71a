@@ -1,0 +1,17 @@
+package ex_06;
+
+public class Ex06_teacherTest_09 {
+	public static void main(String[] args) {
+		Book javaBook = new Book();
+
+		/* setter로 값을 저장하고 getter로 출력해 보세요 */
+		/* title = "Java JDK", author = "황기태", ISBN = 3333 */
+		javaBook.setTitle("Java JDK");
+		javaBook.setAuthor("황기태");
+		javaBook.setISBN(3333);
+		
+		System.out.println("title = ", javaBook.getTitle());
+		System.out.println("title = ", javaBook.getAuthor());
+		System.out.println("title = ", javaBook.getISBN());
+	}
+}

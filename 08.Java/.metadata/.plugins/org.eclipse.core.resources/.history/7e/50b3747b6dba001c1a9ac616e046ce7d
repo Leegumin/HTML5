@@ -1,0 +1,15 @@
+package ex_03;
+
+import ex_02.Song;
+
+public class Ex3_test_3 {
+	public static void main(String args[]) {
+		Song song = new Song();
+		
+		String title = "Dancing Queen";
+		String singer = "ABBA";
+		String country = "스웨덴";
+		
+		song.show("Dancing Queen", "ABBA", "스웨덴");
+	}
+}

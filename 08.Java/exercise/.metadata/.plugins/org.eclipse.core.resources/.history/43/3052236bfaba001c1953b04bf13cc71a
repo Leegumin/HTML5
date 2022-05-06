@@ -1,0 +1,6 @@
+package ex_07;
+
+public class Dslr {
+	String os;
+	String numbers;
+}

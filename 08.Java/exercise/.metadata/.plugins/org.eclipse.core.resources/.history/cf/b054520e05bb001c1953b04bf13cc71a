@@ -1,0 +1,10 @@
+package ex_07;
+
+public class Customers {
+	String name;
+	String number;
+	
+	public void takePicture() {
+		System.out.println("사진을 찍습니다.");
+	}
+}

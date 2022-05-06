@@ -1,0 +1,19 @@
+package ex;
+
+public class Ex3_2 {
+	public static void main(String args[]) {
+		int i = 5, j = 0;
+		j = i++;
+		
+		/* i++은 후위형으로 값이 참조된 후에 증가시킴. 즉 j = 5로 참조가 일어난 후에 i++이 작동해서 i = 6이 됨 */
+		System.out.println("j=i++; 실행 후, i=" + i + ", j=" + j);
+
+		i = 5;
+		j = 0;
+
+		/* ++i은 전위형으로 값이 참조되기 전에 증가시킴. 즉 ++i이 작동해서 i = 6이된 후에 j = 6으로 참조가 됨 */
+		j = ++i;
+		System.out.println("j=i++; 실행 후, i=" + i + ", j=" + j);
+
+	}
+}

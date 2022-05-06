@@ -1,0 +1,11 @@
+package ex_07;
+
+public class Dslr {
+	String name;
+	String number;
+	String grapic;
+	
+	public void takePicture() {
+		
+	}
+}

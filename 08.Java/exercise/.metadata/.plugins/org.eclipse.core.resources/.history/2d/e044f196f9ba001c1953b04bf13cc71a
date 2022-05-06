@@ -1,0 +1,16 @@
+package ex_07;
+
+public class ex_07_01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Iphone iphone = new Iphone();
+		Galaxy galaxy = new Galaxy();
+		
+		System.out.println(galaxy.os);
+		System.out.println(galaxy.numbers);
+		galaxy.dmb();
+	}
+
+}

@@ -1,0 +1,48 @@
+package 기초연습문제_선생님.DTO.예제_06;
+
+public class CategoryDto {
+	int idParent;
+	String title;
+	String icon;
+	String description;
+
+	public CategoryDto(int idParent, String title, String icon, String description) {
+		this.idParent = "카테고리 부모 id";
+		this.title = title;
+		this.icon = icon;
+		this.description = description;
+	}
+
+	public int getIdParent() {
+		return idParent;
+	}
+
+	public void setIdParent(int idParent) {
+		this.idParent = idParent;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+}

@@ -1,0 +1,15 @@
+package ex_07;
+
+public class FilmCamera {
+	String name;
+	String number;
+	String grapicExtra;
+	
+	public void takePicture() {
+		System.out.println("사진을 찍습니다.");
+	}
+	
+	public void extraPicture() {
+		System.out.println("득소 화질로 찍습니다.");
+	}
+}

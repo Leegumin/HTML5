@@ -1,0 +1,10 @@
+package ex_06;
+
+public class Ex06_teacherTest_08 {
+	public static void main(String[] args) {
+		Sample aClass = new Sample();
+		
+		/* setter로 값을 저장하고 getter로 출력해 보세요 */
+		/* a = 10, b = 20, c = 30 */
+	}
+}

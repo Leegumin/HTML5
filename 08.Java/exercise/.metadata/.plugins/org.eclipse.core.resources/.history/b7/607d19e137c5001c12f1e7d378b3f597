@@ -1,0 +1,16 @@
+package 기초연습문제_선생님.DTO.예제_06;
+
+public class ProductDto {
+	String name;
+	int price;
+	String description;
+	String imageUrl;
+	String color;
+	int size;
+	int discount;
+	int categoryId;
+	String createTimestamp;
+	String updateTimestamp;
+	int discountPrice;
+
+}

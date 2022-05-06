@@ -1,0 +1,8 @@
+package ex_07;
+
+public class StarCraft_Firebat {
+	Spublic void steamPack () {
+		System.out.println("스팀팩을 썼습니다.");
+	}
+}
+

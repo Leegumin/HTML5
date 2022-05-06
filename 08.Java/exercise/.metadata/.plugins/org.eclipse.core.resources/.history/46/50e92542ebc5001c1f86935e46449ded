@@ -1,0 +1,10 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_02;
+
+public interface AuthorService {
+	"	public void authorGetList(String cri) "
+	"	public void authorGetTotal(String cri) "
+	"	public void authorGetDetail(int authorId) "
+	"	public void authorModify(String author)	"
+	"	public void authorDelete(int authorId)"
+
+}

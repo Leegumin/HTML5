@@ -1,0 +1,18 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_01;
+
+public class OrderDTO {
+	orderId: String
+	addressee: String
+	memberId: String
+	memberAddr1: String
+	memberAddr2: String
+	memberAddr3: String
+	orderState: String
+	orders: String
+	deliveryCost: int
+	usePoint: int
+	orderDate: Date
+	orderSalePrice: int
+	orderSavePoint: int
+	orderFinalSalePrice: int
+}

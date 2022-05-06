@@ -1,0 +1,17 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_01;
+
+public class MemberDTO {
+	private String memberId;
+	private String memberPw;
+	private String memberName;
+	private String memberMail;
+	private String memberAddr1;
+	private String memberAddr2;
+	private String memberAddr3;
+	private int adminCk;
+	private int regDate;
+	private int money;
+	private int point;
+	
+	
+}

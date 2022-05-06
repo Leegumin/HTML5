@@ -1,0 +1,12 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_02;
+
+public interface BookService {
+	"	public void getGoodsList(String cri)"
+	"	public void goodsGetTotal(String cri)"
+	"	public void getCateCode1()"
+	"	public void getCateCode2()"
+	"	public void getGoodsInfo(int bookId)	"
+	"	public void getBookIdName(int bookId)"
+	"	public void authorEnroll(String author) "
+
+}

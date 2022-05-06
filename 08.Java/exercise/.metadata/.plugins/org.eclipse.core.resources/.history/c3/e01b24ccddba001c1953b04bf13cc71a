@@ -1,0 +1,10 @@
+package ex_06;
+
+public class JBank {
+	String name;
+	int money;
+
+	JBank(){
+		
+	}
+}

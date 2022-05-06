@@ -1,0 +1,10 @@
+package ex_06;
+
+public class Person {
+	String name;
+	int height;
+	int weight;
+	
+	Person(){
+	}
+}

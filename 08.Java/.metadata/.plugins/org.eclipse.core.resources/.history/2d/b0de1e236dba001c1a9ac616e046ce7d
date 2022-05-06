@@ -1,0 +1,16 @@
+package ex;
+
+public class Rectangle {
+	int x;
+	int y;
+	int width;
+	int height;
+	
+	public void show() {
+		System.out.println("좌표는 x = " + x + ", y =" + y);
+	}
+
+	public int square() {
+		return width * height;
+	}
+}

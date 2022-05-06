@@ -1,0 +1,8 @@
+package ex_06;
+
+public class Ex06_teacherTest_06 {
+	public static void main(String[] args) {
+		Student student1 = new Student(100, 85, 90);
+		Student student2 = new Student(95, 85, 90);
+	}
+}

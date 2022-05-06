@@ -1,0 +1,19 @@
+package ex_06;
+
+class Car {
+	/* 색상 */
+	String color;
+	/* 변속기 종류 - auto, manual */
+	String gearType;
+	/* 문 개수 */
+	int door;
+	
+	/* 매개변수 없는 생성자 추가 */
+	Car(){}
+	
+}
+
+public class Ex06_12 {
+	public static void main(String[] args) {
+	}
+}

@@ -1,0 +1,23 @@
+package 기초연습문제_선생님.DTO.예제_03_상속;
+
+public class BlackPointDTO extends Point {
+	private boolean blackYn;
+
+	// 컬러 색상, 정의좌표 출력
+	@Override
+	public void showPoint() {
+		System.out.println(blackYn);
+		super.showPoint();
+	}
+
+	// 좌표 설정
+	@Override
+	public void set(int x, int y) {
+		super.set(x, y);
+	}
+
+	// 색상 설정
+	public void setblackYn(boolean color) {
+		this.color = color;
+	}
+}

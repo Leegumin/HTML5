@@ -1,0 +1,33 @@
+package ex_07;
+
+public class ex_07_03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/* 마린 :  */
+		/* 속성 : 키, 몸무게 */
+		/* 기능*/ 
+		/* 걷기 : "걸어가고 있습니다" */
+		/* 총쏘기 : "총쏘기" */
+		/* 스팀팩 : "스팀팩을 썼습니다." */
+		/* 파이어뱃 :  */
+		/* 속성 : 키, 몸무게 */
+		/* 기능 */ 
+		/* 걷기 : "걸어가고 있습니다" */
+		/* 불쏘기 : "총쏘기" */
+		/* 탱크 :  */
+		/* 속성 : 몸무게 */
+		/* 기능 */ 
+		/* 운전 : "움직이고 있습니다" */
+		/* 시즈모드 : "시즈모드로 동작하였습니다." */
+		
+		StarCraft_Marin marin = new StarCraft_Marin();
+		StarCraft_Firebat firebat = new StarCraft_Firebat();
+		StarCraft_Tank tank = new StarCraft_Tank();
+		
+		System.out.println("유닛 : 마린");
+		System.out.printf("속성%n-키 : %s%n-몸무게 : %s%n", marin.height, marin.weight);
+		System.out.printf("속성%n-총쏘기 : %s: %s%n", marin.height, marin.weight);
+	}
+
+}

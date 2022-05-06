@@ -1,0 +1,13 @@
+package 기초연습문제_선생님.기초연습문제.문제_08;
+
+public class 문제8 {
+
+	public static void main(String[] args) {
+
+		// 26개 문자 배열
+		char[] arr = new char[26];
+		for (int i = 65; i <= 90; i++) {
+			System.out.print((char)i + " ");
+		}
+	}
+}

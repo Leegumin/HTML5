@@ -1,0 +1,14 @@
+package ex_06;
+
+public class CarFactory {
+	int carNum;
+	String carName;
+
+	CarFactory() {
+	}
+	
+	CarFactory(int carNum, String carName) {
+		this.carNum = carNum;
+	}
+	
+}

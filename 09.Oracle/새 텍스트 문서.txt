@@ -1,0 +1,25 @@
+*sql 접속
+sqlplus /nolog
+
+* 최고 관리자 접속
+conn /as sysdba
+
+*scott 계정 잠금 해제
+alter user cott account unlock;
+*scott 계정 연결(기본 비번 tiger)
+conn scott/tiger
+*scott 계정 원격접속
+conn scott/tiger@orcl
+
+* view 생성에 대한 모든 권한 부여
+grant create any view to scott;
+
+* view 생성에 대한 모든 권한 취소
+revoke create any view from scott;
+
+* ROLE 권한 부여
+GRANT CONNECT, RESOURCE, DBA TO SCOTT;
+-- SCOTT 유저 권한상승 : 롤(ROLE : 여러 권한들을 모두 모아놓은 것)
+-- CONNECT(접속에 관련된 권한 모음집)
+-- RESOURCE(테이블, 뷰, 프로시저 생성 권한 모음집)
+-- DBA(유저, DB관리 등등 최상위 권한 모음집)

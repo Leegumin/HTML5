@@ -1,0 +1,17 @@
+package 기초연습문제_선생님.DTO.예제_06_상속_extends;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Line line = new Line();
+		line.draw("Line");
+		
+		Circle circle = new Circle();
+		circle.draw("Circle");
+		
+		Circle circle = new Circle();
+		line.draw("Line");
+	}
+
+}

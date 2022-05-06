@@ -1,0 +1,10 @@
+package 기초연습문제_선생님.DTO.예제_04_상속_extends;
+
+public class StudentDTO extends PersonDTO {
+	void setStudent() {
+		age = 30;
+		name = "홍길동";
+		height = 175;
+		setWeight(99);
+	}
+}

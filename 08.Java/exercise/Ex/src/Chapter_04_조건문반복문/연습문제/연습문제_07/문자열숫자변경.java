@@ -1,0 +1,27 @@
+package Chapter_04_조건문반복문.연습문제.연습문제_07;
+
+public class 문자열숫자변경 {
+	public static void main(String args[]) {
+//		숫자로 이루어진 문자열 str이 있을 때, 각 자리의 합을 더한 결과를 출력하는 코드를 완성하라.
+//		만일 문자열이 "12345"라면 '1+2+3+4+5'의 결과인 15를 출력해야 한다.
+//		(1)에 알맞은 코드를 넣으시오
+//		String str = "12345";
+//		int sum = 0;
+//		
+//		for (int i = 0; i < str.length(); i++) {
+//						(1)
+//		}
+//		System.out.println("sum= " + sum);
+//	}
+		String str = "12345";
+		int sum = 0;
+
+		for (int i = 0; i < str.length(); i++) {
+			/* int값으로 들어갈 때 아스키코드 값으로 변환되므로*/
+			/* 해당 인덱스의 아스키코드값 - '0'을 하면 int값으로 동일한 결과가 나옴 */
+			sum += (str.charAt(i)) - '0';
+			System.out.println(sum);
+		}
+		System.out.println("sum= " + sum);
+	}
+}

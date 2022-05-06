@@ -1,0 +1,7 @@
+package ex;
+
+public class Grade {
+	double average(int math, int science, int english) {
+		return (double)(math+science+english)/3;
+	}
+}

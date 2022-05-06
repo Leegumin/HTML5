@@ -1,0 +1,8 @@
+package ex_07;
+
+public class Customers_a extends Customers{
+
+	public Customers_a() {
+		// TODO Auto-generated constructor stub
+	}
+}

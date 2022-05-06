@@ -1,0 +1,8 @@
+package ex_06;
+
+//객체생성 예제
+public class constructExam_01 {
+	public static void main(String[] args) {
+		
+	}
+}

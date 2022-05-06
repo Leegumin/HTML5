@@ -1,0 +1,8 @@
+package ex_07;
+
+public class StarCraft_Firebat {
+	public void fireShot () {
+		System.out.println("불을 쏘고 있습니다.");
+	}
+}
+

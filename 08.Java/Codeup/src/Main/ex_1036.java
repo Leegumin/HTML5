@@ -1,0 +1,18 @@
+package Main;
+
+import java.util.Scanner;
+
+public class ex_1036 {
+
+	public static void main(String args[]) {
+
+		Scanner scn = new Scanner(System.in);
+
+		String str = scn.nextLine();
+
+		int num = str.charAt(0);
+
+		System.out.println(num);
+	}
+
+}

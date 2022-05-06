@@ -1,0 +1,5 @@
+package ex;
+
+public class Singer {
+	String title = "Dancing Queen";
+}

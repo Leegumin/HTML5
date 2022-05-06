@@ -1,0 +1,9 @@
+package Exam_2022_04_27_네트워크프로그래밍구현.Exam_02;
+
+public interface MemberService {
+	"	public void memberJoin(String member) "
+	"	public void idCheck(String memberId)"
+	"	public void memberLogin(String member) "
+	"	public void getMemberInfo(String memberId)"
+
+}

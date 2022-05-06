@@ -1,0 +1,13 @@
+package ex_06;
+
+public class Person {
+	String name;
+	int height;
+	int weight;
+	
+	Person(String name, int height, int weight){
+		this.name = name;
+		this.height = height;
+		this.weight = weight;
+	}
+}

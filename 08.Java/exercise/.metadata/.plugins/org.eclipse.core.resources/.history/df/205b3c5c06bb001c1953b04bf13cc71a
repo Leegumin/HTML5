@@ -1,0 +1,17 @@
+package ex_07;
+
+public class Customers_b extends Customers{
+	String id;
+	String name;
+	String grade;
+
+	public void draw() {
+		System.out.println("여러분은 동성쇼핑몰 고객입니다.");
+	}
+
+	public void show() {
+		System.out.println("아이디 : " + id);
+		System.out.println("이름  : " + name);
+		System.out.println("등급  : " + grade);
+	}
+}

@@ -1,0 +1,31 @@
+package Main;
+
+import java.util.Scanner;
+
+public class ex_1414 {
+
+	public static void main(String args[]) {
+
+		Scanner scn = new Scanner(System.in);
+		String str = scn.nextLine().toLowerCase();
+		int countC = 0;
+		int countCC = 0;
+
+		/*indexOf의 범위를 한칸 한칸 두칸 두칸으로 한정지어줄 필요가 있음*/
+		for (int i = 0; i < str.length(); i++) {
+			String cLetter = str.charAt(i)+"";
+			
+			if (cLetter.equals("c")) {
+				countC++;
+			}
+			
+			String cLetter2 = (str.charAt(i)+str.charAt(i+1))+"";
+			
+			if (cLetter2.equals("cc")) {
+				countCC++;
+			}
+		}
+		System.out.println("C: " + countC);
+		System.out.println("CC: " + countCC);
+	}
+}

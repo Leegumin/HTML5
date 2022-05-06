@@ -1,0 +1,24 @@
+package ex_06;
+
+public class Ex06_11 {
+	public static void main(String[] args) {
+		/* ?´?˜?Š¤ ë¶„ë¦¬ ë°©ë²• */
+		/* myMath2 ?´?˜?Š¤ ë§Œë“ ê±? ì¶œë ¥?š© */
+		/* ? „?—­ ë©”ì„œ?“œ?Š” ê°ì²´ ?ƒ?„± ?•ˆ?•´?„ ?‚¬?š© ê°??Š¥ */
+		System.out.println(MyMath2.add(200L, 100L));
+		System.out.println(MyMath2.subtract(200L, 100L));
+		System.out.println(MyMath2.multiply(200L, 100L));
+		System.out.println(MyMath2.divide(200L, 100L));
+		
+		/* ê°ì²´?ƒ?„± */
+		MyMath2 mm = new MyMath2();
+		mm.a = 200L;
+		mm.b = 100L;
+		
+		/* ?¸?Š¤?„´?Š¤ ë©”ì„œ?“œ?Š” ê°ì²´ ?ƒ?„±(new) ?›„ ?‚¬?š© ê°??Š¥ */
+		System.out.println(mm.add());
+		System.out.println(mm.subtract());
+		System.out.println(mm.multiply());
+		System.out.println(mm.divide());
+	}
+}

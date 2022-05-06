@@ -1,0 +1,12 @@
+package 기초연습문제_선생님.문제_08;
+
+public class 문제8 {
+
+	public static void main(String[] args) {
+
+		char[] ch = {};
+		for (int i = 65; i <= 90; i++) {
+			System.out.print((char)i + " ");
+		}
+	}
+}

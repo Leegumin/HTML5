@@ -1,0 +1,22 @@
+package 기초연습문제_선생님.DTO.예제_05_상속_interface;
+
+public class CommentServiceImpl implements CommentService {
+
+	@Override
+	public void registerComment(String params) {
+
+	}
+
+	@Override
+	public void deleteComment(Long idx) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getCommentList(String params) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
