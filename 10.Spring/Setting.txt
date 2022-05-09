@@ -1,0 +1,40 @@
+프로젝트 -> src 선택 -> 알트+인설트 -> 파일만들기
+*단축키 이클립스로 바꾸기
+File -> Setting -> Keymap -> eclipse
+
+Keymap -> parameter info 검색 -> 단축키 Crtl+P로 변경
+
+*플러그인
+File -> Setting -> Plugins
+
+*Gradle 한글 안깨지게 세팅
+Gradle로 새 파일 생성 ->  gradle 자동으로 설치됨
+HelloGradle.java 생성
+File -> Setting -> Editer -> file encondings -> 프로젝트 인코딩 utf-8로 변경
+쉬프트*2 -> edit custom vm options -> 붙여넣기
+-Dfile.encoding=UTF-8
+-Dconsole.encoding=UTF-8
+
+-오른쪽 gradle메뉴 -> Tasks -> bulid -> clean, build 차례대로 실행
+-재시작 or invalid cashe
+-오른쪽 gradle메뉴 -> Tasks -> bulid -> clean, build 차례대로 실행
+-HelloGradle.java 에서 Run -> 한글나오는지 확인
+
+*파일생성 주석 설정
+File -> Setting -> editer -> file and code templates -> includes -> /** 부터 *끝까지 복사해서 인클루드 옆에 붙여넣기
+
+1. Setting - Editor - File and Code Templates
+2. Setting - Editor - Live Templates
+
+/** 
+* packageName : ${PACKAGE_NAME} 
+* fileName : ${NAME} 
+* author : ${USER} 
+* date : ${DATE} 
+* description : 
+* =========================================================== 
+* DATE            AUTHOR             NOTE 
+* ----------------------------------------------------------- 
+* ${DATE}         ${USER}          최초 생성 */
+
+
