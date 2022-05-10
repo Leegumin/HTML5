@@ -1,6 +1,6 @@
 package creation.main;
 
-import creation.factorymethod.IkeaFactory;
+import creation.factoryMethod.IkeaFactory;
 
 /**
  * packageName : creation.main
