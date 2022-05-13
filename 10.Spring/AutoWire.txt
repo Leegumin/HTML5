@@ -1,0 +1,32 @@
+<나쁜 코딩>
+    DeptDao3 deptDao3;
+
+    public void setDeptDao3() {
+        DeptDao3 deptDao3 = new DeptDao3();
+        this.deptDao3 = deptDao3;
+    }
+
+    @Override
+    public List<Dept3> selectAll() {
+        setDeptDao3();
+        return deptDao3.selectAll();
+    }
+-------------------------------------------------------------------
+<좋은 코딩, 스프링>
+  @Autowired
+    DeptDao3 deptDao3;
+
+    @Override
+    public List<Dept3> selectAll() {
+        return deptDao3.selectAll();
+    }
+---------------------------------------------------------------------
+<
+    DeptDao3 deptDao3 = new DeptDao3(); -> main이든 어디든 따로 정의해줘야함
+
+    aaa.setDeptDao3(deptDao3)
+
+    public void setDeptDao3(DeptDao3 deptDao3) {
+
+        this.deptDao3 = deptDao3;
+    }

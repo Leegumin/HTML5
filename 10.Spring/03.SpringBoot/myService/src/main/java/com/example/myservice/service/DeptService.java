@@ -17,5 +17,9 @@ import java.util.List;
  */
 
 public interface DeptService {
-    public List<Dept> selectList();
+//    public List<Dept> selectList();
+    public List<Dept> selectAll(); // 부서정보 select 하는 서비스
+
+    // insert의 Dao와 연결된 서비스 메소드
+    void insertMember(Dept dept);
 }

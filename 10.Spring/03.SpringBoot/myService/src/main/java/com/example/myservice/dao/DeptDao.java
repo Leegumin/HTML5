@@ -22,5 +22,8 @@ import java.util.List;
 @Mapper
 public interface DeptDao {
     // select 문 메서드
-    List<Dept> selectList(); // 부서정보를 select하는 메소드
+//    List<Dept> selectList(); // 부서정보를 select하는 메소드
+    List<Dept> selectAll(); // 부서정보를 select 하는 메소드
+
+    void insert(Dept dept); // 부서정보를 insert하는 메소드
 }
