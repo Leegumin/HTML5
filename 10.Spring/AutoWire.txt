@@ -21,7 +21,6 @@
         return deptDao3.selectAll();
     }
 ---------------------------------------------------------------------
-<
     DeptDao3 deptDao3 = new DeptDao3(); -> main이든 어디든 따로 정의해줘야함
 
     aaa.setDeptDao3(deptDao3)

@@ -22,4 +22,7 @@ public interface DeptService {
 
     // insert의 Dao와 연결된 서비스 메소드
     void insertMember(Dept dept);
+
+    // update 서비스 추가
+    void updateMember(int dno, Dept updateDept);
 }

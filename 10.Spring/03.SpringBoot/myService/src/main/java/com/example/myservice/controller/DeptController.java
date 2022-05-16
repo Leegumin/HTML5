@@ -1,20 +1,14 @@
 package com.example.myservice.controller;
 
 import com.example.myservice.dao.DeptDao;
-import com.example.myservice.dao.DeptDao2;
-import com.example.myservice.dao.DeptDao3;
-import com.example.myservice.dao.EmpDao;
+import com.example.myservice.dao.Tb_BoardDao;
 import com.example.myservice.model.Dept;
-import com.example.myservice.model.Dept2;
-import com.example.myservice.model.Dept3;
-import com.example.myservice.model.Emp;
-import com.example.myservice.service.*;
+import com.example.myservice.model.Tb_Board;
+import com.example.myservice.service.DeptService;
+import com.example.myservice.service.DeptServiceImpl;
+import com.example.myservice.service.Tb_BoardServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -76,62 +70,40 @@ public class DeptController {
 ////        // 데이터 추가되었는지 결과 확인(DB Select)
 //////        return deptDao.selectList();
 ////        return deptDao.selectAll();
-//
-//    @PostMapping("/dept2/new")
-//    public List<Dept2> insertMember(
-//            @RequestBody
-//            Dept2 dept2) {
-//        // 웹브라우저에서 json 형태로 데이터(dept 객체)를 넘겨받아 DB에 INSERT문을
-//        // 실행하는 부분
-//        deptService2.insertMember(dept2);
-//        // 데이터 추가되었는지 결과 확인(DB Select)
-////        return deptDao.selectList();
-//        return deptDao2.selectAll();
-//    }
-
-//    @Autowired
-//    DeptDao3         deptDao3;
-//    @Autowired
-//    DeptServiceImpl3 deptService3;
-//
-//    @GetMapping("/dept3/all")
-//    public List<Dept3> selectAll() {
-////        List<Dept> list = deptDao.selectList();
-//        List<Dept3> list = deptDao3.selectAll();
-//        return list;
-//    }
-//
-//    @PostMapping("/dept3/new")
-//    public List<Dept3> insertMember(
-//            @RequestBody
-//            Dept3 dept) {
-//        // 웹브라우저에서 json 형태로 데이터(dept 객체)를 넘겨받아 DB에 INSERT문을
-//        // 실행하는 부분
-//        deptService3.insertMember(dept);
-//        // 데이터 추가되었는지 결과 확인(DB Select)
-////        return deptDao.selectList();
-//        return deptDao3.selectAll();
-//    }
 
     @Autowired
-    EmpDao         empDao;
+    DeptDao         deptDao;
     @Autowired
-    EmpServiceImpl empService;
+    DeptServiceImpl deptService;
 
-    @GetMapping("/emp/all")
-    public List<Emp> selectAll() {
-        List<Emp> list = empDao.selectAll();
+    @GetMapping("/dept/all")
+    public List<Dept> selectAll() {
+        List<Dept> list = deptDao.selectAll();
         return list;
     }
-    @PostMapping("/emp/new")
-    public List<Emp> insertMember(
+
+    // @PutMapping : update 어노테이션
+    // @PathVariable : URL 메뉴 /dept/{dno} 중에서 dno 값을 의미함
+    // 웹브라우저 URL 매개변수{dno}를 메소드 updateMember의 매개변수 dno로 연결
+    @PutMapping("/dept/{dno}")
+    public List<Dept> updateMember(
+            @PathVariable
+            int dno,
             @RequestBody
-            Emp emp) {
-        // 웹브라우저에서 json 형태로 데이터(dept 객체)를 넘겨받아 DB에 INSERT문을
-        // 실행하는 부분
-        empService.insertMember(emp);
+            Dept dept) {
+        // update 문 실행
+        deptService.updateMember(dno, dept);
+        // 데이터가 수정되었는지 전체 데이터 다시 조회
+        return deptService.selectAll();
+    }
+
+    @PostMapping("/dept/new")
+    public List<Dept> insertMember(
+            @RequestBody
+            Dept dept) {
+        // 웹브라우저에서 json 형태로 데이터(dept 객체)를 넘겨받아 DB에 INSERT문을 실행하는 부분
+        deptService.insertMember(dept);
         // 데이터 추가되었는지 결과 확인(DB Select)
-//        return deptDao.selectList();
-        return empDao.selectAll();
+        return deptService.selectAll();
     }
 }

@@ -1,0 +1,27 @@
+Content-Type: application/json
+
+{
+  "dno" : 1,
+  "ename" : "길동",
+  "job" : "사원",
+  "manager" : 11,
+  "hiredate" : "2022-05-15",
+  "salary" : 55,
+  "commission" : 10,
+  "dno" : 10
+}
+
+
+------------------------------------------안된거
+Content-Type: application/json
+
+{
+  "ENO" : 1,
+  "ENAME" : "이순신",
+  "JOB" : "사원",
+  "MANAGER" : 11,
+  "HIREDATE" : "20220513",
+  "SALARY" : 1000,
+  "COMMISSION" : 10,
+  "DNO" : 1
+}

@@ -1,0 +1,3 @@
+[JAVA] IntelliJ- error code [17056]; 지원되지 않는 문자 집합
+intellij  그레이들 지원되지 않는 문자 집합(클래스 경로에 orai18n.jar 추가)
+-> bulid.gradle -> dependencies -> implementation 'com.oracle.ojdbc:orai18n:19.3.0.0' 추가
