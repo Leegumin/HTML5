@@ -26,8 +26,12 @@ public interface Tb_BoardDao {
 //    List<Dept> selectList(); // 회원정보를 select하는 메소드
     List<Tb_Board> selectAll(); // 회원정보를 select 하는 메소드
 
+<<<<<<< HEAD
     Tb_Board selectById(int idx);
     void insert(Tb_Board board);
     void update(Tb_Board board);
     void delete(int idx);
+=======
+    void insert(Tb_Board board); // 회원정보를 insert하는 메소드
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

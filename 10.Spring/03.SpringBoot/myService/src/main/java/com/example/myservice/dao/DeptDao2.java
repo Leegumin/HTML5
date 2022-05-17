@@ -20,6 +20,7 @@ import java.util.List;
 public interface DeptDao2 {
     List<Dept2> selectAll();
 
+<<<<<<< HEAD
     Dept2 selectById(int dno);
 
     void insert(Dept2 dept);
@@ -27,4 +28,7 @@ public interface DeptDao2 {
     void update(Dept2 dept);
 
     void delete(int dno);
+=======
+    void insert(Dept2 dept2);
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

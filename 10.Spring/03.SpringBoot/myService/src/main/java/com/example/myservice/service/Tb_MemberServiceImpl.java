@@ -2,7 +2,10 @@ package com.example.myservice.service;
 
 import com.example.myservice.dao.EmpDao;
 import com.example.myservice.dao.Tb_MemberDao;
+<<<<<<< HEAD
 import com.example.myservice.model.Dept2;
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 import com.example.myservice.model.Emp;
 import com.example.myservice.model.Tb_Member;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +38,7 @@ public class Tb_MemberServiceImpl implements Tb_MemberService {
     public void insertMember(Tb_Member member) {
         memberDao.insert(member);
     }
+<<<<<<< HEAD
 
     @Override
     public void updateMember(String userId, Tb_Member updateData) {
@@ -65,4 +69,6 @@ public class Tb_MemberServiceImpl implements Tb_MemberService {
             throw new IllegalStateException("유저가 존재하지 않습니다.");
         }
     }
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

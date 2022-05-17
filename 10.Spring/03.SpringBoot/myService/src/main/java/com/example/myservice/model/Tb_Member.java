@@ -1,7 +1,10 @@
 package com.example.myservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+<<<<<<< HEAD
 import lombok.Data;
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +21,10 @@ import lombok.Setter;
  */
 // Rombok의 기능
 // getter, setter을 자동으로 적용시켜줌
+<<<<<<< HEAD
 // @Data : 디버그를 위한 데이터 표시 어노테이션
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 @Getter
 @Setter
 public class Tb_Member {

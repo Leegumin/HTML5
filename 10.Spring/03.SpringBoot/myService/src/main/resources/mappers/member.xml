@@ -6,11 +6,19 @@
 
     <select id="selectAll" parameterType="com.example.myservice.model.Tb_Member"
             resultType="com.example.myservice.model.Tb_Member">
+<<<<<<< HEAD
         SELECT USER_ID,
                USER_NAME,
                USER_AUTH,
                APPEND_DATE,
                UPDATE_DATE
+=======
+        SELECT USER_ID     AS "userId",
+               USER_NAME   AS "userName",
+               USER_AUTH   AS "userAuth",
+               APPEND_DATE AS "appendDate",
+               UPDATE_DATE AS "updateDate"
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
         FROM TB_MEMBER
     </select>
 
@@ -20,6 +28,7 @@
         VALUES (#{userId}, #{userName}, #{userAuth}, #{appendDate}, #{updateDate})
     </insert>
 
+<<<<<<< HEAD
     <select id="selectById"
             parameterType="String"
             resultType="com.example.myservice.model.Tb_Member">
@@ -50,4 +59,6 @@
         WHERE USER_ID = #{userId}
     </delete>
 
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 </mapper>

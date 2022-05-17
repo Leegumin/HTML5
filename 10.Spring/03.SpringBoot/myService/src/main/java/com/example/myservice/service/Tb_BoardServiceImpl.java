@@ -1,7 +1,13 @@
 package com.example.myservice.service;
 
 import com.example.myservice.dao.Tb_BoardDao;
+<<<<<<< HEAD
 import com.example.myservice.model.Tb_Board;
+=======
+import com.example.myservice.dao.Tb_MemberDao;
+import com.example.myservice.model.Tb_Board;
+import com.example.myservice.model.Tb_Member;
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +38,7 @@ public class Tb_BoardServiceImpl implements Tb_BoardService {
     public void insertMember(Tb_Board board) {
         boardDao.insert(board);
     }
+<<<<<<< HEAD
 
     @Override
     public void updateMember(int idx, Tb_Board updateData) {
@@ -53,4 +60,6 @@ public class Tb_BoardServiceImpl implements Tb_BoardService {
     public void deleteMember(int idx) {
 
     }
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

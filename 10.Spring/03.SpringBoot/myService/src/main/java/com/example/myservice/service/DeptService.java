@@ -25,7 +25,10 @@ public interface DeptService {
 
     // update 서비스 추가
     void updateMember(int dno, Dept updateDept);
+<<<<<<< HEAD
     
     // delete 서비스 추가
     void deleteMember(int dno);
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

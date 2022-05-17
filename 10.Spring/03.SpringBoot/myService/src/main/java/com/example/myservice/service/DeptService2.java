@@ -18,9 +18,13 @@ import java.util.List;
 public interface DeptService2 {
     public List<Dept2> selectAll();
 
+<<<<<<< HEAD
     void insertMember(Dept2 dept);
 
     void updateMember(int dno, Dept2 updateDept);
 
     void deleteMember(int dno);
+=======
+    void insertMember(Dept2 dept2);
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

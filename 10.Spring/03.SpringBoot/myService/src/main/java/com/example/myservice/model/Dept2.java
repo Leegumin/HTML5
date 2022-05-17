@@ -18,7 +18,10 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Dept2 {
+<<<<<<< HEAD
     @JsonProperty(value = "dno")
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
     private int dno;
     @JsonProperty(value = "dname")
     private String dname;

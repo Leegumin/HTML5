@@ -20,8 +20,11 @@ public interface Tb_BoardService {
 
     public List<Tb_Board> selectAll();
     void insertMember(Tb_Board board);
+<<<<<<< HEAD
 
     void updateMember(int idx, Tb_Board updateData);
 
     void deleteMember(int idx);
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

@@ -1,6 +1,9 @@
 package com.example.myservice.service;
 
+<<<<<<< HEAD
 import com.example.myservice.model.Dept2;
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 import com.example.myservice.model.Dept4;
 import com.example.myservice.model.Tb_Member;
 
@@ -21,8 +24,11 @@ public interface Tb_MemberService {
 
     public List<Tb_Member> selectAll();
     void insertMember(Tb_Member member);
+<<<<<<< HEAD
 
     void updateMember(String userId, Tb_Member updateData);
 
     void deleteMember(String userId);
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

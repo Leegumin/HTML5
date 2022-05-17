@@ -22,6 +22,7 @@ import java.util.List;
 public class DeptServiceImpl2 implements DeptService2 {
 
     @Autowired
+<<<<<<< HEAD
     DeptDao2 deptDao;
 
     @Override
@@ -57,5 +58,17 @@ public class DeptServiceImpl2 implements DeptService2 {
         else {
             throw new IllegalStateException("부서가 존재하지 않습니다.");
         }
+=======
+    DeptDao2 deptDao2;
+
+    @Override
+    public List<Dept2> selectAll() {
+        return deptDao2.selectAll();
+    }
+
+    @Override
+    public void insertMember(Dept2 dept2) {
+        deptDao2.insert(dept2);
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
     }
 }

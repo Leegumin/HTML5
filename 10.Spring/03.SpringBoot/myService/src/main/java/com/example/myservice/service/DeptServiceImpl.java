@@ -66,6 +66,7 @@ public class DeptServiceImpl implements DeptService {
             throw new IllegalStateException("부서가 존재하지 않습니다.");
         }
     }
+<<<<<<< HEAD
 
     // delete 구현
     @Override
@@ -82,4 +83,6 @@ public class DeptServiceImpl implements DeptService {
             throw new IllegalStateException("부서가 존재하지 않습니다.");
         }
     }
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 }

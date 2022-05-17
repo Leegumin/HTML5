@@ -1,7 +1,10 @@
 package com.example.myservice.dao;
 
 import com.example.myservice.model.Dept;
+<<<<<<< HEAD
 import com.example.myservice.model.Dept2;
+=======
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 import com.example.myservice.model.Tb_Member;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -24,6 +27,7 @@ import java.util.List;
 @Mapper
 public interface Tb_MemberDao {
     // select 문 메서드
+<<<<<<< HEAD
     List<Tb_Member> selectAll(); // 회원정보를 select 하는 메소드
 
     Tb_Member selectById(String userId);
@@ -31,5 +35,10 @@ public interface Tb_MemberDao {
 
     void delete(String userId);
 
+=======
+//    List<Dept> selectList(); // 회원정보를 select하는 메소드
+    List<Tb_Member> selectAll(); // 회원정보를 select 하는 메소드
+
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
     void insert(Tb_Member member); // 회원정보를 insert하는 메소드
 }

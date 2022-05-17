@@ -2,25 +2,42 @@
 
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<<<<<<< HEAD
 <mapper namespace="com.example.myservice.dao.DeptDao">
 
     <select id="selectAll"
             parameterType="com.example.myservice.model.Dept"
             resultType="com.example.myservice.model.Dept">
+=======
+<mapper namespace = "com.example.myservice.dao.DeptDao" >
+
+    <select id = "selectAll"
+            parameterType = "com.example.myservice.model.Dept"
+            resultType = "com.example.myservice.model.Dept" >
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
         SELECT DNO,
                DNAME,
                LOC
         FROM DEPARTMENT
+<<<<<<< HEAD
     </select>
 
     <select id="selectById"
             parameterType="int"
             resultType="com.example.myservice.model.Dept">
+=======
+    </select >
+
+    <select id = "selectById"
+            parameterType = "int"
+            resultType = "com.example.myservice.model.Dept" >
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
         SELECT DNO,
                DNAME,
                LOC
         FROM DEPARTMENT
         WHERE DNO = #{dno}
+<<<<<<< HEAD
     </select>
 
     <!--insert문-->
@@ -34,26 +51,52 @@
             /*SELECT 시퀀스명.NEXTVAL FROM DUAL*/
             SELECT SQ_DEPT.NEXTVAL FROM DUAL
         </selectKey>
+=======
+    </select >
+
+    <insert id = "insert"
+            parameterType = "com.example.myservice.model.Dept" >
+        -- 시퀀스 가져오기
+        <!--<selectKey keyProperty="컬럼명" resultType="형태" order="BEFORE">-->
+        <selectKey keyProperty = "dno"
+                   resultType = "int"
+                   order = "BEFORE" >
+            /*SELECT 시퀀스명.NEXTVAL FROM DUAL*/
+            SELECT SQ_DEPT.NEXTVAL FROM DUAL
+        </selectKey >
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
 
         INSERT INTO TB_BOARD(
         DNO,
         DNAME,
         LOC
         )
+<<<<<<< HEAD
         --model의 Dept의 값이 넘어옴
+=======
+        -- model의 Dept의 값이 넘어옴
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
         VALUES (
         #{dno},
         #{dname},
         #{loc},
         )
+<<<<<<< HEAD
     </insert>
 
     <!--업데이트 문 -->
     <update id="update" parameterType="com.example.myservice.model.Dept">
+=======
+    </insert >
+
+<!--    업데이트 문 -->
+    <update id = "update" parameterType = "com.example.myservice.model.Dept" >
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
         UPDATE DEPARTMENT
         SET DNAME = #{dname},
             LOC   = #{loc}
         WHERE DNO = #{dno}
+<<<<<<< HEAD
     </update>
 
     <!--delete문-->
@@ -63,3 +106,7 @@
         WHERE DNO = #{dno}
     </delete>
 </mapper>
+=======
+    </update >
+</mapper >
+>>>>>>> 3d17d0532bef7097ac8cdec80a3512bfa026bf67
