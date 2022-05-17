@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.myservice.dao.Tb_MemberDao">
+
+    <select id="selectAll" parameterType="com.example.myservice.model.Tb_Member"
+            resultType="com.example.myservice.model.Tb_Member">
+        SELECT USER_ID,
+               USER_NAME,
+               USER_AUTH,
+               APPEND_DATE,
+               UPDATE_DATE
+        FROM TB_MEMBER
+    </select>
+
+    <insert id="insert" parameterType="com.example.myservice.model.Tb_Member">
+        INSERT INTO TB_MEMBER(USER_ID, USER_NAME, USER_AUTH, APPEND_DATE, UPDATE_DATE)
+            -- model의 Dept의 값이 넘어옴
+        VALUES (#{userId}, #{userName}, #{userAuth}, #{appendDate}, #{updateDate})
+    </insert>
+
+    <select id="selectById"
+            parameterType="String"
+            resultType="com.example.myservice.model.Tb_Member">
+        SELECT USER_ID,
+               USER_NAME,
+               USER_AUTH,
+               APPEND_DATE,
+               UPDATE_DATE
+        FROM TB_MEMBER
+        WHERE USER_ID = #{userId}
+    </select>
+
+    <!--업데이트 문 -->
+    <update id="update" parameterType="com.example.myservice.model.Tb_Member">
+        UPDATE TB_MEMBER
+        SET USER_ID     = #{userId},
+            USER_NAME   = #{userName},
+            USER_AUTH   = #{userAuth},
+            APPEND_DATE = #{appendDate},
+            UPDATE_DATE = #{updateDate}
+        WHERE USER_ID = #{userId}
+    </update>
+
+    <!--delete문-->
+    <delete id="delete" parameterType="String">
+        DELETE
+        FROM TB_MEMBER
+        WHERE USER_ID = #{userId}
+    </delete>
+
+</mapper>

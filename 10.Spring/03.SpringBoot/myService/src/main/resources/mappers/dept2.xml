@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.myservice.dao.DeptDao2">
+
+    <select id="selectAll"
+            parameterType="com.example.myservice.model.Dept2"
+            resultType="com.example.myservice.model.Dept2">
+        SELECT DNO,
+               DNAME,
+               LOC
+        FROM DEPARTMENT2
+    </select>
+
+    <select id="selectById"
+            parameterType="int"
+            resultType="com.example.myservice.model.Dept2">
+        SELECT DNO,
+               DNAME,
+               LOC
+        FROM DEPARTMENT2
+        WHERE DNO = #{dno}
+    </select>
+
+    <!--insert문-->
+    <insert id="insert"
+            parameterType="com.example.myservice.model.Dept2">
+<!--        &#45;&#45; 시퀀스 가져오기-->
+<!--        &lt;!&ndash;<selectKey keyProperty="컬럼명" resultType="형태" order="BEFORE">&ndash;&gt;-->
+<!--        <selectKey keyProperty="dno"-->
+<!--                   resultType="int"-->
+<!--                   order="BEFORE">-->
+<!--            /*SELECT 시퀀스명.NEXTVAL FROM DUAL*/-->
+<!--            SELECT SQ_DEPT.NEXTVAL FROM DUAL-->
+<!--        </selectKey>-->
+
+        INSERT INTO DEPARTMENT2(
+        DNO,
+        DNAME,
+        LOC
+        )
+        --model의 Dept의 값이 넘어옴
+        VALUES (
+        #{dno},
+        #{dname},
+        #{loc}
+        )
+    </insert>
+
+    <!--업데이트 문 -->
+    <update id="update" parameterType="com.example.myservice.model.Dept2">
+        UPDATE DEPARTMENT2
+        SET DNAME = #{dname},
+            LOC   = #{loc}
+        WHERE DNO = #{dno}
+    </update>
+
+    <!--delete문-->
+    <delete id="delete" parameterType="int">
+        DELETE
+        FROM DEPARTMENT2
+        WHERE DNO = #{dno}
+    </delete>
+</mapper>

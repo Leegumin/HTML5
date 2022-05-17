@@ -1,0 +1,10 @@
+1. DEPARTMENT2 테이블 생성,
+   시퀀스 생성 : SQ_DEPT2
+2. model / 클래스 생성 xxx.java
+3. dao / 클래스 xxxDao.java
+4. service / 2개 
+   - 인터페이스 1개
+   - 구현 클래스 1개
+5. resources /mappers/ dept2.xml
+   -- 실제 sql문
+6. DeptController 안에 /dept2/new 생성

@@ -1,0 +1,12 @@
+Content-Type: application/json
+
+{
+  "dno" : 1,
+  "ename" : "길동",
+  "job" : "사원",
+  "manager" : 11,
+  "hiredate" : "2022-05-15",
+  "salary" : 55,
+  "commission" : 10,
+  "dno" : 10
+}
