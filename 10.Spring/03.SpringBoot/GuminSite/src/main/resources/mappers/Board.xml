@@ -2,26 +2,27 @@
 
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.guminsite.dao.BoardDao">
+<mapper namespace = "com.example.guminsite.dao.BoardDao">
 
-    <sql id="boardColumns">
+    <sql id = "boardColumns">
         IDX
         ,TITLE
         ,CONTENT
         ,WRITER
-        ,VIEWCNT
-        ,NOTICEYN
-        ,SECRETYN
-        ,DELETEYN
-        ,INSERTTIME
-        ,UPDATETIME
-        ,DELETETIME
+        ,VIEW_CNT
+        ,NOTICE_YN
+        ,SECRET_YN
+        ,DELETE_YN
+        ,INSERT_TIME
+        ,UPDATE_TIME
+        ,DELETE_TIME
     </sql>
 
-    <insert id="insertBoard" parameterType="com.example.guminsite.model.BoardDto">
+    <insert id = "insertBoard"
+            parameterType = "com.example.guminsite.model.BoardDto">
         INSERT INTO TB_BOARD (
         -- boardColumns의 값이 들어옴
-        <include refid="boardColumns"></include>
+        <include refid = "boardColumns"></include>
         ) VALUES (
         SQ_TB_BOARD.NEXTVAL
         ,#{title}
@@ -35,6 +36,87 @@
         ,null
         ,null
         )
-
     </insert>
+
+    <!--게시판 상세조회-->
+    <select id = "selectBoardDetail"
+            parameterType = "Long"
+            resultType = "com.example.guminsite.model.BoardDto">
+        SELECT
+        <include refid = "boardColumns"></include>
+        FROM
+        TB_BOARD
+        WHERE DELETE_YN = 'N'
+        AND IDX = #{idx}
+    </select>
+
+    <!--게시판 전체조회-->
+    <select id = "selectBoardAllList"
+            parameterType = "com.example.guminsite.model.BoardDto"
+            resultType = "com.example.guminsite.model.BoardDto">
+        SELECT
+        <include refid = "boardColumns"></include>
+        FROM
+            TB_BOARD
+        WHERE DELETE_YN = 'N'
+        ORDER BY
+            NOTICE_YN ASC,
+            IDX DESC,
+            INSERT_TIME DESC
+    </select>
+
+    <!--게시판 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
+    <update id = "deleteBoard"
+            parameterType = "Long">
+        UPDATE TB_BOARD
+        SET DELETE_YN   = 'Y'
+          , DELETE_TIME = SYSDATE
+        WHERE IDX = #{idx}
+    </update>
+
+    <!--게시판 글 개수 조회 ( 노출돼어 있는 총 건수 )-->
+    <select id = "selectBoardTotalCount"
+            parameterType = "com.example.guminsite.model.BoardDto"
+            resultType = "int">
+        SELECT COUNT(*)
+        FROM TB_BOARD
+        WHERE DELETE_YN = 'N'
+    </select>
+
+    <!--게시판 업데이트-->
+    <update id = "updateBoard"
+            parameterType = "com.example.guminsite.model.BoardDto">
+        UPDATE TB_BOARD
+        SET UPDATE_TIME = SYSDATE
+          , TITLE       = #{title}
+          , CONTENT     = #{content}
+          , WRITER      = #{writer}
+          , NOTICE_YN   = NVL(#{noticeYn}, 'N')
+          , SECRET_YN   = NVL(#{noticeYn}, 'N')
+    </update>
+
+    <!--게시판 전체조회-->
+    <select id = "selectBoardList"
+            parameterType = "com.example.guminsite.model.BoardDto"
+            resultType = "com.example.guminsite.model.BoardDto">
+
+        <!--<![CDATA[]] : '<'가 일반 문자열이라는 것을 알려줌-->
+
+        <![CDATA[
+        SELECT *
+        FROM (SELECT ROWNUM R,
+                     TBB.*
+              FROM TB_BOARD TBB
+              --끝 조건 : 현재 페이지번호 * 페이지당 개수
+              WHERE ROWNUM <= #{currentPageNo} * #{recordsPerPage}
+              AND DELETE_YN = 'N'
+              ORDER BY
+                  NOTICE_YN ASC,
+                  IDX DESC,
+                  INSERT_TIME DESC
+              )
+             --시작 조건 : (현재 페이지번호 - 1) * 페이지당 개수
+        WHERE R > (#{currentPageNo} - 1) * #{recordsPerPage};
+        ]]>
+    </select>
 </mapper>

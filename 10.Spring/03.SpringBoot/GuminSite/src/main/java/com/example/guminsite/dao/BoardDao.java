@@ -22,10 +22,16 @@ public interface BoardDao {
     int insertBoard(BoardDto params);
 
     // 게시판 목록 조회
-    List<BoardDto> selectBoardList();
-    
+    List<BoardDto> selectBoardAllList();
+
+    // 게시판 페이징 처리를 위한 메소드
+    List<BoardDto> selectBoardList(BoardDto params);
+
     // 게시판 상세 목록 조회하는 메소드 (  매개변수가 게시판 번호인 select sql문 )
     BoardDto selectBoardDetail(Long idx);
+
+    // 게시물의 총 건수를 가져오는 메소드 ( select : 1건 )
+    int selectBoardTotalCount(BoardDto params);
 
     // 게시판 글 수정 메소드
     int updateBoard(BoardDto params);

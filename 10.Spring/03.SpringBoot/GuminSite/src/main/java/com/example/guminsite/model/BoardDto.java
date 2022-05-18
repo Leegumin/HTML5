@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,29 +23,23 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
+@ToString
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class BoardDto {
+public class BoardDto extends CommonDto{
     // 번호 (PK : Primal key 기본키)
-    private Long          idx;
+    private Long   idx;
     // 제목
-    private String        title;
+    private String title;
     // 내용
-    private String        content;
+    private String content;
     // 작성자
-    private String        writer;
+    private String writer;
     // 조회수
-    private int           viewCnt;
+    private int    viewCnt;
     // 공지여부 (Y ,N)
-    private String        noticeYn;
+    private String noticeYn;
     // 비밀여부 (Y ,N)
-    private String        secretYn;
-    // 삭제여부 (Y ,N)
-    private String        deleteYn;
-    // 등록일
-    private LocalDateTime insertTime;
-    // 수정일
-    private LocalDateTime updateTime;
-    // 삭제일
-    private LocalDateTime deleteTime;
+    private String secretYn;
+
 
 }
