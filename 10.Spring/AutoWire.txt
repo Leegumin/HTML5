@@ -29,3 +29,10 @@
 
         this.deptDao3 = deptDao3;
     }
+
+--------------------------------------------------------------------
+MemberDao memberDao;
+memberDao = new MemberDao();
+=> @Autowired
+@Autowired
+MemberDao memberDao;

@@ -1,0 +1,17 @@
+build.gradle -> alt + insert -> 종속성 추가 -> logback-classic 검색으로 추가하던가
+
+implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+implementation 'ch.qos.logback:logback-classic:1.2.11'
+implementation 'org.slf4j:slf4j-api:1.7.36'
+implementation 'org.slf4j:jcl-over-slf4j:1.7.36'
+
+그냥 이거 추가하던가
+
+-------------설치후에 프로퍼티 설정
+spring.datasource.driver-class-name=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+spring.datasource.url=jdbc:log4jdbc:oracle:thin:@127.0.0.1:1521/orcl
+spring.datasource.username=scott
+spring.datasource.password=ds603
+
+------------------------
+log4 관련 프로퍼티, xml 파일을 resources 폴더에 추가

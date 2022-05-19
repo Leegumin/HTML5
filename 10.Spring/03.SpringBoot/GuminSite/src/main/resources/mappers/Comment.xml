@@ -2,97 +2,87 @@
 
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace = "com.example.guminsite.dao.BoardDao">
+<mapper namespace = "com.example.guminsite.dao.CommentDao">
 
-    <sql id = "boardColumns">
+    <sql id = "commentColumns">
         IDX
-        ,TITLE
+        ,BOARD_IDX
         ,CONTENT
         ,WRITER
-        ,VIEW_CNT
-        ,NOTICE_YN
-        ,SECRET_YN
         ,DELETE_YN
-        ,INSERT_TIME
-        ,UPDATE_TIME
-        ,DELETE_TIME
+        ,INSERT_DATE
+        ,UPDATE_DATE
+        ,DELETE_DATE
     </sql>
 
-    <insert id = "insertBoard"
-            parameterType = "com.example.guminsite.model.BoardDto">
-        INSERT INTO TB_BOARD (
+    <insert id = "insertComment"
+            parameterType = "com.example.guminsite.model.CommentDto">
+        INSERT INTO TB_COMMENT (
         -- boardColumns의 값이 들어옴
-        <include refid = "boardColumns"></include>
+        <include refid = "commentColumns"></include>
         ) VALUES (
-        SQ_TB_BOARD.NEXTVAL
-        ,#{title}
+        SQ_TB_COMMENT.NEXTVAL
+        ,#{boardIdx}
         ,#{content}
         ,#{writer}
-        ,0
         ,'N'
-        ,'N'
-        ,'N'
+        ,null
         ,SYSDATE
-        ,null
-        ,null
+        ,SYSDATE
         )
     </insert>
 
-    <!--게시판 상세조회-->
-    <select id = "selectBoardDetail"
+    <!--댓글 상세조회-->
+    <select id = "selectCommentDetail"
             parameterType = "Long"
-            resultType = "com.example.guminsite.model.BoardDto">
+            resultType = "com.example.guminsite.model.CommentDto">
         SELECT
-        <include refid = "boardColumns"></include>
+        <include refid = "commentColumns"></include>
         FROM
-        TB_BOARD
+        TB_COMMENT
         WHERE DELETE_YN = 'N'
         AND IDX = #{idx}
     </select>
 
-    <!--게시판 전체조회-->
-    <select id = "selectBoardAllList"
-            parameterType = "com.example.guminsite.model.BoardDto"
-            resultType = "com.example.guminsite.model.BoardDto">
+    <!--댓글 전체조회-->
+    <select id = "selectCommentAllList"
+            parameterType = "com.example.guminsite.model.CommentDto"
+            resultType = "com.example.guminsite.model.CommentDto">
         SELECT
-        <include refid = "boardColumns"></include>
+        <include refid = "commentColumns"></include>
         FROM
-            TB_BOARD
+            TB_COMMENT
         WHERE DELETE_YN = 'N'
         ORDER BY
-            NOTICE_YN ASC,
             IDX DESC,
-            INSERT_TIME DESC
+            INSERT_DATE DESC
     </select>
 
-    <!--게시판 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
-    <update id = "deleteBoard"
+    <!--댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
+    <update id = "deleteComment"
             parameterType = "Long">
-        UPDATE TB_BOARD
+        UPDATE TB_COMMENT
         SET DELETE_YN   = 'Y'
-          , DELETE_TIME = SYSDATE
+          , DELETE_DATE = SYSDATE
         WHERE IDX = #{idx}
     </update>
 
-    <!--게시판 글 개수 조회 ( 노출돼어 있는 총 건수 )-->
-    <select id = "selectBoardTotalCount"
-            parameterType = "com.example.guminsite.model.BoardDto"
+    <!--댓글 개수 조회 ( 노출돼어 있는 총 건수 )-->
+    <select id = "selectCommentTotalCount"
+            parameterType = "com.example.guminsite.model.CommentDto"
             resultType = "int">
         SELECT COUNT(*)
-        FROM TB_BOARD
+        FROM TB_COMMENT
         WHERE DELETE_YN = 'N'
     </select>
 
     <!--게시판 업데이트-->
-    <update id = "updateBoard"
-            parameterType = "com.example.guminsite.model.BoardDto">
-        UPDATE TB_BOARD
-        SET UPDATE_TIME = SYSDATE
-          , TITLE       = #{title}
+    <update id = "updateComment"
+            parameterType = "com.example.guminsite.model.CommentDto">
+        UPDATE TB_COMMENT
+        SET UPDATE_DATE = SYSDATE
           , CONTENT     = #{content}
           , WRITER      = #{writer}
-          , NOTICE_YN   = NVL(#{noticeYn}, 'N')
-          , SECRET_YN   = NVL(#{noticeYn}, 'N')
     </update>
 
     <!--게시판 페이지 조회-->
@@ -116,8 +106,7 @@
         <!--                  INSERT_TIME DESC-->
         <!--              )-->
         <!--        WHERE R > (#{currentPageNo} - 1) * #{recordsPerPage}-->
-        <!--        ]]>-->
-        SELECT *
+        <!--        ]]>-->SELECT *
         FROM (
               SELECT ROWNUM R,
                      TBB.*

@@ -85,4 +85,10 @@ public class BoardApiController {
     public List<BoardDto> openBoardList(BoardDto params) {
         return boardService.getBoardList(params);
     }
+
+    //    페이징 처리를 위한 게시물 검색 메뉴2
+    @GetMapping("/board/list/c-page/{currentPageNo}/r-page/{recordsPerPage}/s-word/{searchKeyword}/s-type/{searchType}")
+    public List<BoardDto> openBoardList2(BoardDto params) {
+        return boardService.getBoardList(params);
+    }
 }

@@ -20,6 +20,10 @@ public class Member {
     private String        name; // 회원 이름
     private LocalDateTime registerDateTime; // 회원가입 날짜 생성
 
+    // 기본 생성자
+    public Member() {
+    }
+
     // id를 제외한 4개짜리 생성자
     public Member(String email, String password, String name, LocalDateTime registerDateTime) {
         this.email = email;

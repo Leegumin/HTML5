@@ -1,0 +1,71 @@
+
+###
+GET http://localhost:8000/api/board/write/10
+
+<> 2022-05-18T112354.500.json
+<> 2022-05-18T110651.500.json
+<> 2022-05-18T110629.500.json
+<> 2022-05-18T110616.500.json
+<> 2022-05-18T110552.500.json
+<> 2022-05-18T110414.500.json
+<> 2022-05-18T105818.500.json
+<> 2022-05-18T105657.500.json
+
+###
+GET http://localhost:8000/api/board/write/11
+
+<> 2022-05-18T113141.500.json
+
+###
+GET http://localhost:8000/api/board/write/10
+
+<> 2022-05-18T125640.200.json
+<> 2022-05-18T124130.200.json
+<> 2022-05-18T114905.200.json
+<> 2022-05-18T114656.500.json
+
+###
+POST http://localhost:8000/api/board/register
+Content-Type: application/json
+
+{
+  "idx": null,
+  "title": "테스트 제목",
+  "content": "테스트 본문",
+  "writer": "이구민",
+  "view_cnt": 0,
+  "notice_yn": "N",
+  "secret_yn": "N",
+  "delete_yn": "N",
+  "insert_time": "2022-05-18T09:51:46",
+  "update_time": null,
+  "delete_time": null
+}
+
+<> 2022-05-18T140639.200.json
+<> 2022-05-18T140439.200.json
+
+###
+PUT http://localhost:8000/api/board/delete/2
+
+<> 2022-05-18T153208.200.json
+
+###
+GET http://localhost:8000/api/board/list/cur-page-no/1/records-per-page/10
+
+<> 2022-05-18T225535.200.json
+<> 2022-05-18T225407.500.json
+<> 2022-05-18T224929.500.json
+
+###
+PUT http://localhost:8000/api/board/delete/{{idx}}
+
+###
+GET http://localhost:8000/api/board/list/cur-page-no/2/records-per-page/10
+
+<> 2022-05-18T230135.200.json
+<> 2022-05-18T225951.200.json
+<> 2022-05-18T225858.200.json
+
+###
+GET http://localhost:8000/api/board/list/cur-page-no/{{currentPageNo}}/records-per-page/{{recordsPerPage}}
