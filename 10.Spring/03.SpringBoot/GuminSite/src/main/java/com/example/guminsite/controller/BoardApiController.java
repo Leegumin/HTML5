@@ -80,6 +80,7 @@ public class BoardApiController {
         return boardService.getBoardAllList();
     }
 
+    //    페이징 처리를 위한 게시물 검색 메뉴
     @GetMapping("/board/list/cur-page-no/{currentPageNo}/records-per-page/{recordsPerPage}")
     public List<BoardDto> openBoardList(BoardDto params) {
         return boardService.getBoardList(params);

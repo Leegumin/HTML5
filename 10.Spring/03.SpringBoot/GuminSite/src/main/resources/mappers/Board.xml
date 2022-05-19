@@ -104,10 +104,10 @@
 
         <![CDATA[
         SELECT *
-        FROM (SELECT ROWNUM R,
+        FROM (
+        SELECT ROWNUM R,
                      TBB.*
               FROM TB_BOARD TBB
-              --끝 조건 : 현재 페이지번호 * 페이지당 개수
               WHERE ROWNUM <= #{currentPageNo} * #{recordsPerPage}
               AND DELETE_YN = 'N'
               ORDER BY
@@ -115,8 +115,7 @@
                   IDX DESC,
                   INSERT_TIME DESC
               )
-             --시작 조건 : (현재 페이지번호 - 1) * 페이지당 개수
-        WHERE R > (#{currentPageNo} - 1) * #{recordsPerPage};
+        WHERE R > (#{currentPageNo} - 1) * #{recordsPerPage}
         ]]>
     </select>
 </mapper>
