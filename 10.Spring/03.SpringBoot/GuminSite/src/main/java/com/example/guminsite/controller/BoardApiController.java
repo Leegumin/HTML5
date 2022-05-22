@@ -1,7 +1,9 @@
 package com.example.guminsite.controller;
 
 import com.example.guminsite.dao.BoardDao;
+import com.example.guminsite.dao.CommentDao;
 import com.example.guminsite.model.BoardDto;
+import com.example.guminsite.model.CommentDto;
 import com.example.guminsite.service.BoardServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -91,4 +93,5 @@ public class BoardApiController {
     public List<BoardDto> openBoardList2(BoardDto params) {
         return boardService.getBoardList(params);
     }
+
 }

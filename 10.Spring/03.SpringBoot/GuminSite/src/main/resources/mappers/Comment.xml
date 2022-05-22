@@ -15,24 +15,7 @@
         ,DELETE_DATE
     </sql>
 
-    <insert id = "insertComment"
-            parameterType = "com.example.guminsite.model.CommentDto">
-        INSERT INTO TB_COMMENT (
-        -- boardColumns의 값이 들어옴
-        <include refid = "commentColumns"></include>
-        ) VALUES (
-        SQ_TB_COMMENT.NEXTVAL
-        ,#{boardIdx}
-        ,#{content}
-        ,#{writer}
-        ,'N'
-        ,null
-        ,SYSDATE
-        ,SYSDATE
-        )
-    </insert>
-
-    <!--댓글 상세조회-->
+    <!--1. 댓글 상세조회-->
     <select id = "selectCommentDetail"
             parameterType = "Long"
             resultType = "com.example.guminsite.model.CommentDto">
@@ -41,21 +24,68 @@
         FROM
         TB_COMMENT
         WHERE DELETE_YN = 'N'
-        AND IDX = #{idx}
+        AND IDX = #{Idx}
     </select>
 
-    <!--댓글 전체조회-->
-    <select id = "selectCommentAllList"
+    <!--2. 댓글 등록-->
+    <insert id = "insertComment"
+            parameterType = "com.example.guminsite.model.CommentDto">
+        INSERT INTO TB_COMMENT (
+        <!--*commentColumns의 값이 들어옴!-->
+        <include refid = "commentColumns"></include>
+        ) VALUES (
+        SQ_TB_COMMENT.NEXTVAL
+        ,#{boardIdx}
+        ,#{content}
+        ,#{writer}
+        ,'N'
+        ,SYSDATE
+        ,NULL
+        ,NULL
+        )
+    </insert>
+
+    <!--댓글 업데이트-->
+    <update id = "updateComment"
+            parameterType = "com.example.guminsite.model.CommentDto">
+        UPDATE TB_COMMENT
+        SET UPDATE_DATE = SYSDATE
+          , CONTENT     = #{content}
+          , WRITER      = #{writer}
+        WHERE IDX = #{idx}
+    </update>
+
+
+
+    <!--게시글에 달린 댓글 전체 조회-->
+    <select id = "selectCommentList"
             parameterType = "com.example.guminsite.model.CommentDto"
             resultType = "com.example.guminsite.model.CommentDto">
         SELECT
-        <include refid = "commentColumns"></include>
+            <include refid = "commentColumns"></include>
         FROM
             TB_COMMENT
-        WHERE DELETE_YN = 'N'
+        WHERE
+            DELETE_YN = 'N'
+        AND
+            BOARD_IDX = #{boardIdx}
         ORDER BY
             IDX DESC,
             INSERT_DATE DESC
+    </select>
+
+    <!--댓글 개수 조회 ( 노출돼어 있는 총 건수 )-->
+    <select id = "selectCommentTotalCount"
+            parameterType = "com.example.guminsite.model.CommentDto"
+            resultType = "int">
+        SELECT
+            COUNT(*)
+        FROM
+            TB_COMMENT
+        WHERE
+            DELETE_YN = 'N'
+          AND
+            BOARD_IDX = #{boardIdx}
     </select>
 
     <!--댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
@@ -67,58 +97,4 @@
         WHERE IDX = #{idx}
     </update>
 
-    <!--댓글 개수 조회 ( 노출돼어 있는 총 건수 )-->
-    <select id = "selectCommentTotalCount"
-            parameterType = "com.example.guminsite.model.CommentDto"
-            resultType = "int">
-        SELECT COUNT(*)
-        FROM TB_COMMENT
-        WHERE DELETE_YN = 'N'
-    </select>
-
-    <!--게시판 업데이트-->
-    <update id = "updateComment"
-            parameterType = "com.example.guminsite.model.CommentDto">
-        UPDATE TB_COMMENT
-        SET UPDATE_DATE = SYSDATE
-          , CONTENT     = #{content}
-          , WRITER      = #{writer}
-    </update>
-
-    <!--게시판 페이지 조회-->
-    <select id = "selectBoardList"
-            parameterType = "com.example.guminsite.model.BoardDto"
-            resultType = "com.example.guminsite.model.BoardDto">
-
-        <!-- * 꺽쇄 처리를 위한 방법 1-->
-        <!-- *<![CDATA[]] : '<'가 일반 문자열이라는 것을 알려줌-->
-        <!--        <![CDATA[-->
-        <!--        SELECT *-->
-        <!--        FROM (-->
-        <!--        SELECT ROWNUM R,-->
-        <!--                     TBB.*-->
-        <!--              FROM TB_BOARD TBB-->
-        <!--              WHERE ROWNUM <= #{currentPageNo} * #{recordsPerPage}-->
-        <!--              AND DELETE_YN = 'N'-->
-        <!--              ORDER BY-->
-        <!--                  NOTICE_YN ASC,-->
-        <!--                  IDX DESC,-->
-        <!--                  INSERT_TIME DESC-->
-        <!--              )-->
-        <!--        WHERE R > (#{currentPageNo} - 1) * #{recordsPerPage}-->
-        <!--        ]]>-->SELECT *
-        FROM (
-              SELECT ROWNUM R,
-                     TBB.*
-              FROM TB_BOARD TBB
-              WHERE ROWNUM &lt;= #{currentPageNo} * #{recordsPerPage}
-              AND DELETE_YN = 'N'
-              ORDER BY
-                  NOTICE_YN ASC,
-                  IDX DESC,
-                  INSERT_TIME DESC
-              )
-        WHERE R &gt; (#{currentPageNo} - 1) * #{recordsPerPage}
-        <include refid = "Common.search"></include>
-    </select>
 </mapper>

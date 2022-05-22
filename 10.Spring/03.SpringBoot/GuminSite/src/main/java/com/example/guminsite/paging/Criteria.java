@@ -41,6 +41,7 @@ public class Criteria {
     // 검색 유형
     private String searchType;
 
+
     public Criteria() {
         // 현재 페이지 1
         this.currentPageNo = 1;
