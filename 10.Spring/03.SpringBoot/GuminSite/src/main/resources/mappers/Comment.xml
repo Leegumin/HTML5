@@ -45,19 +45,28 @@
         )
     </insert>
 
-    <!--댓글 업데이트-->
+    <!--2. 댓글 업데이트-->
     <update id = "updateComment"
             parameterType = "com.example.guminsite.model.CommentDto">
         UPDATE TB_COMMENT
         SET UPDATE_DATE = SYSDATE
+          , IDX         = #{idx}
           , CONTENT     = #{content}
           , WRITER      = #{writer}
         WHERE IDX = #{idx}
     </update>
 
+    <!--3. 댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
+    <update id = "deleteComment"
+            parameterType = "Long">
+        UPDATE TB_COMMENT
+        SET DELETE_YN   = 'Y'
+          , DELETE_DATE = SYSDATE
+        WHERE IDX = #{idx}
+    </update>
 
 
-    <!--게시글에 달린 댓글 전체 조회-->
+    <!--4. 게시글에 달린 댓글 전체 조회-->
     <select id = "selectCommentList"
             parameterType = "com.example.guminsite.model.CommentDto"
             resultType = "com.example.guminsite.model.CommentDto">
@@ -78,23 +87,10 @@
     <select id = "selectCommentTotalCount"
             parameterType = "com.example.guminsite.model.CommentDto"
             resultType = "int">
-        SELECT
-            COUNT(*)
-        FROM
-            TB_COMMENT
-        WHERE
-            DELETE_YN = 'N'
-          AND
-            BOARD_IDX = #{boardIdx}
+        SELECT COUNT(*)
+        FROM TB_COMMENT
+        WHERE DELETE_YN = 'N'
+          AND BOARD_IDX = #{boardIdx}
     </select>
-
-    <!--댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
-    <update id = "deleteComment"
-            parameterType = "Long">
-        UPDATE TB_COMMENT
-        SET DELETE_YN   = 'Y'
-          , DELETE_DATE = SYSDATE
-        WHERE IDX = #{idx}
-    </update>
 
 </mapper>

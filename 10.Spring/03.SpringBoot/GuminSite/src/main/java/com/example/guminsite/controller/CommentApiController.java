@@ -46,7 +46,8 @@ public class CommentApiController {
         return detail;
     }
 
-//  2. 댓글 등록
+//  2. 댓글 등록 & 업데이트
+    // ?업데이트 실행은 되는데 리턴값 조회 안됨
     // *@PostMapping : insert 할 때 사용하는 어노테이션
     // *@RequestBody : 입력테스트 시 json 형태로 데이터를 전송할 수 있음
     @PostMapping("/write/comment")
@@ -69,18 +70,20 @@ public class CommentApiController {
         return commentService.getCommentList(commentDto);
     }
 
-    // @PutMapping : update문 실행
+//  3. 댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형
+    // ?리턴값이 노출이 안됨
+    // *@PutMapping : update문 실행
     @PutMapping(value = "/comment/delete/{idx}")
     public List<CommentDto> deleteComment(
             @PathVariable("idx")
-            Long idx) {
-        // 삭제 서비스 호출
+            Long idx, CommentDto commentDto) {
+        // *삭제 서비스 호출
         boolean isDeleted = commentService.deleteComment(idx);
-        // 삭제 되었는지 전체 조회 함 ( select : 전체 조회 )
-        return commentService.getCommentAllList();
+        // *삭제 되었는지 게시판의 댓글을 조회 함 ( select : 전체 조회 )
+        return commentService.getCommentList(commentDto);
     }
 
-    //    페이징 처리를 위한 게시물 검색 메뉴
+//   4. 게시글에 달린 댓글 전체 조회
     @GetMapping("/comment/list/board-idx/{boardIdx}")
     public List<CommentDto> openCommentList(CommentDto params) {
         return commentService.getCommentList(params);
