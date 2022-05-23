@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace = "com.example.boot_exam.dao.CommentDao">
+
+    <sql id = "commentColumns">
+        ID
+        ,BOARD_ID
+        ,COMMENT_CONTENT
+        ,COMMENT_WRITER
+        ,DELETE_FLAG
+        ,INSERT_TIME
+        ,UPDATE_TIME
+        ,DELETE_TIME
+    </sql>
+
+    <!--1. 댓글 상세조회-->
+    <select id = "selectCommentDetail"
+            parameterType = "Long"
+            resultType = "com.example.boot_exam.model.CommentDto">
+        SELECT
+        <include refid = "commentColumns"></include>
+        FROM
+        TB_COMMENT_EXAM_LGM
+        WHERE DELETE_FLAG = 'N'
+        AND ID = #{Id}
+    </select>
+
+    <!--2. 댓글 등록-->
+    <insert id = "insertComment"
+            parameterType = "com.example.boot_exam.model.CommentDto">
+        INSERT INTO TB_COMMENT_EXAM_LGM (
+        <include refid = "boardColumns"></include>
+        )VALUES ( SQ_COMMENT_EXAM_LGM.NEXTVAL
+                ,#{boardId}
+                ,#{commentContent}
+                ,#{commentWriter}
+                ,null
+                ,#{insertTime}
+                ,null
+                ,null
+    </insert>
+
+    <!--2. 댓글 업데이트-->
+    <update id = "updateComment"
+            parameterType = "com.example.boot_exam.model.CommentDto">
+        UPDATE TB_COMMENT_EXAM_LGM
+        SET UPDATE_TIME     = #{updateTime}
+          , COMMENT_CONTENT = #{commentContent}
+          , COMMENT_WRITER  = #{commentWriter}
+        WHERE ID = #{id}
+    </update>
+
+    <!--3. 댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
+    <update id = "deleteComment"
+            parameterType = "Long">
+        UPDATE TB_COMMENT_EXAM_LGM
+        SET DELETE_FLAG = 'Y'
+          , DELETE_TIME = #{deleteTime}
+        WHERE ID = #{id}
+    </update>
+
+
+    <!--4. 게시글에 달린 댓글 전체 조회-->
+    <select id = "selectCommentList"
+            parameterType = "com.example.boot_exam.model.CommentDto"
+            resultType = "com.example.boot_exam.model.CommentDto">
+        SELECT
+            <include refid = "commentColumns"></include>
+        FROM
+            TB_COMMENT_EXAM_LGM
+        WHERE
+            DELETE_FLAG = 'N'
+        AND
+            BOARD_ID = #{boardId}
+        ORDER BY
+            ID DESC,
+            INSERT_TIME DESC
+    </select>
+
+    <!--댓글 개수 조회 ( 노출돼어 있는 총 건수 )-->
+    <select id = "selectCommentTotalCount"
+            parameterType = "com.example.boot_exam.model.CommentDto"
+            resultType = "int">
+        SELECT COUNT(*)
+        FROM TB_COMMENT_EXAM_LGM
+        WHERE DELETE_FLAG = 'N'
+          AND BOARD_ID = #{boardId}
+    </select>
+
+</mapper>

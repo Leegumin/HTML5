@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace = "com.example.boot_exam.dao.BoardDao">
+
+    <sql id = "boardColumns">
+        ID
+        ,BOARD_TITLE
+        ,BOARD_CONTENT
+        ,BOARD_WRITER
+        ,VIEW_CNT
+        ,DELETE_FLAG
+        ,INSERT_TIME
+        ,UPDATE_TIME
+        ,DELETE_TIME
+    </sql>
+
+    <insert id = "insertBoard"
+            parameterType = "com.example.boot_exam.model.BoardDto">
+        INSERT INTO TB_BOARD_EXAM_LGM (
+        -- boardColumns의 값이 들어옴
+        <include refid = "boardColumns"></include>
+        ) VALUES (
+        SQ_BOARD_EXAM_LGM.NEXTVAL
+        ,#{boardTitle}
+        ,#{boardContent}
+        ,#{boardWriter}
+        ,0
+        ,'N'
+        ,#{insertTime}
+        ,null
+        ,null
+        )
+    </insert>
+
+    <!--게시판 상세조회-->
+    <select id = "selectBoardDetail"
+            parameterType = "Long"
+            resultType = "com.example.boot_exam.model.BoardDto">
+        SELECT
+        <include refid = "boardColumns"></include>
+        FROM
+        TB_BOARD_EXAM_LGM
+        WHERE DELETE_FLAG = 'N'
+        AND ID = #{id}
+    </select>
+
+    <!--게시판 전체조회-->
+    <select id = "selectBoardAllList"
+            parameterType = "com.example.boot_exam.model.BoardDto"
+            resultType = "com.example.boot_exam.model.BoardDto">
+        SELECT
+        <include refid = "boardColumns"></include>
+        FROM
+            TB_BOARD_EXAM_LGM
+        WHERE DELETE_FLAG = 'N'
+        ORDER BY
+            ID DESC,
+            INSERT_TIME DESC
+    </select>
+
+    <!--게시판 삭제(업데이트 : 'N' 값을 'Y'값으로 변형-->
+    <update id = "deleteBoard"
+            parameterType = "Long">
+        UPDATE TB_BOARD_EXAM_LGM
+        SET DELETE_FLAG = 'Y'
+          , DELETE_TIME = #{deleteTime}
+        WHERE ID = #{id}
+    </update>
+
+    <!--게시판 글 개수 조회 ( 노출돼어 있는 총 건수 )-->
+    <select id = "selectBoardTotalCount"
+            parameterType = "com.example.boot_exam.model.BoardDto"
+            resultType = "int">
+        SELECT COUNT(*)
+        FROM TB_BOARD_EXAM_LGM
+        WHERE DELETE_FLAG = 'N'
+    </select>
+
+    <!--게시판 업데이트-->
+    <update id = "updateBoard"
+            parameterType = "com.example.boot_exam.model.BoardDto">
+        UPDATE TB_BOARD_EXAM_LGM
+        SET UPDATE_TIME   = #{updateTime}
+          , ID = #{id}
+          , BOARD_TITLE   = #{boardTitle}
+          , BOARD_CONTENT = #{boardContent}
+    </update>
+
+    <!--게시판 페이지 조회-->
+    <select id = "selectBoardList"
+            parameterType = "com.example.boot_exam.model.BoardDto"
+            resultType = "com.example.boot_exam.model.BoardDto">
+        SELECT *
+        FROM (
+              SELECT ROWNUM R,
+                     TBB.*
+              FROM TB_BOARD_EXAM_LGM TBB
+              WHERE ROWNUM &lt;= #{currentPageNo} * #{recordsPerPage}
+              AND DELETE_FLAG = 'N'
+              ORDER BY
+                  ID DESC,
+                  INSERT_TIME DESC
+              )
+        WHERE R &gt; (#{currentPageNo} - 1) * #{recordsPerPage}
+        <include refid = "Common.search"></include>
+    </select>
+</mapper>
