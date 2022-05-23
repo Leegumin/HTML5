@@ -3,6 +3,8 @@ package com.example.guminsite.controller;
 import com.example.guminsite.dao.CommentDao;
 import com.example.guminsite.model.CommentDto;
 import com.example.guminsite.service.CommentServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +30,9 @@ import java.util.List;
 @RequestMapping("/api")
 public class CommentApiController {
 
+    //    로그 정의 : slf4j 로그
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
     // @Autowired를 달아주어야
     // 스프링에서 객체를 받아서 아래 멤버변수에 넣을 수 있음
     @Autowired
@@ -35,22 +40,27 @@ public class CommentApiController {
     @Autowired
     CommentServiceImpl commentService; // -> 단순히 정의를 내린 코드
 
-//  1. 댓글 상세조회
-    @GetMapping("/write/comment/{idx}")
-    public CommentDto openCommentWirte(
+    //  1. 댓글 상세조회
+    // *@PathVariable : Variable -> 변수, 즉 변수경로. 메소드의 매개변수로 전달됨
+    @GetMapping("/board/comment/{idx}")
+    public CommentDto openCommentDetail(
             @PathVariable("idx")
             Long idx) {
-        // 상세목록 보기 서비스를 호출 ( select : 1건 )
+
+        // *콘솔에 로그 찍기
+        logger.info("openCommentDetail(idx) : {}", idx);
+
+        // *상세목록 보기 서비스를 호출 ( select : 1건 )
         CommentDto detail = commentService.getCommentDetail(idx);
-        System.out.println("detail :" + detail);
         return detail;
     }
 
-//  2. 댓글 등록 & 업데이트
-    // ?업데이트 실행은 되는데 리턴값 조회 안됨
+    //  2. 댓글 등록 & 업데이트
+    // ?boardIdx값도 같이 들어가야 업데이트시 에러가 안남. boardIdx값이 안들어가도 업데이트 실행은 지장 없음
+    // ?어디까지나 getCommentList();를 불러오는 문제
     // *@PostMapping : insert 할 때 사용하는 어노테이션
     // *@RequestBody : 입력테스트 시 json 형태로 데이터를 전송할 수 있음
-    @PostMapping("/write/comment")
+    @PostMapping("/board/comment")
     public List<CommentDto> registerComment(
             @RequestBody
             CommentDto commentDto) {
@@ -66,32 +76,30 @@ public class CommentApiController {
         catch (Exception e) {
             // *TODO => 시스템에 문제가 발생했다는 메세지를 출력
         }
+        // *콘솔에 로그 찍기
+        logger.info(" commentDto : {} ", commentDto);
         // *insert 완료 후 데이터 확인을 위한 전체 조회 ( select )
         return commentService.getCommentList(commentDto);
     }
 
-//  3. 댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형
-    // ?리턴값이 노출이 안됨
+    //  3. 댓글 삭제(업데이트 : 'N' 값을 'Y'값으로 변형
+    // ?실행할 때 deleteYn값이 'Y'로 바뀌어서 빈 자료라고 나옴.
     // *@PutMapping : update문 실행
-    @PutMapping(value = "/comment/delete/{idx}")
-    public List<CommentDto> deleteComment(
-            @PathVariable("idx")
-            Long idx, CommentDto commentDto) {
+    @PutMapping(value = "/board/comment/delection/{idx}")
+    public CommentDto deleteComment(CommentDto commentDto) {
         // *삭제 서비스 호출
-        boolean isDeleted = commentService.deleteComment(idx);
+        boolean isDeleted = commentService.deleteComment(commentDto.getIdx());
         // *삭제 되었는지 게시판의 댓글을 조회 함 ( select : 전체 조회 )
-        return commentService.getCommentList(commentDto);
+        // *콘솔에 로그 찍기
+        logger.info(" commentDto : {} ", commentDto);
+        return commentService.getCommentDetail(commentDto.getIdx());
     }
 
-//   4. 게시글에 달린 댓글 전체 조회
-    @GetMapping("/comment/list/board-idx/{boardIdx}")
+    //   4. 게시글에 달린 댓글 전체 조회
+    @GetMapping("/board/{boardIdx}/comments")
     public List<CommentDto> openCommentList(CommentDto params) {
-        return commentService.getCommentList(params);
-    }
-
-    //    페이징 처리를 위한 게시물 검색 메뉴2
-    @GetMapping("/comment/list/c-page/{currentPageNo}/r-page/{recordsPerPage}/s-word/{searchKeyword}/s-type/{searchType}")
-    public List<CommentDto> openBoardList2(CommentDto params) {
+        // *콘솔에 로그 찍기
+        logger.info(" commentDto : {} ", params);
         return commentService.getCommentList(params);
     }
 

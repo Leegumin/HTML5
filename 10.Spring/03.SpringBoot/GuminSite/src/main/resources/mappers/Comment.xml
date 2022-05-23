@@ -10,9 +10,9 @@
         ,CONTENT
         ,WRITER
         ,DELETE_YN
-        ,INSERT_DATE
-        ,UPDATE_DATE
-        ,DELETE_DATE
+        ,INSERT_DATE AS INSERT_TIME
+        ,UPDATE_DATE AS UPDATE_TIME
+        ,DELETE_DATE AS DELETE_TIME
     </sql>
 
     <!--1. 댓글 상세조회-->
@@ -30,19 +30,22 @@
     <!--2. 댓글 등록-->
     <insert id = "insertComment"
             parameterType = "com.example.guminsite.model.CommentDto">
-        INSERT INTO TB_COMMENT (
-        <!--*commentColumns의 값이 들어옴!-->
-        <include refid = "commentColumns"></include>
-        ) VALUES (
-        SQ_TB_COMMENT.NEXTVAL
-        ,#{boardIdx}
-        ,#{content}
-        ,#{writer}
-        ,'N'
-        ,SYSDATE
-        ,NULL
-        ,NULL
-        )
+        INSERT INTO TB_COMMENT ( IDX
+                               , BOARD_IDX
+                               , CONTENT
+                               , WRITER
+                               , DELETE_YN
+                               , INSERT_DATE
+                               , UPDATE_DATE
+                               , DELETE_DATE)
+        VALUES ( SQ_TB_COMMENT.NEXTVAL
+               , #{boardIdx}
+               , #{content}
+               , #{writer}
+               , 'N'
+               , SYSDATE
+               , NULL
+               , NULL)
     </insert>
 
     <!--2. 댓글 업데이트-->
@@ -50,7 +53,6 @@
             parameterType = "com.example.guminsite.model.CommentDto">
         UPDATE TB_COMMENT
         SET UPDATE_DATE = SYSDATE
-          , IDX         = #{idx}
           , CONTENT     = #{content}
           , WRITER      = #{writer}
         WHERE IDX = #{idx}

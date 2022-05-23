@@ -35,9 +35,6 @@ public class CommentServiceImpl implements CommentService {
         // *위의 sql문이 정상수행되면 1, 아니면 다른 값
         int queryResult = 0;
 
-        // ?데이터 점검
-        System.out.println("Service params : " + params);
-
         // *새댓글 쓰기 ( insert 문 실행 )
         if (params.getIdx() == null) {
             queryResult = commentDao.insertComment(params);
@@ -56,7 +53,7 @@ public class CommentServiceImpl implements CommentService {
         return commentDao.selectCommentDetail(idx);
     }
 
-    // !전체 게시물 select 하는 서비스
+    // *전체 게시물 select 하는 서비스
     @Override
     public List<CommentDto> getCommentAllList() {
         List<CommentDto> commentList = commentDao.selectCommentAllList();

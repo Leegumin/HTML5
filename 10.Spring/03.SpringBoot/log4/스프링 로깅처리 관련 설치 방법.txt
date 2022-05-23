@@ -15,3 +15,10 @@ spring.datasource.password=ds603
 
 ------------------------
 log4 관련 프로퍼티, xml 파일을 resources 폴더에 추가
+
+---------------------------
+logback.xml -> logback-spring.xml로 변경
+
+name 경로 수정
+<!-- Logger -->
+	<logger name="com.example.guminsite" level="DEBUG" appender-ref="console" />

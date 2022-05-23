@@ -1,6 +1,5 @@
 package com.example.guminsite.dao;
 
-import com.example.guminsite.model.BoardDto;
 import com.example.guminsite.model.CommentDto;
 import org.apache.ibatis.annotations.Mapper;
 

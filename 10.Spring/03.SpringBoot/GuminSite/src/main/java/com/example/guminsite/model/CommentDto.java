@@ -33,16 +33,17 @@ public class CommentDto extends CommonDto {
     private String        content;
     // *작성자
     private String        writer;
-    // *삭제여부
-    private String        deleteYn;
+    
+//    // *삭제여부 - 상속(CommonDto)
+//    private String        deleteYn;
     
     // CommonDto에서 상속받으면 됨 -> 굳이 컬러명과 일치할 필요는 없고 쿼리문과 연동 시키거나 할때만
     // 맞춰주면 상관없음
-    // *댓글쓴 날짜
-    private LocalDateTime insertDate;
-    // *수정한 날짜
-    private LocalDateTime updateDate;
-    // *삭제한 날짜
-    private LocalDateTime deleteDate;
+//    // *댓글쓴 날짜
+//    private LocalDateTime insertDate;
+//    // *수정한 날짜
+//    private LocalDateTime updateDate;
+//    // *삭제한 날짜
+//    private LocalDateTime deleteDate;
 
 }

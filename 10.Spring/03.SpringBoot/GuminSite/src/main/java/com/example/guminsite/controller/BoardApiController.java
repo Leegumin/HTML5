@@ -5,6 +5,8 @@ import com.example.guminsite.dao.CommentDao;
 import com.example.guminsite.model.BoardDto;
 import com.example.guminsite.model.CommentDto;
 import com.example.guminsite.service.BoardServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +31,8 @@ import java.util.List;
 // @RequestMapping : 호스트번호 뒤에 /api를 자동으로 설정해줌
 @RequestMapping("/api")
 public class BoardApiController {
+    //    로그 정의 : slf4j 로그
+    Logger looger = LoggerFactory.getLogger(this.getClass());
 
     // @Autowired를 달아주어야
     // 스프링에서 객체를 받아서 아래 멤버변수에 넣을 수 있음
