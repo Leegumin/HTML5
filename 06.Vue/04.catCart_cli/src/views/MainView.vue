@@ -108,9 +108,6 @@ export default {
     cartItemCount() {
       return this.cart.length;
     },
-    ChildProducts(){
-
-    }
   },
   methods: {
     // 물품 추가

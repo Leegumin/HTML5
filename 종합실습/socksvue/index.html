@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Vue Mastery</title>
+
+    <!--stylesheet link-->
+    <link rel = "stylesheet" href = "./assets/css/styles.css">
+    <!--vue cdn link-->
+    <script src = "https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <!--app => Vue의 영역-->
+    <div id = "app">
+        <!--메뉴바-->
+        <div class = "nav-bar"></div>
+        <div class = "cart">Cart({{ cart.length }})</div>
+
+        <!--*import돤 자식 컴포넌트 노출-->
+        <product-display :premium = "prem" @add-to-cart = "updateCart"></product-display>
+        <review-form></review-form>
+
+    </div>
+    <!--import js-->
+    <script src = "./main.js"></script>
+    <!--*자식 컴포넌트-->
+    <script src = "./components/ProductDisplay.js"></script>
+    <script src = "./components/ReviewForm.js"></script>
+    <!--mount app-->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>
