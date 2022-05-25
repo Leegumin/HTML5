@@ -48,10 +48,17 @@ app.component('product-display', {
                 <!--* => v-on:click="addToCart">-->
             </div>
         </div>
+        <!--1. 손자 컴포넌트 추가-->
+        <review-list v-if = "reviews.length" :rev = "reviews"></review-list>
+        <!--2. 손자 컴포넌트 추가-->
+        <review-form @review-submitted = "addReview"></review-form>
+
     </div>
     `,
   data () {
     return {
+      // *자식컴포넌트(ReviewForm)에서 review값(addReview)을 받는 배열
+      reviews        : [],
       onSale         : true,
       product        : 'Socks',
       brand          : 'Vue Mastery',
@@ -72,6 +79,9 @@ app.component('product-display', {
     }
   },
   methods : {
+    addReview (review) {
+      this.reviews.push(review)
+    },
     addToCart () {
       // *자식에서 부모쪽으로 'add-to-cart' 이름으로 리턴값을 보냄
       this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
