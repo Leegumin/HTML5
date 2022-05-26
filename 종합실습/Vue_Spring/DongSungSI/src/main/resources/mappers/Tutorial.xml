@@ -28,7 +28,7 @@
                UPDATE_TIME,
                DELETE_TIME
         FROM TB_TUTORIAL
-        WHERE DELETE_Y = 'N'
+        WHERE DELETE_YN = 'N'
           AND PUBLISHED = #{published}
     </select>
 
@@ -45,8 +45,9 @@
                UPDATE_TIME,
                DELETE_TIME
         FROM TB_TUTORIAL
-        WHERE DELETE_Y = 'N'
-        <!--'%'|| #{title} ||'%' => '#{title}'-->AND TITLE LIKE '%'|| #{title} ||'%'
+        WHERE DELETE_YN = 'N'
+        AND TITLE LIKE '%'|| #{title} ||'%'
+        <!--'%'|| #{title} ||'%' => '#{title}'-->
     </select>
 
 
@@ -62,7 +63,7 @@
                UPDATE_TIME,
                DELETE_TIME
         FROM TB_TUTORIAL
-        WHERE DELETE_Y = 'N'
+        WHERE DELETE_YN = 'N'
     </select>
 
     <!--*id 번호로 게시글 찾기-->
@@ -82,7 +83,7 @@
           AND ID = #{id}
     </select>
 
-    <!--*Create-->
+    <!--*Create, insertTutorial 메소드에 값이 정상적으로 들어가면 그 값을 받아 쿼리문을 실행함-->
     <insert id = "insertTutorial"
             parameterType = "com.example.dongsungsi.model.Tutorial">
         INSERT INTO TB_TUTORIAL(ID,

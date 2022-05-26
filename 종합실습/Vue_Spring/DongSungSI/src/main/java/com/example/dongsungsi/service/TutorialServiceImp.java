@@ -49,7 +49,7 @@ public class TutorialServiceImp implements TutorialService {
             // *타이틀 값이 있으면 매개변수로 들어가는 title의 값과 일치하는 title 변수를 가진 Tutorial을 배열로 반환함
         }
         else {
-            tutorialDao.findByTitleContaining(title);
+            tutorials = tutorialDao.findByTitleContaining(title);
         }
         return tutorials;
     }
@@ -62,11 +62,13 @@ public class TutorialServiceImp implements TutorialService {
     @Override
     public boolean save(Tutorial tutorial) {
         int queryResult = 0;
-        logger.info("tutorial : {} ", tutorial);
+        logger.info("Tutorial : {} ", tutorial);
 
         // *id값이 없을때 insert문 실행됐는지 여부 파악
         if (tutorial.getId() == null) {
+            // *insertTutorial(tutorial); -> 처음 호출되는 순간 insertTutorial에 데이터가 저장되어 Tutorial.xml의 insert문 실행 가능해짐
             queryResult = tutorialDao.insertTutorial(tutorial);
+            logger.info("queryResult : {} ", queryResult);
 
         }
         // *id값이 있을때 update문 실행됐는지 여부 파악

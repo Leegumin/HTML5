@@ -29,6 +29,7 @@ public interface TutorialService {
 
     // 서비스 메소드
     // *insert&update 같이 구성되는 메소드
+    // *참 거짓 값을 넘겨
     public boolean save(Tutorial tutorial);
 
     public boolean deleteById(Long id);
