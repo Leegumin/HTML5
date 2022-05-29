@@ -23,8 +23,16 @@ import java.util.Optional;
  * -----------------------------------------------------------
  * 2022-05-25         gumin          최초 생성
  */
+// *@CrossOrigin
+// *웹 페이지의 제한(CORS(Cross-origin resource sharing) 문제)된 자원을 외부 도메인에서 접근을 허용해주는 매커니즘
+// *기본적으로 '모든 도메인, 모든 요청방식'에 대해 허용 한다는 뜻
+// *(origins = "http://localhost:8080") : 특정 도메인만 허용할 경우 origins에 주소가 들어감. 도메인이 복수개일 경우 ','로 구분
+// *front-end와 연결하기 위해 사용함
+@CrossOrigin(origins = "http://localhost:8080")
+
 // *@RestController : REST API 호출을 위한 어노테이션, JSON 형태로 들어옴
 @RestController
+
 // *@RequestMapping("/api") : http://localhost:8000/ -> http://localhost:8000/api로 기본주소 변경됨
 @RequestMapping("/api")
 public class TutorialController {
@@ -83,9 +91,7 @@ public class TutorialController {
 
     // TITLE 검색
     @GetMapping("/tutorials")
-    public ResponseEntity<List<Tutorial>> getTitleTutorials(
-            @RequestParam(required = false)
-            String title) {
+    public ResponseEntity<List<Tutorial>> getTitleTutorials(String title) {
         // *title(제목)을 조회하는 서비스를 호출
         List<Tutorial> tutorials = tutorialService.findByTitleContaining(title);
         logger.info("tutorials: {}", tutorials);
