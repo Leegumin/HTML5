@@ -45,14 +45,27 @@
           >
         </div>
       </div>
-      <!--미리보기 이미지 끝-->
+      <!--미리보기 이미지 끝-->x
       <!--서버에러 메시지가 있을 경우 시작-->
       <div v-if = "message"
            class = "alert alert-secondary"
            role = "alert"
       >
+        {{ message }}
       </div>
       <!--서버에러 메시지가 있을 경우 끝-->
+
+      <!-- list(목록) 이미지 정보를 출력-->
+      <div class = "card mt-3">
+        <div class = "card-header">List of Image</div>
+        <ul class = "list-group list-group-flush">
+          <li class = "list-group-item"
+              v-for = "(image, index) in imageInfo"
+              :key = "index"
+          ><a :href = "image.url">{{ image.name }}</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

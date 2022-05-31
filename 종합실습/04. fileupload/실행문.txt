@@ -1,0 +1,6 @@
+###
+POST http://localhost:9000/api/upload
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="input.txt"
