@@ -45,7 +45,7 @@
           >
         </div>
       </div>
-      <!--미리보기 이미지 끝-->x
+      <!--미리보기 이미지 끝-->
       <!--서버에러 메시지가 있을 경우 시작-->
       <div v-if = "message"
            class = "alert alert-secondary"
