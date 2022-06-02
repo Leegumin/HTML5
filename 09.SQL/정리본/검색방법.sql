@@ -76,3 +76,14 @@ ORDER BY
     ENAME DESC,
     EMPNO; --오름차순 ASC는 생략 가능
 --ORDER BY 2 DESC, 1; --컬럼ID(숫자)로도 사용 가능
+
+--DESC 테이블명
+--테이블의 구조를 보여주는 명령어
+--NUMBER : 정수, 실수를 표기하는 자료형
+--NUMBER(4) : 4는 숫자 4자리
+--NUMBER(7,2) : 7은 정수자리수, 2는 소수자리수 2자리
+--VARCHAR2 : 문자열을 표기하는 자료형(*)
+--VARCHAR2(10) : 10 자리수 
+--UTF8 설정 : 영어(한글자) 1BYTE, 한글(한글자) 3BYTE
+--DATE : 날짜를 표기하는 자료형
+DESC DEPT;
