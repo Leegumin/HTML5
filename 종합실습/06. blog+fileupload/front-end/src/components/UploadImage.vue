@@ -57,22 +57,45 @@
     </div>
     <!--서버에러 메시지가 있을 경우 끝-->
 
-    <!-- list(목록) 이미지 정보를 출력-->
-    <div class = "card mt-3">
-      <div class = "card-header">List of Image</div>
-      <ul class = "list-group list-group-flush">
-        <li class = "list-group-item"
-            v-for = "(image, index) in imageInfo"
-            :key = "index"
-        ><a :href = "image.url">{{ image.name }}</a>
-        </li>
-      </ul>
+    <!-- list(목록) 이미지 정보를 출력, 쇼핑카트 형태 디자인-->
+    <div class = "card mt-3"
+         v-for = "(image, index) in imageInfo"
+         :key = "index"
+    >
+      <div class = "card-header">이미지 번호 : {{ image.id }}</div>
+      <div class = "row">
+        <div class = "col-md-5 col-md-offset-0">
+          <figure>
+            <img
+                class = "img-thumbnail"
+                :src = "image.url"
+                alt = "이미지 없음"
+            />
+          </figure>
+        </div>
+        <div class = "col-md-6 col-md-offset-0 description">
+          <p v-html = "image.name"></p>
+          <p class = "price">
+            {{ image.url }}
+          </p>
+        </div>
+      </div>
     </div>
+    <!--<div class = "card mt-3">-->
+    <!--  <div class = "card-header">List of Image</div>-->
+    <!--  <ul class = "list-group list-group-flush">-->
+    <!--    <li class = "list-group-item"-->
+    <!--        v-for = "(image, index) in imageInfo"-->
+    <!--        :key = "index"-->
+    <!--    ><a :href = "image.url">{{ image.name }}</a>-->
+    <!--    </li>-->
+    <!--  </ul>-->
+    <!--</div>-->
   </div>
 </template>
 
 <script>
-import UploadFilesService from '../service/UploadFilesService'
+import UploadFilesService from '@/services/UploadFilesService'
 
 export default {
   name: 'upload-image',

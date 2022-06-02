@@ -1,9 +1,9 @@
-package com.example.dongsunguploaddb.controller;
+package com.example.dongsungsi.controller;
 
-import com.example.dongsunguploaddb.message.ResponseFile;
-import com.example.dongsunguploaddb.message.ResponseMessage;
-import com.example.dongsunguploaddb.model.FileDB;
-import com.example.dongsunguploaddb.service.FileDBService;
+import com.example.dongsungsi.message.ResponseFile;
+import com.example.dongsungsi.message.ResponseMessage;
+import com.example.dongsungsi.model.FileDB;
+import com.example.dongsungsi.service.FileDBService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * packageName : com.example.dongsunguploaddb.controller
+ * packageName : com.example.dongsungsi.controller
  * fileName : FileController
  * author : gumin
  * date : 2022-05-31
@@ -96,8 +96,10 @@ public class FileDBController {
                                                                 .path("/api/files/")
                                                                 .path(dbFile.getId())
                                                                 .toUriString();
-            // Vue로 전송할 데이터 반환 ( 파일이름, URL, 파일유형, 파일크기 )
-            return new ResponseFile(dbFile.getName(), fileDownloadURL, dbFile.getType(), dbFile.getData().length);
+            // Vue로 전송할 데이터 반환 ( 파일번호, 파일이름, URL, 파일유형, 파일크기 )
+            return new ResponseFile(dbFile.getId(), dbFile.getName(), fileDownloadURL, dbFile.getType(),
+                                    dbFile.getData().length
+            );
 
             // 반환된 Stream => List로 원상복구
         }).collect(Collectors.toList());
