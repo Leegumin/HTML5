@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace = "com.example.dongsungsi.dao.MemberDao">
+<!--     List<Tutorial> findByPublished(String published);-->
+
+    <!--    // 제목 검색을 위한 메소드-->
+    <!--    List<Tutorial> findByTitleContaining(String title);-->
+
+    <!--    // 모든 데이터 목록 조회-->
+    <!--    List<Tutorial> findAll();-->
+
+    <!--    // id에 해당하는 값을 조회-->
+    <!--    // Optional : null을 방지하는 클래스-->
+    <!--    Optional<Tutorial> findById(Long id);-->
+
+    <!-- &lt;!&ndash;*제목으로 게시글 찾기&ndash;&gt;
+     <select id = "findByTitleContaining"
+             parameterType = "String"
+             resultType = "com.example.dongsungsi.model.MemberDTO">
+         SELECT ID,
+                TITLE,
+                DESCRIPTION,
+                PUBLISHED,
+                DELETE_YN,
+                INSERT_TIME,
+                UPDATE_TIME,
+                DELETE_TIME
+         FROM TB_TUTORIAL
+         WHERE DELETE_YN = 'N'
+         AND TITLE LIKE '%'|| #{title} ||'%'
+         &lt;!&ndash;'%'|| #{title} ||'%' => '#{title}'&ndash;&gt;
+     </select>-->
+
+    <!--*게시된 전부 찾기(삭제된 게시글 제외)-->
+    <select id = "findAll"
+            resultType = "com.example.dongsungsi.model.MemberDTO">
+        SELECT ID,
+               FIRST_NAME,
+               LAST_NAME,
+               EMAIL,
+               PHONE,
+               DELETE_YN,
+               INSERT_TIME,
+               UPDATE_TIME
+        FROM TB_CUSTOMER
+        WHERE DELETE_YN = 'N'
+    </select>
+
+    <!--*id 번호로 게시글 찾기-->
+    <select id = "findById"
+            parameterType = "Long"
+            resultType = "com.example.dongsungsi.model.MemberDTO">
+        SELECT ID,
+               FIRST_NAME,
+               LAST_NAME,
+               EMAIL,
+               PHONE,
+               DELETE_YN,
+               INSERT_TIME,
+               UPDATE_TIME
+        FROM TB_CUSTOMER
+        WHERE DELETE_YN = 'N'
+          AND ID = #{id}
+    </select>
+
+    <!--*Create, insertTutorial 메소드에 값이 정상적으로 들어가면 그 값을 받아 쿼리문을 실행함-->
+    <insert id = "insertMember"
+            parameterType = "com.example.dongsungsi.model.MemberDTO">
+        INSERT INTO TB_CUSTOMER(ID,
+                                FIRST_NAME,
+                                LAST_NAME,
+                                EMAIL,
+                                PHONE,
+                                INSERT_TIME)
+        VALUES (SQ_CUSTOMER.NEXTVAL,
+                #{firstName},
+                #{lastName},
+                #{email},
+                #{phone},
+                TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'))
+    </insert>
+
+    <!--*Update-->
+    <update id = "updateMember"
+            parameterType = "com.example.dongsungsi.model.MemberDTO">
+        UPDATE TB_CUSTOMER
+        SET FIRST_NAME  = #{firstName},
+            LAST_NAME   = #{lastName},
+            EMAIL       = #{email},
+            PHONE       = #{phone},
+            UPDATE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+        WHERE ID = #{id}
+    </update>
+
+    <!--*Delete-->
+    <update id = "deleteMember"
+            parameterType = "Long">
+        UPDATE TB_CUSTOMER
+        SET DELETE_YN   = 'Y',
+            DELETE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+        WHERE ID = #{id}
+    </update>
+
+    <!--*DeleteAll-->
+    <update id = "deleteAll">
+        UPDATE TB_CUSTOMER
+        SET DELETE_YN   = 'Y',
+            DELETE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+    </update>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
