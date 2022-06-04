@@ -2,11 +2,9 @@
   <div id = "app">
     <!-- * bootstrap dropdown 적용 -->
     <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
-      <!--      <a class="navbar-brand" href="#">Navbar</a>-->
-      <router-link to = "/"
-                   class = "navbar-brand"
-      >bezkoder
-      </router-link>
+      <a class = "navbar-brand"
+         href = "#"
+      >Navbar</a>
       <button class = "navbar-toggler"
               type = "button"
               data-toggle = "collapse"
@@ -47,12 +45,37 @@
               </router-link>
             </div>
           </li>
+          <!-- * dropdown #1 끝-->
         </ul>
       </div>
     </nav>
-    <router-view/>
+
+    <div class = "container">
+      <router-view/>
+    </div>
+
   </div>
 </template>
 
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
