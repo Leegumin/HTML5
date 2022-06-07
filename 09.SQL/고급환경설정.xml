@@ -9,7 +9,7 @@
 <alignAssignments>true</alignAssignments>
 <breaksProcArgs>false</breaksProcArgs>
 <alignRight>false</alignRight>
-<breaksComma>oracle.dbtools.app.Format.Breaks.After</breaksComma>
+<breaksComma>oracle.dbtools.app.Format.Breaks.Before</breaksComma>
 <breaksAroundLogicalConjunctions>oracle.dbtools.app.Format.Breaks.Before</breaksAroundLogicalConjunctions>
 <alignNamedArgs>true</alignNamedArgs>
 <formatProgramURL>default</formatProgramURL>
@@ -28,6 +28,6 @@
 <parseForwardAndBackward>true</parseForwardAndBackward>
 <identSpaces>4</identSpaces>
 <breaksAfterSelect>true</breaksAfterSelect>
-<spaceAfterCommas>true</spaceAfterCommas>
+<spaceAfterCommas>false</spaceAfterCommas>
 <kwCase>oracle.dbtools.app.Format.Case.UPPER</kwCase>
 </options>

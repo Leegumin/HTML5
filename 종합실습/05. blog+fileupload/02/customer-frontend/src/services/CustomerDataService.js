@@ -5,7 +5,7 @@
 //     axios.post('/user, {id: 'aa', name: 'forbob'})
 //     .then(function(res) { 성공하면 then })
 //     .catch(function(error) { 실패하면 catch })
-
+//     http.axios형식('/spring에서 정의된 주소'), router의 index.js 주소와는 관계 없음 
 import http from '../http-common'
 
 // 자바스크립트 class

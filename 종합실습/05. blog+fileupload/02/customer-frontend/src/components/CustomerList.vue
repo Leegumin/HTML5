@@ -19,9 +19,14 @@
         <td>{{ customer.lastName }}</td>
         <td>{{ customer.email }}</td>
         <td>{{ customer.phone }}</td>
+        <!--* http://localhost8080/customers/customer.id 형태의 주소로 이동-->
+        <!--* :href -> v-bind:href, customer.id 값을 가져오기 위해서는 <script>의 data()와 바인딩할 필요가 있음-->
         <td><a :href = "'/customers/' + customer.id"
                class = "btn btn-primary"
-        >Edit</a></td>
+        >id</a></td>
+        <td><a :href = "'/customer/' + customer.phone"
+               class = "btn btn-primary"
+        >phone</a></td>
       </tr>
       </tbody>
     </table>
