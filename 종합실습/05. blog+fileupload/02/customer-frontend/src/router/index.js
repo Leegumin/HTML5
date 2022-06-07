@@ -16,6 +16,12 @@ const routes = [
     name     : 'add-customers',
     component: () => import('@/components/AddCustomer'),
   },
+  {
+    path     : '/customers/:id',
+    alias    : '/edit-customers',
+    name     : 'edit-customers',
+    component: () => import('@/components/EditCustomer'),
+  }
 ]
 
 const router = new VueRouter({

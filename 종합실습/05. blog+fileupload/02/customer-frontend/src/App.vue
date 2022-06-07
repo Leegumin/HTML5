@@ -20,7 +20,7 @@
       >
         <ul class = "navbar-nav">
           <!-- * dropdown #1 -->
-          <li class = "nav-item dropdown">
+          <li class = "nav-item dropdown active">
             <a class = "nav-link dropdown-toggle"
                href = "#"
                id = "navbarDropdownMenuLink"
@@ -43,6 +43,11 @@
               >
                 Customer 추가
               </router-link>
+              <router-link to = "/edit"
+                           class = "dropdown-item"
+              >
+                Customer 변경
+              </router-link>
             </div>
           </li>
           <!-- * dropdown #1 끝-->
@@ -58,24 +63,4 @@
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

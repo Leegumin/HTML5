@@ -19,7 +19,7 @@
         <td>{{ customer.lastName }}</td>
         <td>{{ customer.email }}</td>
         <td>{{ customer.phone }}</td>
-        <td><a :href = "'/customer/' + customer.id"
+        <td><a :href = "'/customers/' + customer.id"
                class = "btn btn-primary"
         >Edit</a></td>
       </tr>

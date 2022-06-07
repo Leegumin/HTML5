@@ -17,7 +17,7 @@ import lombok.Data;
  */
 // @Data = @Getter, @Setter, ToString(배열 주소값으로 표기되는걸 변수값이 표기되도록 변경해줌)
 @Data
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+//@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Tutorial {
     private Long   id;
     private String title;
