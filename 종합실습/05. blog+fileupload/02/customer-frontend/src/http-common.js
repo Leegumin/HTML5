@@ -5,6 +5,7 @@ export default axios.create({
   // *back-end 주소(application.properti의 서버 포트)
   baseURL: 'http://localhost:8000/api',
   // *axios를 실행할 때 기본적으로 머리에 붙는 구문
+  // *전송되는 데이터를 json 형식으로 전송함
   headers: {
     'Content-type': 'application/json',
   },

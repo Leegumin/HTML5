@@ -36,17 +36,12 @@
               <router-link to = "/customers"
                            class = "dropdown-item"
               >
-                Customer 목록
+                Customer List
               </router-link>
               <router-link to = "/add"
                            class = "dropdown-item"
               >
-                Customer 추가
-              </router-link>
-              <router-link to = "/edit"
-                           class = "dropdown-item"
-              >
-                Customer 변경
+                Add New Customer
               </router-link>
             </div>
           </li>
