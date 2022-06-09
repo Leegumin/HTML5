@@ -1,6 +1,6 @@
 <template>
   <!--기존 회원이 있을 경우 currentCustomer != null이 아닐 경우, 현재 상태는 currentCustomer null-->
-  <div v-if = "currentCustomer">
+  <div v-if = "currentCustomer" class="container mt-3">
     <!--! mb-3 : m(margin), p(padding), : l(left), r(right), b(bottom), 1 : 25px ~ -->
     <!--*div mb-3 #1 시작-->
     <div class = "mb-3">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mt-3">
     <div class = "row">
       <div class = "col-8">
         <label class = "btn btn-default p-0"

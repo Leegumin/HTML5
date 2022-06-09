@@ -1,0 +1,12 @@
+npm install bootstrap@4.5.0
+npm install bootstrap-vue
+
+main.js에 추가>
+
+Vue.config.productionTip = false
+import { BootstrapVue } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+
+Vue.config.productionTip = false

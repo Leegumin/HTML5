@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mt-3">
     <!--새 회원가입일 경우 submitted = false -->
     <div v-if = "!submitted">
       <!--*div mb-3 #1 시작-->

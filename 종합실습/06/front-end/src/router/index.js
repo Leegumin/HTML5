@@ -61,12 +61,6 @@ const routes = [
     name     : 'edit-customers',
     component: () => import('@/components/customer/EditCustomer'),
   },
-  {
-    path     : '/home2',
-    alias    : '/home2',
-    name     : 'home2',
-    component: () => import('@/views/HomeView2'),
-  },
 
 ]
 

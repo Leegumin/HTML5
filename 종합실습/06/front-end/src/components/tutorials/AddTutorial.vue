@@ -1,5 +1,5 @@
 <template>
-  <div class = "submit-form">
+  <div class = "submit-form container mt-3">
 
     <div v-if = "!submitted">
       <div class = "form-group">

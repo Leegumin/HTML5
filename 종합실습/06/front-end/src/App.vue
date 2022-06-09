@@ -111,27 +111,6 @@
               </router-link>
             </div>
           </li>
-          <!-- * dropdown #4 -->
-          <li class = "nav-item dropdown mr-4 active">
-            <a class = "nav-link dropdown-toggle"
-               href = "#"
-               id = "navbarDropdownMenuLink"
-               data-toggle = "dropdown"
-               aria-haspopup = "true"
-               aria-expanded = "false"
-            >
-              About2
-            </a>
-            <div class = "dropdown-menu"
-                 aria-labelledby = "navbarDropdownMenuLink"
-            >
-              <router-link to = "/home2"
-                           class = "dropdown-item"
-              >
-                Home
-              </router-link>
-            </div>
-          </li>
         </ul>
       </div>
     </nav>

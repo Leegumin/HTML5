@@ -44,7 +44,7 @@ export default {
   components: {
     HeaderCom,
     FooterCom,
-    SectionCom
+    SectionCom,
   },
   mounted () {
     loadWin()
@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 /*Todo : bootstrap 테마 사용자 css import*/
 @import '@/assets/css/styles.css';
 </style>

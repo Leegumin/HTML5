@@ -1,7 +1,7 @@
 <template>
   <!--currentTutorial != null 일 때-->
   <div v-if = "currentTutorial"
-       class = "edit-form"
+       class = "edit-form container mt-3"
   >
     <!--!form 시작-->
     <h4>Tutorial</h4>

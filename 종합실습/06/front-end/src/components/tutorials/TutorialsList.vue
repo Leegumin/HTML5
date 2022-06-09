@@ -1,5 +1,5 @@
 <template>
-  <div class = "list row">
+  <div class = "list row container mt-3">
 
     <!--search 관련 div 시작-->
     <div class = "col-md-8">
