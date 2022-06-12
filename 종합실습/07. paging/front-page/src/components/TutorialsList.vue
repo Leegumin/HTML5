@@ -14,7 +14,7 @@
         <div class = "input-group-append">
           <button class = "btn btn-outline-secondary"
                   type = "button"
-                  @click = "page = 1; retrieveTutorials();"
+                  @click = "page =1; retrieveTutorials();"
           >
             Search
           </button>
@@ -30,9 +30,9 @@
         <select v-model = "pageSize"
                 @change = "handlePageSizeChange($event)"
         >
-          <option v-for = "size in pageSize"
+          <option v-for = "size in pageSizes"
                   :key = "size"
-                  value = "size"
+                  :value = "size"
           >{{ size }}
           </option>
         </select>
@@ -41,8 +41,8 @@
       <b-pagination v-model = "page"
                     :total-rows = "count"
                     :per-page = "pageSize"
-                    :prev-text = "Prev"
-                    :next-text = "Next"
+                    prev-text = "Prev"
+                    next-text = "Next"
                     @change = "handlePageChange"
       >
       </b-pagination>
