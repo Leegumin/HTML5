@@ -2,13 +2,11 @@ package com.example.dongsungsi.service;
 
 import com.example.dongsungsi.dao.CustomerDao;
 import com.example.dongsungsi.model.Customer;
-import com.example.dongsungsi.paging.Criteria;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,38 +35,10 @@ public class CustomerServiceImp implements CustomerService {
         return customerDao.findById(id);
     }
 
-    // Todo: 2개 수정 findByTitleContaining, findAll
+    // 회원 전체 조회
     @Override
-    public List<Customer> findByEmailContaining(Criteria criteria) {
-        // *빈 값으로 초기화
-        List<Customer> customers = Collections.emptyList();
-
-        // Optional.ofNullable(criteria.getTitle()) : Null 체크
-        Optional<String> optionalCriteria = Optional.ofNullable(criteria.getEmail());
-        // optionalCriteria.orElse("") : Title 값이 Null이면 => ""으로 변경
-        // 테이블의 총 건수
-        int totalCount = customerDao.selectTotalCount(optionalCriteria.orElse(""));
-
-        // criteria : 페이징 처리 클래스 객체
-        criteria.setTotalItems(totalCount);
-        // 총 페이지 개수 : 테이블의 총 건수(totalCount) / 페이지당 출력할 데이터 개수(size)
-        criteria.setTotalPages(totalCount / criteria.getSize());
-
-        // email이 null이면 전체검색
-        if (criteria.getEmail() == null) {
-            customers = customerDao.findAll(criteria);
-        }
-        // email이 있으면 email 검색
-        else {
-            customers = customerDao.findByEmailContaining(criteria);
-        }
-        return customers;
-    }
-
-    // 모든 회원 조회
-    @Override
-    public List<Customer> findAll(Criteria criteria) {
-        return customerDao.findAll(criteria);
+    public List<Customer> findAll() {
+        return customerDao.findAll();
     }
 
     // 회원 생성&수정 서비스

@@ -1,7 +1,6 @@
 package com.example.dongsungsi.dao;
 
 import com.example.dongsungsi.model.Customer;
-import com.example.dongsungsi.paging.Criteria;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -27,31 +26,24 @@ public interface CustomerDao {
 
     // id에 해당하는 값을 조회
     // *Optional : null을 방지하는 클래스
-    public Optional<Customer> findById(Long id);
-
-    // Todo : 2개 수정(findByEmailContaining, findAll), 1개 추가(selectTotalCount)
-    // 제목 검색을 위한 메소드
-    public List<Customer> findByEmailContaining(Criteria criteria);
+    Optional<Customer> findById(Long id);
 
     // 모든 데이터 목록 조회
-    public List<Customer> findAll(Criteria criteria);
-
-    // 제목에 따른 데이터 건수를 세는 메소드
-    public int selectTotalCount(String email);
+    List<Customer> findAll();
 
     // * 자료형 long가 붙는 메서드는 전부 실행 건수가 나타남
 
     // 회원 생성
-    public long insertCustomer(Customer customer);
+    long insertCustomer(Customer customer);
 
     // 회원 수정
-    public long updateCustomer(Customer Customer);
+    long updateCustomer(Customer Customer);
 
     // id로 회원 삭제
-    public long deleteCustomer(Long id);
+    long deleteCustomer(Long id);
 
     // 회원 전체삭제
-    public long deleteAll();
+    long deleteAll();
 
 
 

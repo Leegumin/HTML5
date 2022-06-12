@@ -1,7 +1,6 @@
 package com.example.dongsungsi.controller;
 
 import com.example.dongsungsi.model.Customer;
-import com.example.dongsungsi.paging.Criteria;
 import com.example.dongsungsi.service.CustomerServiceImp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,9 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * packageName : com.example.dongsungsi.controller
@@ -42,6 +39,25 @@ public class CustomerController {
 
     @Autowired
     private CustomerServiceImp customerService;
+
+    // 모든 회원 조회 메뉴
+    @GetMapping("/customers")
+    public ResponseEntity<Object> getAllCustomers() {
+
+        List<Customer> customers = customerService.findAll();
+
+        // 모든 회원 조회 서비스 호출
+        // * 성공하면 customers와 OK 메시지 송출
+        try {
+            return new ResponseEntity<Object>(customers, HttpStatus.OK);
+        }
+        // * 실패하면 에러
+        catch (Exception ex) {
+            logger.error(ex.getMessage(), ex);
+            // Vue에 에러메세지 전송
+            return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+        }
+    }
 
     // 회원 생성
     @PostMapping("/customers")
@@ -91,40 +107,6 @@ public class CustomerController {
         }
     }
 
-    // Todo: 추가 getAllEmailPage
-    // EMAIL 검색 (검색조건이 없을 때 모든 회원 조회)
-    @GetMapping("/customers")
-    public ResponseEntity<Map<String, Object>> getAllEmailPage(Criteria criteria) {
-        logger.info("criteria1 : {}", criteria);
-        // *email을 조회하는 서비스를 호출, totalItem과 totalPages 계산 기능 포함(현재 null)
-        List<Customer> customers = customerService.findByEmailContaining(criteria);
-        // *findByEmailContaining이 호출되면서 totalItem과 totalPages 값도 같이 나옴
-        logger.info("customers: {}", customers);
-        try {
-            // *조회데이터가 없을 때
-            if (customers.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-            logger.info("criteria2 : {}", criteria);
-
-            Map<String, Object> response = new HashMap<>();
-            response.put("customers", customers);
-            // *page : 현재페이지
-            response.put("currentPage", criteria.getPage());
-            // *totalItems : 총 데이터 건수
-            response.put("totalItems", criteria.getTotalItems());
-            // *totalPage : 총 페이지 개수
-            response.put("totalPage", criteria.getTotalPages());
-
-            // *조회데이터가 있을 때 :tutorials, 상태정보 (OK) 전송
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        }
-        catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-    }
-
     // id로 회원 수정
     // * Vue에서 전송받아야 하는 것 : url 매개변수({id}), 객체(data)
     // * url 매개변수({id}) : @PathVariable("id") Long id), Vue에서 url 매개변수를 받는 어노테이션
@@ -135,7 +117,7 @@ public class CustomerController {
             Customer customer,
             @PathVariable("id")
             Long id
-    ) {
+            ) {
 
         // * 성공하면 customer, OK 메시지 송출
         try {
