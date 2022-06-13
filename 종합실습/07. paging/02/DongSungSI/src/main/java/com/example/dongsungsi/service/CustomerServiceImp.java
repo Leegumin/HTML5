@@ -37,7 +37,7 @@ public class CustomerServiceImp implements CustomerService {
         return customerDao.findById(id);
     }
 
-    // Todo: 2개 수정 findByTitleContaining, findAll
+    // Todo: 2개 수정 findByEmailContaining, findAll
     @Override
     public List<Customer> findByEmailContaining(Criteria criteria) {
         // *빈 값으로 초기화
@@ -105,7 +105,7 @@ public class CustomerServiceImp implements CustomerService {
         queryResult = customerDao.deleteCustomer(id);
 
         // queryResult에 건수가 정상저장되면 true값을 반환
-        return queryResult >=1;
+        return queryResult >= 1;
     }
 
     // 회원 전부 삭제
@@ -117,6 +117,6 @@ public class CustomerServiceImp implements CustomerService {
         queryResult = customerDao.deleteAll();
 
         // queryResult에 건수가 정상저장되면 true값을 반환
-        return queryResult >=1;
+        return queryResult >= 1;
     }
 }
