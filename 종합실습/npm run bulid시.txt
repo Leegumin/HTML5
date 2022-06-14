@@ -1,0 +1,4 @@
+새로고침하면 서버를 찾지를 못함
+-> 리다이렉션을 위한 자바클래스 추가
+-> pagine 03번 참고
+-> controller에 RootController 클래스 추가
