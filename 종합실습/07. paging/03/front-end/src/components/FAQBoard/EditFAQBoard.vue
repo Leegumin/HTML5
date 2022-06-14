@@ -1,6 +1,6 @@
 <template>
-  <!--기존 회원이 있을 경우 currentFreeBoards != null이 아닐 경우, 현재 상태는 currentFreeBoards null-->
-  <div v-if = "currentFreeBoards" class="container mt-3">
+  <!--기존 회원이 있을 경우 currentFAQBoards != null이 아닐 경우, 현재 상태는 currentFAQBoards null-->
+  <div v-if = "currentFAQBoards" class="container mt-3">
     <!--! mb-3 : m(margin), p(padding), : l(left), r(right), b(bottom), 1 : 25px ~ -->
     <!--*div mb-3 #1 시작-->
     <div class = "mb-3">
@@ -14,7 +14,7 @@
              id = "title"
              required
              name = "title"
-             v-model = "currentFreeBoards.title"
+             v-model = "currentFAQBoards.title"
       >
     </div>
     <!--*div mb-3 #1 끝-->
@@ -30,33 +30,16 @@
              id = "content"
              required
              name = "content"
-             v-model = "currentFreeBoards.content"
+             v-model = "currentFAQBoards.content"
       >
     </div>
     <!--*div mb-3 #2 끝-->
-    <!--*div mb-3 #3 시작-->
     <div class = "mb-3">
-      <label for = "writer"
-             class = "form-label"
-      >
-        작성자
-      </label>
-      <input type = "text"
-             class = "form-control"
-             id = "writer"
-             required
-             name = "writer"
-             v-model = "currentFreeBoards.writer"
-      >
-    </div>
-    <!--*div mb-3 #3 끝-->
-    <!--*div mb-3 #4 시작-->
-    <div class = "mb-3">
-      <button @click = "updateFreeBoards"
+      <button @click = "updateFAQBoards"
               class = "btn btn-primary me-3"
       >Update
       </button>
-      <button @click = "deleteFreeBoards"
+      <button @click = "deleteFAQBoards"
               class = "btn btn-danger me-3"
       >Delete
       </button>
@@ -71,23 +54,23 @@
 </template>
 
 <script>
-import FreeBoardsDataService from '@/services/FreeBoardDataService'
+import FAQBoardsDataService from '@/services/FAQBoardDataService'
 
 export default {
-  name: 'edit-freeBoard',
+  name: 'edit-faqBoard',
   data () {
     return {
-      currentFreeBoards: null,
+      currentFAQBoards: null,
       message        : '',
     }
   },
   methods: {
     // id에 해당하는 회원정보를 조회하는 서비스 요청
-    getFreeBoards (id) {
-      FreeBoardsDataService.get(id)
+    getFAQBoards (id) {
+      FAQBoardsDataService.get(id)
           // * 성공하면 then ( 결과데이터 response.data가 들어옴 )
           .then(response => {
-            this.currentFreeBoards = response.data
+            this.currentFAQBoards = response.data
           })
           // * 실패하면 catch
           .catch(e => {
@@ -95,8 +78,8 @@ export default {
           })
     },
     // 회원정보 수정 서비스 요청
-    updateFreeBoards () {
-      FreeBoardsDataService.update(this.currentFreeBoards.id, this.currentFreeBoards)
+    updateFAQBoards () {
+      FAQBoardsDataService.update(this.currentFAQBoards.id, this.currentFAQBoards)
           // * 성공하면 then
           .then(response => {
             console.log(response.data)
@@ -108,8 +91,8 @@ export default {
           })
     },
     // 회원 삭제 서비스 요청
-    deleteFreeBoards () {
-      FreeBoardsDataService.delete(this.currentFreeBoards.id)
+    deleteFAQBoards () {
+      FAQBoardsDataService.delete(this.currentFAQBoards.id)
           // * 성공하면 then
           .then(response => {
             console.log(response.data)
@@ -117,9 +100,9 @@ export default {
             // * $router.push에 관한 설명은 아래 참고
             // * https://router.vuejs.org/guide/essentials/navigation.html#navigate-to-a-different-location
             // * index.js의 name으로 지정하는 방식(Json 형태로 데이터 기입)
-            this.$router.push({ name: 'free-boards' })
+            this.$router.push({ name: 'faq-boards' })
             // * url로 지정하는 방식
-            // this.$router.push('/freeBoards')
+            // this.$router.push('/faqBoards')
           })
           // * 실패하면 catch
           .catch(e => {
@@ -131,7 +114,7 @@ export default {
   // * http://localhost:8080/:id
   // * $route : router/index.js에 접근, params 중 'id'로 정의된 변수를 가져옴
   mounted () {
-    this.getFreeBoards(this.$route.params.id)
+    this.getFAQBoards(this.$route.params.id)
   },
 }
 </script>

@@ -74,14 +74,14 @@ const routes = [
   },
   {
     path     : '/free-boards',
-    name     : 'free-board',
+    name     : 'free-boards',
     component: () => import('@/components/freeBoard/FreeBoardList'),
   },
   {
     path     : '/free-boards/add',
     alias    : '/add-boards',
     name     : 'add-boards',
-    // component: () => import('@/components/freeBoard/AddFreeBoard'),
+    component: () => import('@/components/freeBoard/AddFreeBoard'),
   },
   {
     // /customers/:id, CustomerList에서 설정된 링크 "'/customers/' + customer.id" 형태에서 customer.id를 id(다른 이름도 가능함, ex - idx로 해도 작동하는거 확인됨)라는 이름의 매개변수로 사용하겠다.
@@ -89,6 +89,24 @@ const routes = [
     alias    : '/edit-boards',
     name     : 'edit-boards',
     component: () => import('@/components/freeBoard/EditFreeBoard'),
+  },
+  {
+    path     : '/faq-boards',
+    name     : 'faq-boards',
+    component: () => import('@/components/FAQBoard/FAQBoardList'),
+  },
+  {
+    path     : '/faq-boards/add',
+    alias    : '/add-faq-boards',
+    name     : 'add-faq-boards',
+    component: () => import('@/components/FAQBoard/AddFAQBoard'),
+  },
+  {
+    // /customers/:id, CustomerList에서 설정된 링크 "'/customers/' + customer.id" 형태에서 customer.id를 id(다른 이름도 가능함, ex - idx로 해도 작동하는거 확인됨)라는 이름의 매개변수로 사용하겠다.
+    path     : '/faq-boards/:id',
+    alias    : '/edit-faq-boards',
+    name     : 'edit-faq-boards',
+    component: () => import('@/components/FAQBoard/EditFAQBoard'),
   },
 
 ]

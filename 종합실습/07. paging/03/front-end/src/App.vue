@@ -172,12 +172,12 @@
             <div class = "dropdown-menu"
                  aria-labelledby = "navbarDropdownMenuLink"
             >
-              <router-link to = "/#"
+              <router-link to = "/faq-boards"
                            class = "dropdown-item"
               >
                 FAQ 목록
               </router-link>
-              <router-link to = "/#/add"
+              <router-link to = "/faq-boards/add"
                            class = "dropdown-item"
               >
                 FAQ 글쓰기
