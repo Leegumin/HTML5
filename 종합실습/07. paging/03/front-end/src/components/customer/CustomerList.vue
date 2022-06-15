@@ -62,7 +62,7 @@
       <!--Todo: :class, @click 추가-->
       <tbody v-for = "(customer, index) in customers"
              :key = "index"
-             :class = "{ active: index == currentIndex}"
+             :class = "{ active: index == currentIndex }"
              @click = "setActiveCustomer(customer,index)"
       >
       <tr>

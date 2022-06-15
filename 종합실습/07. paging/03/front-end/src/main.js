@@ -5,11 +5,13 @@ import store from './store'
 
 // Todo : Bootstrap import 4개
 import { BootstrapVue } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
+
+import '@/assets/css/styles.css'
 
 
 new Vue({
