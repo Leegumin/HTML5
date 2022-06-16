@@ -1,0 +1,5 @@
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true,
+   => 이 부분 추가 lintOnSave: false
+})
