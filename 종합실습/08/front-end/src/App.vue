@@ -20,6 +20,29 @@
         </li>
       </div>
       <!--로그인 태그 추가-->
+      <div v-if = "!currentUser"
+           class = "navbar-nav ml-auto"
+      >
+        <li class = "nav-item">
+          <router-link to = "/register"
+                       class = "nav-link"
+          >
+            <!--웹 아이콘 추가-->
+            <font-awesome-icon icon = "user-plus"></font-awesome-icon>
+            Sign Up
+          </router-link>
+        </li>
+        <li class = "nav-item">
+          <router-link to = "/login"
+                       class = "nav-link"
+          >
+            <!--웹 아이콘 추가-->
+            <font-awesome-icon icon = "sign-in-alt"></font-awesome-icon>
+            Login
+          </router-link>
+        </li>
+      </div>
+      <!--로그아웃 태그 추가-->
       <div v-if = "currentUser"
            class = "navbar-nav ml-auto"
       >
@@ -59,8 +82,8 @@ export default {
       // 공유저장소의 전역변수(공유변수 : user)
       // 자동으로 로그인 되었으면 loggedIn = true, user 객체 있음
       // 아닐 ㅣ시 loggedIn = false, user 객체 = null
-      // return this.$store.state.auth.user
-      return true
+      return this.$store.state.auth.user
+      // return true
     },
   },
   // methods : 함수호출, 뒤에 () 붙음
