@@ -2,6 +2,7 @@
 
 <mapper namespace = "com.example.taegyungsi.dao.UserDao">
 
+    <!--id로 유저 찾기-->
     <select id = "findById"
             parameterType = "String"
             resultType = "User">
@@ -19,89 +20,49 @@
           AND DELETE_YN = 'N'
     </select>
 
-    <!--    -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-    <select id = "findByTitleContaining"
+    <!--name으로 유저 찾기-->
+    <select id = "findByName"
             parameterType = "String"
-            resultType = "com.example.taegyungsi.model.User">
-        SELECT ID
-             , TITLE
-             , DESCRIPTION
-             , PUBLISHED
-             , DELETE_YN
-             , INSERT_TIME
-             , UPDATE_TIME
-             , DELETE_TIME
-        FROM TB_USER_JWT
-        WHERE DELETE_YN = 'N'
-          AND TITLE LIKE '%' || #{title} || '%'
-    </select>
-
-    <select id = "findAll"
             resultType = "User">
         SELECT ID
-             , TITLE
-             , DESCRIPTION
-             , PUBLISHED
+             , USERNAME
+             , EMAIL
+             , PASSWORD
+             , ROLES
              , DELETE_YN
              , INSERT_TIME
-             , UPDATE_TIME
+             , UPLOAD_TIME
              , DELETE_TIME
         FROM TB_USER_JWT
-        WHERE DELETE_YN = 'N'
+        WHERE USERNAME = #{username}
+          AND DELETE_YN = 'N'
     </select>
 
-    <select id = "findById"
-            parameterType = "long"
-            resultType = "com.example.taegyungsi.model.User">
-        SELECT ID
-             , TITLE
-             , DESCRIPTION
-             , PUBLISHED
-             , DELETE_YN
-             , INSERT_TIME
-             , UPDATE_TIME
-             , DELETE_TIME
-        FROM TB_USER_JWT
-        WHERE DELETE_YN = 'N'
-          AND ID = #{id}
-    </select>
-
+    <!--회원정보 추가-->
     <insert id = "insertUser"
-            parameterType = "com.example.taegyungsi.model.User">
-        INSERT INTO TB_USER_JWT ( ID
-                                , TITLE
-                                , DESCRIPTION
-                                , PUBLISHED
-                                , INSERT_TIME)
-        VALUES ( SQ_USER_JWT.NEXTVAL
-               , #{title}
-               , #{description}
-               , 'Y'
+            parameterType = "User">
+        INSERT INTO TB_USER_JWT( ID
+                               , USERNAME
+                               , EMAIL
+                               , PASSWORD
+                               , ROLES
+                               , INSERT_TIME)
+        VALUES ( SQ_USER.NEXTVAL
+               , #{username}
+               , #{email}
+               , #{password}
+               , #{roles}
                , TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS'))
     </insert>
 
-    <update id = "updateUser"
-            parameterType = "com.example.taegyungsi.model.User">
+    <!--회원 삭제-->
+    <update id="deleteUser" parameterType="int">
         UPDATE TB_USER_JWT
-        SET TITLE       = #{title}
-          , DESCRIPTION = #{description}
-          , PUBLISHED   = DECODE(#{published}, 'true', 'Y', 'N')
-          , UPDATE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
-        WHERE ID = #{id}
-    </update>
-
-    <update id = "deleteById"
-            parameterType = "long">
-        UPDATE TB_USER_JWT
-        SET DELETE_YN   = 'Y'
-          , DELETE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
-        WHERE ID = #{id}
-    </update>
-
-    <update id = "deleteAll">
-        UPDATE TB_USER_JWT
-        SET DELETE_YN   = 'Y'
-          , DELETE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+        SET
+            DELETE_YN = 'Y'
+          ,DELETE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+        WHERE
+            NAME = #{name}
     </update>
 
 </mapper>

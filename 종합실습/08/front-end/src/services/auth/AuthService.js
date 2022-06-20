@@ -35,7 +35,7 @@ class AuthService {
   // POST 방식 : springBoot 서버에 회원 가입을 요청(insert)
   register (user) {
     return http.post('/signup', {
-      username: user.name,
+      username: user.username,
       email   : user.email,
       password: user.password,
     })

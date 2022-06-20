@@ -13,3 +13,7 @@ spring.jwt.secret = pepega524832857240
 3. model : JWTResponse, MessageResponse, User
 4. dao : UserDao
 5. mappers : User
+6. service : CustomUserDetailService
+7. security : JWTTokenProvider, JWTAuthenticatioFilter
+8. configuration : SecurityConfig
+9. controller : WebConfig, SignController
