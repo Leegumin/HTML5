@@ -1,0 +1,13 @@
+// 뷰의 유효성 체크
+import VeeValidate from 'vee-validate'
+import ko from 'vee-validate/dist/locale/ko'
+const config = {
+  locale: 'ko',
+  dictionary: {
+    ko
+  }
+}
+// 뷰 유효성 체크 모듈 사용 설정
+Vue.use(VeeValidate, config)
+
+=> main.js에 추가하면 끝
