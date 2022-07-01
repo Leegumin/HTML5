@@ -1,0 +1,29 @@
+구글 검색 tomcat => 아파치 톰캣(WAS : Web Application Service)
+
+8.5.81 버전 download 접속
+
+32-bit/64-bit Windows Service Installer 다운=> 윈도우용
+
+백서버 복사 => 이름_Tomcat으로 변경
+
+프론트 서버 => http-common.js 수정
+이름_Tomcat서버에 스프링 빌드해서 집어넣기
+
+@CrossOrigin(origins = "http://localhost:8080") => 변경 
+@CrossOrigin(origins = "http://192.168.0.44:8080")
+
+SecurityConfig에 보안 제외 경로 추가
+@Override
+public void configure(WebSecurity web) throws Exception {
+web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/lib/**")
+}
+
+경로 막는쪽에 이 부분 추가 => 이 경로는 모두 허용
+.antMachers("/signin", "/signup", "/", "/home").permitAll
+
+
+*
+백서버에서 합쳐진거 잘 실행되는지 확인
+오른쪽의 그레이들 -> 빌드 -> 클린 -> war 단계로 실행
+
+build(주황색) 폴더가 생김 => libs의 war => 톰캣 webapps 폴더로 복붙 => 기존 ROOT 폴더 삭제 => war 이름 ROOT로 변경 => 실행해보기
