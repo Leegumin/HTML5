@@ -26,4 +26,4 @@ web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/lib/**")
 백서버에서 합쳐진거 잘 실행되는지 확인
 오른쪽의 그레이들 -> 빌드 -> 클린 -> war 단계로 실행
 
-build(주황색) 폴더가 생김 => libs의 war => 톰캣 webapps 폴더로 복붙 => 기존 ROOT 폴더 삭제 => war 이름 ROOT로 변경 => 실행해보기
+build(주황색) 폴더가 생김 => libs의 war => 톰캣 webapps 폴더로 복붙 => 기존 ROOT 폴더 삭제 => war 이름 ROOT로 변경 => 실행해보기(bin 폴더 Tomcat8w 실행)
